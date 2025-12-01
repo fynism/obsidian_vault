@@ -1764,15 +1764,6 @@ System.out.println(bd6);
 其中，最后一个除法定义为
 
 
-
-```java
-![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20250706155121392.png)
-![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251126170214996.png)    
-    
-```
-
-
-
 ```java
 public BigDecimal divide(BigDecimal divisor,
                          int scale,
