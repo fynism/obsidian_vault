@@ -257,7 +257,7 @@ public String toString() {
 
 **生成标准javabean的快捷键：**
 
-**`alt + insert` **
+`**alt + insert**` 
 
 
 
