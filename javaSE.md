@@ -1864,21 +1864,22 @@ public class RegexDemo2 {
 ##### 带条件的爬取数据
 ```java
 
-String regex ="Java(?=8|11|17)"
+String regex1 ="((?i)Java)(?=8|11|17)"
 //表示匹配Java8，Java11，Java17中的一个
 //?为占位符，代替Java
 //=为后面跟随的数字
 //但最终获取只获取括号外的部分
-
-
-String regex ="((?i)Java)(?=8|11|17)"
-
 //其中（？i）表示忽略大小写匹配
 
+String regex2 ="((?i)Java)(?:8|11|17)"
+//?后加:表示依然匹配条件，但获取时获取整个串
 
+String regex3 ="((?i)Java)(?！8|11|17)"
+//？后加！表示匹配除了后面条件之外符合的串
 
+```
 
-
+##### 贪婪爬取和非贪婪爬取
 
 
 
