@@ -1862,8 +1862,13 @@ public class RegexDemo2 {
 
 
 ##### 带条件的爬取数据
+```java
 
-
+String regex ="Java(?=8|11|17)"
+//表示匹配Java8，Java11，Java17中的一个
+//?为占位符，代替Java
+//=为后面跟随的数字
+//但最终获取只获取括号外的部分
 
 
 
