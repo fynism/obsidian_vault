@@ -1884,7 +1884,13 @@ String regex3 ="((?i)Java)(?！8|11|17)"
 非贪婪爬取：符合正则的情况下尽可能少地获取数据。
 
 ```java
-String str = 
+String str = "abbbbbbbb";
+
+
+String regex1 = "ab+"; //贪婪爬取
+
+String regex2 = "ab+？"; //非贪婪爬取
+
 ````
 
 
