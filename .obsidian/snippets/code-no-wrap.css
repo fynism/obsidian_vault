@@ -1,4 +1,4 @@
-/* 代码块不自动换行，超出显示水平滚动条 */
+
 pre {
   white-space: pre !important;
   overflow-x: auto !important;

@@ -2,7 +2,8 @@
   "theme": "moonstone",
   "baseFontSizeAction": true,
   "enabledCssSnippets": [
-    "code-no-wrap"
+    "code-no-wrap",
+    "line-height"
   ],
   "nativeMenus": false
 }
