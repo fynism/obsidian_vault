@@ -1941,8 +1941,6 @@ public class RegexDemo4 {
         System.out.println("aaa123aaa".matches(regex3));    //true  
         System.out.println("bbb99923bbc".matches(regex3));  //false  
 //        System.out.println("bbb99923bb".matches(regex3));  //true 出现了问题  
-
-		
     }  
 }
 ```
@@ -1951,9 +1949,12 @@ public class RegexDemo4 {
 分组之后不需要再使用本组数据，仅仅是将其括起来
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20251208154644_146_74.jpg)
 ***
+
 ### 时间相关类
-
-
+***
+**JDK7前：** 
+#### Date类
+是一个JDK中的javabean类，用来描述时间，精确到毫秒。
 
 
 
