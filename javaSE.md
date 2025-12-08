@@ -1917,6 +1917,34 @@ public class RegexDemo3 {
 #### 分组
 分组是使用小括号把正则表达式分开。
 捕获分组就是把这一组数据捕获出来，再用一次。
+从左往右，依次为1,2,3,4组。每一个左括号代表1组。
+在正则表达式内部复用捕获组  的时候使用`\\`,外部使用`$`。
+```java
+public class RegexDemo4 {  
+    public static void main(String[] args) {  
+        //1.判断一个String的开头和结尾是否一致(一个字符)  
+        // \\1 代表复用第1组  
+        //a123a b999b  
+        String regex1 = "(.).+\\1";  
+        System.out.println("a1231a".matches(regex1));   //true  
+  
+        //2.判断字符串的开头和结尾是否相等  
+        //abc1231abc bbg999bbg  
+        String regex2 = "(.+).+\\1";  
+        System.out.println("abc1231abc".matches(regex2));   //true  
+        System.out.println("bbg999bg".matches(regex2));     //false  
+  
+  
+        //3.判断一个字符串的开始部分和结束部分是否一致。其开头和结尾中每个字符也需要一致。  
+        //例如 aaa123aaa bbbbb99923bbbbb        String regex3 = "((.)\\2*).+\\1";  
+        System.out.println("aaa123aaa".matches(regex3));    //true  
+        System.out.println("bbb99923bbc".matches(regex3));  //false  
+//        System.out.println("bbb99923bb".matches(regex3));  //true 出现了问题  
+
+		
+    }  
+}
+```
 
 
 
