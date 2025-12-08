@@ -1918,7 +1918,7 @@ public class RegexDemo3 {
 分组是使用小括号把正则表达式分开。
 捕获分组就是把这一组数据捕获出来，再用一次。
 从左往右，依次为1,2,3,4组。每一个左括号代表1组。
-在正则表达式内部复用的时候使用`\\`,外部使用`$`。
+在正则表达式内部复用捕获组  的时候使用`\\`,外部使用`$`。
 ```java
 public class RegexDemo4 {  
     public static void main(String[] args) {  
