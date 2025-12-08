@@ -11,7 +11,7 @@
 
 ## 项目结构
 
-idea 里的项目结构从大到小依次是**Project、Module、Package、Class**.
+idea 里的项目结构从大到小依次是**Project、Module、Package、Class**。
 
 在不同的Package中的类 是相互独立的，即使它们同名.
 
