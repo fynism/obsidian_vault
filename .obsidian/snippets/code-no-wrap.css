@@ -1,5 +1,10 @@
-
-pre {
-  white-space: pre !important;
-  overflow-x: auto !important;
+/* 强制代码块不自动换行，兼容所有主题 */
+.markdown-preview-view pre,
+.markdown-source-view pre,
+.HyperMD-codeblock,
+pre[class*="language-"] {
+  white-space: pre !important; /* 禁用自动换行 */
+  overflow-x: auto !important; /* 超出显示水平滚动条 */
+  word-break: keep-all !important; /* 防止单词拆分 */
+  word-wrap: normal !important; /* 禁用单词换行 */
 }
