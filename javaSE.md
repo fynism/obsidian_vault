@@ -1800,6 +1800,7 @@ public boolean matches(String regex)
 ![正则表达式](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251126174004492.png)
 
 
+*****
 
 
 
@@ -1894,12 +1895,28 @@ String regex2 = "ab+?"; //非贪婪爬取
 ````
 #### 正则表达式常用方法
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/af398ff29cded844d55447c36691b8ea.jpg)
+
 ```java
-
-
+public class RegexDemo3 {  
+    public static void main(String[] args) {  
+        String str = "小张abbdsd小红adsadasgdf小明";  
+  
+        String regex1 = "(\\w[^_])+";  
+        String replacedStr = str.replaceAll(regex1,",");  
+        System.out.println(replacedStr);    //小张,小红,小明  
+  
+       String splitStr[] = str.split(regex1);  
+        for (int i = 0; i < splitStr.length; i++) {  
+            System.out.println(splitStr[i]);  
+            /*小张  
+            小红            
+            小明*/  
+        }  
+    }
 ```
+*****
 #### 分组
-
+分组是一个小括号
 
 
 
