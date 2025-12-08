@@ -3,5 +3,6 @@
   "baseFontSizeAction": true,
   "enabledCssSnippets": [
     "code-no-wrap"
-  ]
+  ],
+  "nativeMenus": false
 }

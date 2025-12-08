@@ -23,7 +23,7 @@
     "editor:unindent-list",
     "editor:configure-toolbar"
   ],
-  "readableLineLength": true,
+  "readableLineLength": false,
   "foldIndent": true,
   "tabSize": 8
 }
