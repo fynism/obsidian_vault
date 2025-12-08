@@ -849,7 +849,7 @@ class Person {
     }
     
     // 委托构造器
-    public Person() { this("未知", 0); } // 无参→主构造器
+    public Person() { this("null", 0); } // 无参→主构造器
     public Person(String name) { this(name, 0); } // 单参→主构造器
 }
 ```
