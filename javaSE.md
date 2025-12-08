@@ -1893,7 +1893,7 @@ String regex2 = "ab+？"; //非贪婪爬取
 
 ````
 #### 正则表达式常用方法
-图片1
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/af398ff29cded844d55447c36691b8ea.jpg)
 ```java
 
 
