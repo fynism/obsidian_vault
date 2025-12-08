@@ -1,4 +1,7 @@
 {
   "theme": "moonstone",
-  "baseFontSizeAction": true
+  "baseFontSizeAction": true,
+  "enabledCssSnippets": [
+    "code-no-wrap"
+  ]
 }
