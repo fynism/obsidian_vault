@@ -1889,7 +1889,7 @@ String str = "abbbbbbbb";
 
 String regex1 = "ab+"; //贪婪爬取
 
-String regex2 = "ab+？"; //非贪婪爬取
+String regex2 = "ab+?"; //非贪婪爬取
 
 ````
 #### 正则表达式常用方法
