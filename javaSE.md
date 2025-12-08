@@ -22,31 +22,18 @@ idea 里的项目结构从大到小依次是**Project、Module、Package、Class
 ## IDEA 快捷键
 
 `ctrl+alt+L`格式化代码.
-
 `ctrl+Insert`快捷创建javabean .
-
 创建空参构造可以点两下`Tab.`
-
 创建全参构造可以`shift + ⬇️`或者`Ctrl+A`全选.
-
 使用全参构造方法时不知道参数是什么？按下`Ctrl+P`就能显示.
 
-
-
 `Ctrl+Alt+V`能自动生成变量定义部分.
-
 `Ctrl+Alt+T`能对于选择的代码部分选择语句进行包裹.
-
 `Ctrl+D`向下复制一行.
-
 `Ctrl+N`全局搜索类.
-
 `Ctrl+F12`类内部搜索成员.
-
 `Shift+Alt+⬇️`移动到下一行.
-
 `Shift + F6`批量修改变量名称.
-
 `Alt + Enter`列出报错所有解决方法.
 
 
@@ -1748,10 +1735,8 @@ BigDecimal bd6 = BigDecimal.valueOf(10);
 System.out.println(bd6);
 ```
 
-注意：
-
+**注意：**
 - 若表示的数字不大，未超出double表示范围，建议使用`valueof()`静态方法创建。
-
 - 若表示的数字较大，超出double表示范围，使用构造方法创建。
 - 使用`valueof()`时，若传入的是0~10之间的整数，那么会直接返回**已创建**的对象，不会new。
 
@@ -1770,7 +1755,7 @@ public BigDecimal divide(BigDecimal divisor,
                          RoundingMode roundingMode)
 ```
 
- `roundingMode`是一个**枚举**类，枚举常量如下：
+ `RoundingMode`是一个**枚举**类，枚举常量如下：
 
 ![image-20251126170214996](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251126170214996.png)
 
