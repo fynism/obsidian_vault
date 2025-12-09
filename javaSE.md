@@ -1938,9 +1938,9 @@ public class RegexDemo4 {
 ### 时间相关类
 ***
 **JDK7前：** 
-2#### Date类
+#### Date类
 是一个JDK中的javabean类，用来描述时间，精确到毫秒。
-
+`Date`使用构造函数初始化。
 
 
 
