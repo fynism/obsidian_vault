@@ -1987,7 +1987,9 @@ public class SimpleDateFormatt {
 ```
 ***
 #### Calendar类
-`Calendar`是一个抽象类，无法实例化。0
+`Calendar`是一个抽象类，无法实例化。
+通过`getInstance()`方法获取实例对象。
+
 
 
 
