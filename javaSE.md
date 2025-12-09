@@ -2046,9 +2046,30 @@ public class CalendarDemo1 {
 ##### ZoneID 时区
 常用方法如下:
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/a410430c993fa6b38c4353f109cbf370.jpg)
+```java
+import java.time.ZoneId;  
+import java.util.Set;  
+  
+public class JDK8DateDemo {  
+    public static void main(String[] args) {  
+        //所有时区  
+        Set<String> zoneIds = ZoneId.getAvailableZoneIds();  
+        System.out.println(zoneIds);  
+        System.out.println(zoneIds.size()); //603 (个可用时区)  
+  
+        //2.获取当前系统的默认时区  
+        ZoneId defaultId = ZoneId.systemDefault();  
+        System.out.println(defaultId);  // Asia/Shanghai  
+  
+        //3.获取指定时区  
+        ZoneId zoneId2 = ZoneId.of("America/Toronto");  
+        System.out.println(zoneId2);  
+    }  
+}
+```
 
 
-
+##### Instant 时间戳
 
 
 
