@@ -698,7 +698,7 @@ import com.fengye.domain.Student
 
 - **类**，该类为最终类，不能被继承。
 - **方法**，该方法为最终方法，不能被重写。
-- **变量**，修饰后成为**==常量==**，只能被赋值一次。
+- **变量**，修饰后成为==常量==，只能被赋值一次。
 
 
 
@@ -1954,7 +1954,7 @@ Date()
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20251209110020_149_74.jpg)
 
 **pattern**定义如下：
-![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20251209110426_151_74.png)
+![patterns](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20251209110426_151_74.png)
 
 
 
