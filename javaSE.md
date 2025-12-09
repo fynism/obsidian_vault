@@ -1983,7 +1983,6 @@ public class SimpleDateFormatt {
         Date date3 = sdf3.parse(strFormat);  
         System.out.println(date3);  //Tue Dec 09 11:23:55 CST 2025  
     }  
-  
 }
 ```
 
