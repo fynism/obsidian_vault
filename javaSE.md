@@ -2073,7 +2073,49 @@ public class JDK8DateDemo {
 常用方法如下：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/5ce1f6ce8d2bee48a1502e32caf52234.jpg)
 
-
+```java
+import java.time.Instant;  
+import java.time.ZoneId;  
+import java.time.ZonedDateTime;  
+  
+public class InstantDemo {  
+    public static void main(String[] args) {  
+        //1.static方法。now()获取现在时间戳实例  
+        Instant nowins1 = Instant.now();  
+        System.out.println(nowins1);    //2025-12-09T12:36:05.895891100Z  
+  
+        //2.static方法。ofEpochMilli/Second()通过传参数获取时间戳实例  
+        Instant ins1 = Instant.ofEpochMilli(9999999999L);  
+        System.out.println(ins1);   //1970-04-26T17:46:39.999Z  
+        Instant ins2 = Instant.ofEpochSecond(1L);  
+        System.out.println(ins2);   //1970-01-01T00:00:01Z  
+  
+        //3.指定时区  
+        ZonedDateTime nowins2 = Instant.now().atZone(ZoneId.of("Asia/Shanghai"));  
+        System.out.println(nowins2);    //2025-12-09T20:41:25.592551800+08:00[Asia/Shanghai]  
+  
+        //4.isBefore/After() 进行判断  
+        Instant ins3 = Instant.ofEpochSecond(0L);  
+        Instant ins4 = Instant.ofEpochSecond(2L);  
+        boolean result1 = ins3.isBefore(ins4);  
+        boolean result2 = ins3.isAfter(ins4);  
+        System.out.println(result1);    //true  
+        System.out.println(result2);    //false  
+  
+        //5.minusxx()/plusxx()修改Instant.  
+        Instant ins5 = Instant.ofEpochSecond(3000L);  
+        System.out.println(ins5);   //1970-01-01T00:50:00Z  
+        //原本的instant数据不变,新建一个instant对象。  
+        //minus  
+        Instant ins6 = ins5.minusSeconds(1000L);  
+        System.out.println(ins6);   //1970-01-01T00:33:20Z  
+        //plus        
+        Instant ins7 = ins5.plusSeconds(1000L);  
+        System.out.println(ins7);   //1970-01-01T01:06:40Z  
+      
+    }  
+}
+```
 *********
 
 
