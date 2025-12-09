@@ -1484,8 +1484,6 @@ int	indexOf(Object o)
 public static void exit(int status)
 ```
 
-
-
 `arraycopy()`将指定源数组中的数组从指定位置复制到目标数组的指定位置。
 
 ```java
@@ -1513,31 +1511,32 @@ public static long currentTimeMillis()
 ![image-20251125154434503](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251125154434503.png)
 
 ```java
-public static void main(String[] args) throws IOException {
-
-    //1.获取对象
-    Runtime r1 = Runtime.getRuntime();
-    Runtime r2 = Runtime.getRuntime();
-
-    //2.获取线程数
-    int ProcessorCount = Runtime.getRuntime().availableProcessors();
-    System.out.println(ProcessorCount);//20
-
-    //3.JVM总内存大小,单位为byte
-    System.out.println(Runtime.getRuntime().maxMemory() / 1024 / 1024 + "MB");
-
-    //4.JVM已经获取的总内存大小
-    System.out.println(Runtime.getRuntime().totalMemory() / 1024 / 1024 + "MB");
-
-    //5.JVM剩余内存大小
-    System.out.println(Runtime.getRuntime().freeMemory() / 1024 / 1024 + "MB");
-
-    //6.执行cmd语句
-    Runtime.getRuntime().exec("shutdown -s -t 3600");
-    
-    //7.停止虚拟机，也是System.exit()的源码
-    Runtime.getRuntime().exit(0);
-
+public class RuntimeDemo {  
+    public static void main(String[] args) throws IOException {  
+  
+        //1.获取对象  
+        Runtime r1 = Runtime.getRuntime();  
+        Runtime r2 = Runtime.getRuntime();  
+  
+        //2.获取线程数  
+        int ProcessorCount = Runtime.getRuntime().availableProcessors();  
+        System.out.println(ProcessorCount); //20  
+  
+        //3.JVM总内存大小,单位为byte  
+        System.out.println(Runtime.getRuntime().maxMemory() / 1024 / 1024 + "MB");  //4026MB  
+  
+        //4.JVM已经获取的总内存大小  
+        System.out.println(Runtime.getRuntime().totalMemory() / 1024 / 1024 + "MB");  //254MB  
+  
+        //5.JVM剩余内存大小  
+        System.out.println(Runtime.getRuntime().freeMemory() / 1024 / 1024 + "MB"); //248MB  
+  
+        //6.执行cmd语句  
+        System.out.println(Runtime.getRuntime().exec("shutdown -a"));  
+  
+        //7.停止虚拟机，也是System.exit()的源码  
+        Runtime.getRuntime().exit(0);  
+    }  
 }
 ```
 
