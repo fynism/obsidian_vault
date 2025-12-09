@@ -1950,7 +1950,10 @@ Date()
 
 #### SimpleDateFormat类
 提供**格式化输出日期**和**解析字符串为日期**的方法。
-**构造方法和常用方法：**
+**构造方法**和**常用方法**：
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20251209110020_149_74.jpg)
+
+**pattern**定义如下：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20251209110426_151_74.png)
 
 
