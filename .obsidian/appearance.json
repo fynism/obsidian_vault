@@ -1,6 +1,8 @@
 {
   "theme": "moonstone",
   "baseFontSizeAction": true,
-  "enabledCssSnippets": [],
+  "enabledCssSnippets": [
+    "line-height"
+  ],
   "nativeMenus": false
 }
