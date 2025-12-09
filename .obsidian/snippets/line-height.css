@@ -1,7 +1,13 @@
+
 .cm-editor .cm-content {
   line-height: 2.5; 
 }
-
 .cm-editor .cm-list-item {
   line-height: 2.5;
+}
+
+
+.HyperMD-codeblock {
+  line-height: 1.5; /* 或者您想要的数值，例如 1.2, 1.8 等 */
+  
 }
