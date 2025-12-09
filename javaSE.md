@@ -1989,9 +1989,55 @@ public class SimpleDateFormatt {
 #### Calendar类
 `Calendar`是一个抽象类，无法实例化。
 通过`getInstance()`方法获取实例对象。
+**常用方法：**
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/3bfdbdb68323dcb44f9969e952bb2bcf.jpg)
 
-
-
+```java
+import java.util.Date;  
+  
+public class CalendarDemo1 {  
+    public static void main(String[] args) {  
+        //1.获取实例  
+        //会根据系统的不同时区来获取不同的日历对象  
+        //把各种信息都放入一个数组中 包括年月日，时分秒  
+        //细节1：抽象类不能直接new  
+        //细节2：其中获取月份的范围为0-11  
+        //细节3：星期日是一周中的第一天。所以1->周日, 2->周一。  
+        Calendar cal1 = Calendar.getInstance();  
+        System.out.println(cal1);  
+        System.out.println();  
+  
+        //2.修改日期  
+        Date date1 = new Date(0L);  
+        cal1.setTime(date1);  
+        System.out.println(cal1);  
+  
+        //3.信息操作  
+        //3.1获取日期中的某个字段信息  
+        //calendar结果中的索引：0:纪元,1:年,2:月,3:年中的第几周,4:一月中的第几周,5:一月中的第几天.....  
+        int year = cal1.get(1);  
+        int month = cal1.get(2)+1;  
+        int day = cal1.get(5);  
+        System.out.println(year + "," + month + "," + day);  //1970,1,1  
+  
+        //java中定义为了常量，可直接使用  
+        int year1 = cal1.get(Calendar.YEAR);  
+        int month1 = cal1.get(Calendar.MONTH)+1;  
+        int day1 = cal1.get(Calendar.DAY_OF_MONTH);  
+        System.out.println(year1 + "," + month1 + "," + day1);  //1970,1,1  
+  
+        //3.2 set()        cal1.set(Calendar.YEAR,2000);  
+        System.out.println(cal1.get(Calendar.YEAR));  //2000  
+  
+        //3.3 add()        cal1.add(Calendar.YEAR,1);  
+        System.out.println(cal1.get(Calendar.YEAR)); //2001  
+        cal1.add(Calendar.YEAR,-2);  
+        System.out.println(cal1.get(Calendar.YEAR)); //1999  
+  
+  
+    }  
+}
+```
 
 
 
