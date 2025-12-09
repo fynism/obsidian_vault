@@ -2045,6 +2045,7 @@ public class CalendarDemo1 {
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/39cbdaf7ced65cef7ceea7c45621f659.jpg)
 ##### ZoneID 时区
 常用方法如下:
+多为**静态**方法，直接使用类名调用。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/a410430c993fa6b38c4353f109cbf370.jpg)
 ```java
 import java.time.ZoneId;  
@@ -2070,7 +2071,8 @@ public class JDK8DateDemo {
 
 
 ##### Instant 时间戳
-
+常用方法如下：
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/5ce1f6ce8d2bee48a1502e32caf52234.jpg)
 
 
 *********
