@@ -1956,7 +1956,36 @@ Date()
 **pattern**定义如下：
 ![patterns](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20251209110426_151_74.png)
 
-
+```java
+import java.text.ParseException;  
+import java.text.SimpleDateFormat;  
+import java.util.Date;  
+  
+public class SimpleDateFormatt {  
+    public static void main(String[] args) throws ParseException {  
+//        1.format()方法实现格式化输出  
+        Date date = new Date();  
+        //空参构造  
+        SimpleDateFormat sdf1 = new SimpleDateFormat();  
+        String date1 = sdf1.format(date);  
+        System.out.println(date1);  //2025/12/9 11:16  
+        //带参构造，实现结构化输出  
+        SimpleDateFormat sdf2   = new SimpleDateFormat("yyyy年MM月dd日,HH时mm分ss秒,EE");  
+        String date2 = sdf2.format(date);  
+        System.out.println(date2);  //2025年12月09日,11时19分53秒,周二  
+  
+  
+//        2.parse方法实现字符串解析  
+        //需要解析的字符串  
+        String strFormat = "2025-12-09 11:23:55";  
+        //创建对象的pattern要跟格式完全一致  
+        SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
+        Date date3 = sdf3.parse(strFormat);  
+        System.out.println(date3);  //Tue Dec 09 11:23:55 CST 2025  
+    }  
+  
+}
+```
 
 
 
