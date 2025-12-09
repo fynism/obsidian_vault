@@ -1941,7 +1941,9 @@ public class RegexDemo4 {
 #### Date类
 是一个JDK中的javabean类，用来描述时间，精确到毫秒。
 `Date`使用构造函数初始化。
-```
+```java
+Date(long date)
+//分配一个 `Date`对象，并将其初始化为表示自称为“时代”的标准基准时间以后的指定毫秒数，即1970年1月1日00:00:00 GMT。
 ```
 
 
