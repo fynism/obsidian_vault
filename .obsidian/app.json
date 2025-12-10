@@ -26,5 +26,5 @@
   "readableLineLength": false,
   "foldIndent": true,
   "tabSize": 4,
-  "rightToLeft": true
+  "rightToLeft": false
 }

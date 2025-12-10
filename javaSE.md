@@ -1969,7 +1969,7 @@ public class SimpleDateFormatt {
         String date1 = sdf1.format(date);  
         System.out.println(date1);  //2025/12/9 11:16  
         //带参构造，实现结构化输出  
-        SimpleDateFormat sdf2   = new SimpleDateFormat("yyyy年MM月dd日,HH时mm分ss秒,EE");  
+        SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy年MM月dd日,HH时mm分ss秒,EE");  
         String date2 = sdf2.format(date);  
         System.out.println(date2);  //2025年12月09日,11时19分53秒,周二  
   
@@ -2091,7 +2091,7 @@ public class InstantDemo {
         System.out.println(ins2);   //1970-01-01T00:00:01Z  
   
         //3.指定时区  
-        ZonedDateTime nowins2 = Instant.now().atZone(ZoneId.of("Asia/Shanghai"));  
+        ZonedDateTime nowins2 =Instant.now().atZone(ZoneId.of("Asia/Shanghai")); 
         System.out.println(nowins2);    //2025-12-09T20:41:25.592551800+08:00[Asia/Shanghai]  
   
         //4.isBefore/After() 进行判断  
