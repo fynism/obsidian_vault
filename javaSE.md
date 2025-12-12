@@ -2042,7 +2042,8 @@ public class CalendarDemo1 {
 #### JDK8后
 主要有10个类。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/39cbdaf7ced65cef7ceea7c45621f659.jpg)
-##### ZoneID 时区
+##### Date类
+###### ZoneID 时区
 常用方法如下:
 多为**静态**方法，直接使用类名调用。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/a410430c993fa6b38c4353f109cbf370.jpg)
@@ -2069,7 +2070,7 @@ public class JDK8DateDemo {
 ```
 
 
-##### Instant 时间戳
+###### Instant 时间戳
 常用方法如下：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/5ce1f6ce8d2bee48a1502e32caf52234.jpg)
 
@@ -2118,16 +2119,35 @@ public class InstantDemo {
 ```
 
 
-##### ZonedDateTime 带时区的时间
+###### ZonedDateTime 带时区的时间
 常用方法如下:
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/2a6e04322b3b11b33d7795ea52012723.jpg)
 
-##### DateTimeFormatter 时间的格式化和解析
+###### DateTimeFormatter 时间的格式化和解析
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/941ca3a146b12c867bbe826c1ad2a693.jpg)
 ```java
-
+public static void main(String[] args) {  
+        //获取时间对象  
+        ZonedDateTime zdt1 = Instant.now().atZone(ZoneId.of("Asia/Shanghai"));  
+  
+        //创建Formatter  
+        DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss EE a");  
+  
+        //格式化输出  
+        System.out.println(dtf1.format(zdt1));  //2025-12-12 19:20:31 周五 下午  
+  
+    }  
+}
 ```
 
+***
+
+##### Calendar类
+###### LocalDate、LocalTime、LocalDateTime
+- LocalDate:年/月/日
+- LocalTime:时/分/秒
+- LocalDateTime:年/月/日/时/分/秒
+**主要方法:**
 
 
 
