@@ -784,7 +784,7 @@ public class Student {
 
 **格式：**`static{}`
 
-**特点：**随着类加载而加载，自动触发，只执行一次。
+**特点：随着类加载而加载，自动触发，只执行一次。
 
 通常在做一些==数据初始化==的时候使用。
 
@@ -848,17 +848,12 @@ class Person {
 ### 抽象方法
 
 **定义：**
-
 将**待重写**的方法抽取到父类中，在父类中不能确定具体的方法体，那么该方法可以定义为**抽象方法**。
 
 **特点：**
-
 抽象方法在子类中**必须**被**重写**。
 
-
-
 **eg:**   
-
 ```java
 public abstract void work();
 ```
@@ -868,11 +863,9 @@ public abstract void work();
 ### 抽象类
 
 **定义：**
-
 若一个类中存在**抽象方法**，那么该类必须声明为**抽象类**。
 
 **eg：**
-
 ```java
 public abstract class Employee{}
 ```
@@ -880,7 +873,6 @@ public abstract class Employee{}
 
 
 ### 注意
-
 - 抽象类**不能**实例化。
 - 抽象类中不一定有抽象方法，但有抽象方法的类一定是抽象类。
 - 虽然不能实例化，但可以有**构造方法**。(为了在**能够**实例化的子类中调用`super(...)`，实现构造方法)
@@ -893,42 +885,32 @@ public abstract class Employee{}
 ## 接口（Interface）
 
 ### 定义：
-
 接口是一套**规则**。
-
 `interface`（接口）是 Java 中的**抽象类型**（非具体类），本质是一套==「方法签名(抽象方法)、常量、默认行为、静态行为」==的集合，核心作用是**定义规范、解耦实现、支持多实现**，弥补 Java 类单继承的限制。
 
 
 
 1. `interface`格式。
-
 ```java
 public interface name{}
 ```
-
 2. 接口不能实例化。
 3. 接口和类之间是**实现**关系，使用`implements`关键字。
-
 ```java
 public class className implements interfaceName{}
 ```
-
 4. 接口的子类（**实现类**）
-   	- 要么重写接口中所有抽象方法
-   	- 要么是抽象类
-
+  -  要么重写接口中所有抽象方法
+  - 要么是抽象类
 
 
 ### **注意点：**
-
 1. 接口和类可以单实现，也可以**多实现**。
-
 ```java
 public class 类名 implements 接口1,接口2 {}
 ```
 
 2. 实现类可以在继承一个类的时候 实现多个接口。
-
 ```java
 public class 类名 extends 父类名 implements 接口1,接口2 {}
 ```
@@ -940,15 +922,12 @@ public class 类名 extends 父类名 implements 接口1,接口2 {}
 ### 接口中成员特点
 
 **成员变量：**
-
 - 只能是常量，默认用`public static final`修饰
 
 **构造方法：**
-
 - 无
 
 **成员方法：**
-
 - 只能是抽象方法，默认用`public abstract`修饰。**（JDK7 前）**
 
 ****
@@ -956,7 +935,6 @@ public class 类名 extends 父类名 implements 接口1,接口2 {}
 
 
 ### 接口和类之间的关系
-
 - 类X类
   继承关系。只能单继承，**不能**多继承。
 - 类X接口
@@ -968,7 +946,6 @@ public class 类名 extends 父类名 implements 接口1,接口2 {}
 
 
 ### 接口中的新方法
-
 - JDK7 前接口中只能定义抽象方法。
 -  JDK8 中能定义带有方法体的方法。（默认方法、静态方法）
 -  JDK9 能定义私有方法
@@ -978,7 +955,6 @@ public class 类名 extends 父类名 implements 接口1,接口2 {}
 
 
 #### **默认方法**
-
 可以在interface中定义**默认方法**，能够写方法体，解决接口升级问题。
 
 ```java
@@ -986,7 +962,6 @@ public default void show(){}
 ```
 
 **注意：**
-
 - 默认方法不强制被重写。重写时去掉`default`。
 - `public`可省略，但是`default`不能省略。
 - 如果实现的多个接口中存在**相同名字**的默认方法，实现类必须对该方法重写。
@@ -996,15 +971,12 @@ public default void show(){}
 #### **静态方法**
 
 可以在接口中定义静态方法，`static`关键字修饰。
-
 ```java
 public static void show(){}
 ```
 
 **注意：**
-
 - **不能**被重写。
-
 - 静态方法只能通过**接口名**调用。（接口不能实例化）
 - `public`可省略，但是`static` 不能省略。
 
@@ -1013,7 +985,6 @@ public static void show(){}
 #### **私有方法（JDK9 新增）**
 
 可以写只为接口内部服务而不需要外类访问的方法。
-
 ```java
 //普通私有方法，为默认方法服务
 private void method(){}
@@ -1029,9 +1000,7 @@ private static void method(){}
 ### 接口的应用(多态)
 
 主要应用了接口的**多态**。
-
 当接口作为方法的参数的时候，那么这个方法可以接收这个接口**所有**实现类的对象。
-
 ```java
 //接口定义
 public interface Inter{...}
@@ -1053,17 +1022,11 @@ public void work(Inter C){
 ### 适配器设计模式
 
 **设计模式**(Design pattern)就是解决问题的各种套路。
-
 适配器设计模式解决接口与实现类的冲突。
 
-
-
 一个接口中抽象方法过多，但是只要使用一个时可以使用。
-
 - 例如，下面例子中，接口中定义了5个方法，但实现时只需要使用一个方法。
-
 - 此时新建一个Adapter**适配器**类，实现接口。（如果实现类有父类，那么适配器类继承该父类）
-
 - 最后让真正的实现类继承适配器类，并重写需要用的方法。
 
 ```java
@@ -1119,9 +1082,7 @@ public class InterImpl extends InterAdapter{
 ## 内部类
 
 在一个类的里面定义的类。
-
 若B类表示的是A类的一部分，且B类单独存在没有意义，那么此时可以把B类定义为A类的内部类。
-
 ```java
 public class Car {
     private String brand;
@@ -1148,15 +1109,12 @@ public class Car {
 ### 成员内部类
 
 - 写在成员位置，属于外部类的成员。
-
 - 可以被修饰符（private…等）修饰。
-
 - 可以定义静态变量。(JDK16 后)
 
 
 
 **创建：**
-
 1. 外部类提供方法，对外提供内部类对象(内部类为`private`常用)。
 2. 直接创建(内部类为`public`)。
 
@@ -1192,11 +1150,8 @@ Outer.Inner oi = new Outer().new Inner();
 ![image-20251123200348710](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251123200348710.png)
 
 >answer:
->
 >第一个 `Outer.this.a`
->
 >第二个`this.a`
->
 >第三个`a`
 
 ***
@@ -1204,7 +1159,6 @@ Outer.Inner oi = new Outer().new Inner();
 ### 静态内部类
 
 也是成员内部类中的一种。
-
 只能访问外部类中的静态变量和静态方法。若想要想要访问**非静态**的成员需要创建对象。
 
 ```java
@@ -1247,7 +1201,6 @@ public void show(){
 匿名内部类本质上是隐藏了名字的内部类。可以写在成员位置，也可以写在局部位置。
 
 **格式：**
-
 ```java
 new ClassName/InterfaceName(){
     @Override
@@ -1256,7 +1209,6 @@ new ClassName/InterfaceName(){
 ```
 
 **包括了：**
-
 1. 继承/实现关系
 2. 方法的重写
 3. 创建对象
@@ -1294,31 +1246,17 @@ public class Test {
 ```
 
 **使用场景：**
-
-当方法的参数是接口或类时。
-
-若是接口，那么可以传递这个接口的所有实现类对象。
-
-如果实现类只用一次，可以用匿名内部类简化代码。
-
-
-
-
-
-
-
-
-
+- 当方法的参数是接口或类时。
+- 若是接口，那么可以传递这个接口的所有实现类对象。
+- 如果实现类只用一次，可以用匿名内部类简化代码。
+***
 # String
 
 定义在java.lang包中的类.
-
 每一个字符串都是一个String对象.
-
 字符串内容无法改变.
 
 **创建字符串**
-
 ![image-20251114005814819](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251114005814819.png)
 
 ```java
@@ -1335,44 +1273,28 @@ public class Test {
         String s_bytes = new String(bytes);
         System.out.println(s_bytes);
 ```
-
 直接赋值方式定义，再次创建 相同的字符串时会复用前一个字符串在堆内存（StringTable串池）中的地址.
-
 而 new 方式创建的， 每 new 一次都会开辟一个新的字符串地址，较为浪费.
 
 ## String的比较
 
 " == "在基本数据类型中 比较的是**值**.
-
 在引用数据类型中比较的是**地址**.
-
 ```````java	
-        String a = "aaa";
-        String b = "aaa";
-        String c = new String("aaa");
-
-        System.out.println(a == b); //true
-        System.out.println(b == c);	//false
+String a = "aaa";
+String b = "aaa";
+String c = new String("aaa");
+System.out.println(a == b); //true
+System.out.println(b == c);	//false
 ```````
-
-
-
 所以，常用equals()方法比较字符串的**内容**是否相等.
-
-
-
 ## String遍历
 
 - 使用` length()` 方法获取循环次数.
-
 - 使用`charAt(int index)`方法获取特定索引上的字符.
-
-
-
 ## StringBuilder
 
 能够创建一个可编辑的字符串对象.
-
 ```````java	
 StringBuilder sb = new StringBuilder("abc");
 sb.append(1);
@@ -1384,10 +1306,7 @@ System.out.println(sb);
 //abc1v123
 ```````
 
-
-
 ## StringJoiner
-
 ````java	
 //定义
 public StringJoiner(CharSequence delimiter,
@@ -1398,15 +1317,10 @@ public StringJoiner(CharSequence delimiter,
 //其中'['和']'分别为prefix和suffix , ','为delimiter
 ````
 
-
-
 ## 拼接原理
 
 在String拼接的时候:
-
 - 如果没有变量参与,那么会复用串池中的字符串.
-
-
 - 如果有变量参与,那么会在内存中创建新的字符串.
 
 ```java	
@@ -1418,7 +1332,6 @@ String s4 = "ab" + s3;
 System.out.println(s1 == s2); //true
 System.out.println(s1 == s4); //false
 ```
-
 所以,使用StringBuilder拼接字符串能够节省空间.
 
 # 集合
@@ -1426,22 +1339,16 @@ System.out.println(s1 == s4); //false
 ## ArrayList
 
 可以进行CRUD操作的列表.
-
 ```java
 ArrayList<E> arr= new ArrayList<>();
 ```
-
 E 为**泛型**,代表了ArrayList中存储的数据类型.
-
-泛型可为引用数据类型,不能为基本数据类型.
-
+泛型可为**引用**数据类型,不能为**基本**数据类型.
 如果要存储基本数据类型,需要使用对应**包装类**.
+
 ![image-20251117150311454](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251117150311454.png)
 
-
-
 **常用方法**:
-
 ````java
 //C
 boolean	add(E e)
@@ -1458,18 +1365,13 @@ E	get(int index)
 int	indexOf(Object o)
 ````
 
-
-
 # 常用API
-
 [API文档（中文）](https://www.matools.com/api/java8)
-
 [API文档（英文）]([Java Platform SE 8](https://docs.oracle.com/javase/8/docs/api/))
 
 ### **Math** 
 
 工具类，`Math`类包含执行基本数字运算的方法，如基本指数，对数，平方根和三角函数。
-
 常用 `ceil()`,`floor()`,`sqrt()`,`round()`,`random()`
 
 ****
@@ -1479,27 +1381,20 @@ int	indexOf(Object o)
 工具类，包含一些与系统有关的方法。
 
 `exit()`终止当前运行的虚拟机。
-
 ```java
 public static void exit(int status)
 ```
 
 `arraycopy()`将指定源数组中的数组从指定位置复制到目标数组的指定位置。
-
 ```java
 arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
 ```
-
 将指定源数组中的数组从指定位置复制到目标数组的指定位置。 阵列组件的一个子序列被从通过引用的源阵列复制`src`被引用的目标阵列`dest` 。 复制的组件数量等于`length`参数。 源阵列中位置`srcPos`至`srcPos+length-1`的组件分别复制到目标阵列的位置`destPos`至`destPos+length-1` .
 
-
-
 `currentTimeMillis()`返回当前时间（以毫秒为单位）。以1970.1.1 0:00 （UTC +0）为原点。
-
 ```java
 public static long currentTimeMillis()
 ```
-
 可以获取程序运行时间。
 
 
@@ -1541,7 +1436,6 @@ public class RuntimeDemo {
 ```
 
 > cmd命令`shutdown -s -t 3600`意为计算机在3600秒后自动关机。
->
 > `shutdown -a`意为取消关机。
 
 *******
@@ -1549,13 +1443,11 @@ public class RuntimeDemo {
 ### Object
 
 是java中的顶级父类。
-
 - 所有的类都直接/间接继承于Object
 - 所有类都能访问其方法
 - 方法常被子类重写。
 
 **常用方法：**
-
 ![image-20251125161157993](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251125161157993.png)
 
 ******
@@ -1563,15 +1455,12 @@ public class RuntimeDemo {
 clone()存在**浅克隆**和**深克隆**。
 
 **浅克隆/浅拷贝:**
-
 基本数据类型直接拷贝**值**，引用数据类型拷贝**地址**。
-
 会存在问题：拷贝的对象中的引用数据类型与原对象中的共用。
 
 ![image-20251126152638496](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251126152638496.png)
 
 **深克隆/深拷贝:**
-
 基本数据类型直接拷贝值，**但是**引用数据类型会创建**新**的对象。除了String，其存储在串池中，会**复用**。
 
 ![image-20251126153026034](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251126153026034.png) 
@@ -1581,7 +1470,6 @@ clone()存在**浅克隆**和**深克隆**。
 *****
 
 *eg:*
-
 ```java
 public class ObjectDemo {
     public static void main(String[] args) throws CloneNotSupportedException {
@@ -1618,8 +1506,8 @@ public class ObjectDemo {
 }
 
 ```
-**student 类：**
 
+**student 类：**
 ```java
 
 //可克隆的类需要实现Cloneable接口
@@ -1706,15 +1594,11 @@ public class Student implements Cloneable{
 ### BigDecimal和BigInteger
 
 在计算机中，数字以二进制存储。而小数的二进制表示位数可能超出float或double类型的存储上限，这导致浮点数存在精度问题。
-
 **BigDecimal**类就是为了解决此问题。
 
 **创建BigDecimal：**
-
 使用构造方法时，使用String来传递参数能够避免误差。
-
 底层其实是使用一个Byte类型的数组存储。
-
 ```java
 public BigDecimal(String val)
 ```
@@ -1746,8 +1630,6 @@ System.out.println(bd6);
 ![image-20251126165611616](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251126165611616.png)
 
 其中，最后一个除法定义为
-
-
 ```java
 public BigDecimal divide(BigDecimal divisor,
                          int scale,
@@ -1763,45 +1645,31 @@ public BigDecimal divide(BigDecimal divisor,
 ### 正则表达式 Regex
 
 [查看语法详解](Regex.md)
-
 java中正则表达式以*String*形式表示。
 
 **作用：**
-
 1. 判断字符串是否符合正则表达式。
-
 ```java
 public boolean matches(String regex)
 //告诉这个字符串是否匹配给定的regular expression 。
 ```
-
 2. 在文本中查找符合正则表达式的片段。（爬虫）
-
-
-
 **格式：**
 
 ![正则表达式](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251126174004492.png)
 
 
 *****
-
-
-
 #### 爬虫
 
 根据正则表达式爬取信息。
-
 使用`Pattern`类表示正则表达式。
-
 `Matcher`类是文本匹配器。可以在大串中去找符合匹配规则的字串。
-
 ```java
 public Matcher matcher(CharSequence input)
 ```
 
 **简单本地爬虫:**
-
 ```java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -1845,7 +1713,6 @@ public class RegexDemo2 {
 
 ```
 
-
 ##### 带条件的爬取数据
 ```java
 
@@ -1862,11 +1729,10 @@ String regex2 ="((?i)Java)(?:8|11|17)"
 String regex3 ="((?i)Java)(?！8|11|17)"
 //？后加！表示匹配除了后面条件之外符合的串
 ```
-##### 贪婪爬取和非贪婪爬取
 
+##### 贪婪爬取和非贪婪爬取
 贪婪爬取：符合正则情况下尽可能多地获取数据。
 非贪婪爬取：符合正则的情况下尽可能少地获取数据。
-
 ```java
 String str = "abbbbbbbb";
 
@@ -1876,6 +1742,7 @@ String regex1 = "ab+"; //贪婪爬取
 String regex2 = "ab+?"; //非贪婪爬取
 
 ````
+
 #### 正则表达式常用方法
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/af398ff29cded844d55447c36691b8ea.jpg)
 
