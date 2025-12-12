@@ -2148,8 +2148,10 @@ public static void main(String[] args) {
 - LocalTime:时/分/秒
 - LocalDateTime:年/月/日/时/分/秒
 **主要方法:**
+![MainMethods](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/0e16d964f580af61fa50fbe6a4959e71.jpg)
+还可以进行类型转换。
 
-![cc](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/0e16d964f580af61fa50fbe6a4959e71.jpg)
+
 *********
 
 
