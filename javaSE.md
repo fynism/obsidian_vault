@@ -2151,6 +2151,16 @@ public static void main(String[] args) {
 ![MainMethods](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/0e16d964f580af61fa50fbe6a4959e71.jpg)
 还可以进行类型转换。
 
+***
+
+##### 日期工具类
+###### Duration、Period、ChronoUnit
+- Duration:计算两个“时间”间隔 (seconds,nanoseconds)
+- Period:计算两个“日期”间隔 (year,month,day)
+- ChronoUnit:计算两个“时间”间隔
+
+
+
 
 *********
 
