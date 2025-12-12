@@ -2064,6 +2064,13 @@ public static void main(String[] args) {
 ![image-20251117150311454](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251117150311454.png)
 
 #### Integer
+JDK5前通过调用方法进行对象的创建和计算操作。
+```java
+
+```
+>小知识：JDK中,-128~127的Integer对象已经被自动创建好了，新建的时候其实是复用此地址值，而非新建。
+
+JDK5之后实现了自动装箱和自动拆箱。可以把Integer和int相同对待。
 
 ***
 
