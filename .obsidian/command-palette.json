@@ -1,6 +1,7 @@
 {
   "pinned": [
     "outline:open-for-current",
-    "outline:open"
+    "outline:open",
+    "editor:fold-all"
   ]
 }
