@@ -2157,8 +2157,25 @@ public static void main(String[] args) {
 ###### Duration、Period、ChronoUnit
 - Duration:计算两个“时间”间隔 (seconds,nanoseconds)
 - Period:计算两个“日期”间隔 (year,month,day)
-- ChronoUnit:计算两个“时间”间隔
+- **ChronoUnit:计算两个“时间”间隔 (最常用)
 
+```java
+public static void main(String[] args) {  
+    LocalDateTime nowDate = LocalDateTime.now();  
+    LocalDateTime birthDaate = LocalDateTime.of(2005, 9, 14, 10, 0, 0);  
+  
+    System.out.println("相差年数：" + ChronoUnit.YEARS.between(birthDaate,nowDate));  
+    System.out.println("相差月数：" + ChronoUnit.MONTHS.between(birthDaate,nowDate));  
+    System.out.println("相差日数：" + ChronoUnit.DAYS.between(birthDaate,nowDate));  
+    System.out.println("相差周数：" + ChronoUnit.WEEKS.between(birthDaate,nowDate));  
+    System.out.println("相差时数：" + ChronoUnit.HOURS.between(birthDaate,nowDate));  
+    System.out.println("相差分数：" + ChronoUnit.MINUTES.between(birthDaate,nowDate));  
+    System.out.println("相差秒数：" + ChronoUnit.SECONDS.between(birthDaate,nowDate));  
+    System.out.println("相差世纪(100年)数：" + ChronoUnit.CENTURIES.between(birthDaate,nowDate));  
+    System.out.println("相差千年数：" + ChronoUnit.MILLENNIA.between(birthDaate,nowDate));  
+    System.out.println("相差纪元数：" + ChronoUnit.ERAS.between(birthDaate,nowDate));  
+}
+```
 
 
 
