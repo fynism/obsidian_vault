@@ -2157,7 +2157,7 @@ public static void main(String[] args) {
 ###### Duration、Period、ChronoUnit
 - Duration:计算两个“时间”间隔 (seconds,nanoseconds)
 - Period:计算两个“日期”间隔 (year,month,day)
-- **ChronoUnit:计算两个“时间”间隔 (最常用)
+- **ChronoUnit:计算两个“时间”间隔 (最常用)**
 
 **ChronoUnit实例:**
 ```java
