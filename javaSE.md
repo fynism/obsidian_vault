@@ -2193,7 +2193,8 @@ public static void main(String[] args) {
 ### 包装类
 本质上创建了一个引用数据类型对象，并把相应类型的数据存入其中。
 便于多态、集合中等使用。
-
+**如下：**
+![image-20251117150311454](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251117150311454.png)
 
 ***
 
