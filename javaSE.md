@@ -2196,6 +2196,8 @@ public static void main(String[] args) {
 **如下：**
 ![image-20251117150311454](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251117150311454.png)
 
+#### Integer
+
 ***
 
 # 综合练习
