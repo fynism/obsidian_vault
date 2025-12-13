@@ -2094,7 +2094,21 @@ JDK5之后实现了自动装箱和自动拆箱。可以把Integer和int相同对
 >三个类型转换方法均使用String类型作为返回值。因为int、long类型有局限(长度限制，不能以0开头等)。
 
 ```java
-
+public static void main(String[] args) {  
+    //1.进制转换  
+    String num1 = Integer.toBinaryString(255);  
+    String num2 = Integer.toOctalString(255);  
+    String num3 = Integer.toHexString(255);  
+  
+    System.out.println(num1);   //11111111  
+    System.out.println(num2);   //377  
+    System.out.println(num3);   //ff  
+  
+    //2.类型转换  
+    String numStr = "10010";  
+    int num4 = Integer.parseInt(numStr);  
+    System.out.println(num4);   //10010  
+}
 ```
 
 
