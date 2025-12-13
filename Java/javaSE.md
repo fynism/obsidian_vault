@@ -2173,7 +2173,36 @@ public class SequentialSearchDemo1 {
 ***
 ### 二分查找 Binary Search
 **条件**：数组中的数据必须是**有序**的。
-
+```java
+public class BinarySearchDemo {  
+    public static void main(String[] args) {  
+        int[] numArr = {1,5,6,10,12,15,66,95,108,561,569,880,999,1001,1002};  
+        int pos1 = binarySearch(880, numArr);  
+        int pos2 = binarySearch(1, numArr);  
+        int pos3 = binarySearch(1005, numArr);  
+        System.out.println(pos1);   //11  
+        System.out.println(pos2);   //0  
+        System.out.println(pos3);   //-1  
+    }  
+  
+    public static int binarySearch(int num,int[] arr){  
+        int min = 0;  
+        int max = arr.length-1;  
+        int mid;  
+        while (min <= max){  
+            mid = (min+max)/2;  
+            if (num < arr[mid]){  
+                max = mid -1;  
+            }else if(num > arr[mid]){  
+                min = mid +1;  
+            }else{  
+                return mid;  
+            }  
+        }  
+        return -1;  
+    }  
+}
+```
 
 
 
