@@ -2092,6 +2092,7 @@ JDK5之后实现了自动装箱和自动拆箱。可以把Integer和int相同对
 均为静态方法，类名调用。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/e33a048bf11caced65ec4316a13d3a49.jpg)
 >三个类型转换方法均使用String类型作为返回值。因为int、long类型有局限(长度限制，不能以0开头等)。
+>**注意**：8种包装类中，除了`Character`，都有对应的静态`parseXxx`的方法，进行类型转换。
 
 ```java
 public static void main(String[] args) {  
@@ -2110,7 +2111,7 @@ public static void main(String[] args) {
     System.out.println(num4);   //10010  
 }
 ```
->**注意**：8种包装类中，除了`Character`，都有对应的静态`parseXxx`的方法，进行类型转换。
+
 
 
 
