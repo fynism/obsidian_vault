@@ -2146,7 +2146,8 @@ public class SequentialSearchDemo1 {
     }  
   
   
-    //顺序查找方法 SequentialSearch(int num,int[] arr)    //返回需要查找的值在列表中的位置,未找到返回-1  
+    //顺序查找方法 SequentialSearch(int num,int[] arr)    
+    //返回需要查找的值在列表中的位置,未找到返回-1  
     public static int SequentialSearch(int num,int[] arr){  
         for (int i = 0; i < arr.length; i++) {  
             if(num == arr[i]) {  
