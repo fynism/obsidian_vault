@@ -2242,6 +2242,8 @@ public class InterpolationSearchDemo {
 }
 ```
 
+### 斐波那契查找，基于黄金分割比的二分改进
+
 ***
 
 
