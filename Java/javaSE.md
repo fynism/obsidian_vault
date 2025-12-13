@@ -2173,7 +2173,7 @@ public class SequentialSearchDemo1 {
 ```
 ***
 ### 二分查找 Binary Search
-
+**条件**：数组中的数据必须是**有序**的。
 
 
 
