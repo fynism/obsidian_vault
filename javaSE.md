@@ -2110,8 +2110,7 @@ public static void main(String[] args) {
     System.out.println(num4);   //10010  
 }
 ```
-
-
+>**注意**：8种包装类中，除了`Character`，都有对应的静态`parseXxx`的方法，进行类型转换。
 
 
 
