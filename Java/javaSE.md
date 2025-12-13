@@ -2131,8 +2131,33 @@ public static void main(String[] args) {
 
 ## 常见查找算法(7种)
 [基本查找](#基本查找)、二分查找、分块查找、差值查找、斐波那契查找、树表查找、哈希查找。
+
 ### 基本查找/顺序查找 Sequential Search
+
 最基本的查找算法，依次向后查找。
+```java
+public class SequentialSearchDemo1 {  
+    public static void main(String[] args) {  
+        int[] numArr = {1,3,5,7,9,11};  
+        int pos1 = SequentialSearch(7, numArr);  
+        int pos2 = SequentialSearch(8, numArr);  
+        System.out.println(pos1);   //3  
+        System.out.println(pos2);   //-1  
+    }  
+  
+  
+    //顺序查找方法 SequentialSearch(int num,int[] arr)    //返回需要查找的值在列表中的位置,未找到返回-1  
+    public static int SequentialSearch(int num,int[] arr){  
+        for (int i = 0; i < arr.length; i++) {  
+            if(num == arr[i]) {  
+                return i;  
+            }  
+        }  
+        return -1;  
+    }  
+}
+```
+
 
 ## 常见排序算法(10种)
 
