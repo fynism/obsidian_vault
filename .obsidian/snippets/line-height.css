@@ -2,7 +2,7 @@
 .cm-editor .cm-content {
   line-height: 2.5; 
 }
-.cm-editor .cm-list-item {
+.cm-editor .cm-list-item .cm-header{
   line-height: 2.5;
 }
 
