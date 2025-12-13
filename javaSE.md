@@ -2114,7 +2114,16 @@ public static void main(String[] args) {
 >`parseXxx()`方法常用于对键盘录入内容进行转换。
 
 ```java
-
+public static void main(String[] args) {  
+    Scanner sc = new Scanner(System.in);  
+    //统一使用nextLine()录入  
+    String inputStr = sc.nextLine();  
+    //2.3
+  
+    //类型转换  
+    double inputNum = Double.parseDouble(inputStr);  
+    System.out.println(inputNum + 1);  //3.3
+}
 ```
 
 
