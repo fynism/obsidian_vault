@@ -2205,8 +2205,36 @@ public class BinarySearchDemo {
 ```
 
 ### 插值查找 ，二分改进
-```
-
+```java
+public class InterpolationSearchDemo {  
+    public static void main(String[] args) {  
+        int[] numArr = {1, 5, 6, 10, 12, 15, 66, 95, 108, 561, 569, 880, 999, 1001, 1002};  
+        int pos1 = InterpolationSearch(880, numArr);  
+        int pos2 = InterpolationSearch(1, numArr);  
+        int pos3 = InterpolationSearch(1005, numArr);  
+        System.out.println(pos1);   //11  
+        System.out.println(pos2);   //0  
+        System.out.println(pos3);   //-1  
+    }  
+  
+    public static int InterpolationSearch(int key, int[] arr) {  
+        int min = 0;  
+        int max = arr.length - 1;  
+        int mid;  
+        while (min <= max) {  
+	        
+            mid = min + (key - arr[min]) / (arr[max] - arr[min]) * (max - min);  
+            if (key < arr[mid]) {  
+                max = mid - 1;  
+            } else if (key > arr[mid]) {  
+                min = mid + 1;  
+            } else {  
+                return mid;  
+            }  
+        }  
+        return -1;  
+    }  
+}
 ```
 
 ***
