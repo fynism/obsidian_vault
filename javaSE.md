@@ -2066,7 +2066,23 @@ public static void main(String[] args) {
 #### Integer
 JDK5前通过调用方法进行对象的创建和计算操作。
 ```java
-
+public static void main(String[] args) {  
+    //JDK5前  
+    Integer i1 = new Integer(1);  
+    Integer i2 = new Integer("2");  
+  
+    Integer i3 = Integer.valueOf(3);  
+    Integer i4 = Integer.valueOf("4");  
+  
+    //JDK5后,自动装箱/拆箱  
+    // Integer和int可视为相同语法  
+    Integer i5 = 5;  
+    System.out.println(i1); //1  
+    System.out.println(i2); //2  
+    System.out.println(i3); //3  
+    System.out.println(i4); //4  
+    System.out.println(i5); //5  
+}
 ```
 >小知识：JDK中,-128~127的Integer对象已经被自动创建好了，新建的时候其实是复用此地址值，而非新建。
 
