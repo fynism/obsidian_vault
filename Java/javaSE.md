@@ -2133,7 +2133,6 @@ public static void main(String[] args) {
 [基本查找](#基本查找)、二分查找、分块查找、差值查找、斐波那契查找、树表查找、哈希查找。
 ***
 ### 基本查找/顺序查找 Sequential Search
-
 最基本的查找算法，依次向后查找。
 ```java
 public class SequentialSearchDemo1 {  
