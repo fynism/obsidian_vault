@@ -2091,7 +2091,12 @@ JDK5之后实现了自动装箱和自动拆箱。可以把Integer和int相同对
 常用**成员方法**：
 均为静态方法，类名调用。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/e33a048bf11caced65ec4316a13d3a49.jpg)
->三个类型转换方法均使用String类型作为返回值。因为int、
+>三个类型转换方法均使用String类型作为返回值。因为int、long类型有局限(长度限制，不能以0开头等)。
+
+	%% 大 %%
+
+
+
 ***
 
 # 综合练习
