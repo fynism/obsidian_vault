@@ -2243,7 +2243,13 @@ public class InterpolationSearchDemo {
 ```
 
 ### 斐波那契查找，基于黄金分割比的二分改进
+基于黄金分割比进行`mid`的计算。
+$$
+\text{mid} = \text{min} + \text{黄金分割点左半边长度} - 1
+$$
+```java
 
+```
 ***
 
 
