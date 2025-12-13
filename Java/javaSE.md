@@ -2205,6 +2205,9 @@ public class BinarySearchDemo {
 ```
 
 ### 插值查找 ，二分改进
+改进了mid的算法
+
+\text{mid} = \text{min} + \frac{\text{key} - \text{arr}[\text{min}]}{\text{arr}[\text{max}] - \text{arr}[\text{min}]} \times (\text{max} - \text{min})
 ```java
 public class InterpolationSearchDemo {  
     public static void main(String[] args) {  
@@ -2222,7 +2225,7 @@ public class InterpolationSearchDemo {
         int max = arr.length - 1;  
         int mid;  
         while (min <= max) {  
-	        
+            //主要改进语句  
             mid = min + (key - arr[min]) / (arr[max] - arr[min]) * (max - min);  
             if (key < arr[mid]) {  
                 max = mid - 1;  
