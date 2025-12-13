@@ -62,7 +62,7 @@ for (int i = 0; i < 3; i++) {
 
 
 
-# Scanner
+## Scanner
 
 ``````java
 public class Test {
@@ -2063,23 +2063,93 @@ public static void main(String[] args) {
 **如下：**
 ![image-20251117150311454](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251117150311454.png)
 
-#### Integer
+#### 以Integer为例
 JDK5前通过调用方法进行对象的创建和计算操作。
 ```java
-
+public static void main(String[] args) {  
+    //JDK5前  
+    Integer i1 = new Integer(1);  
+    Integer i2 = new Integer("2");  
+  
+    Integer i3 = Integer.valueOf(3);  
+    Integer i4 = Integer.valueOf("4");  
+  
+    //JDK5后,自动装箱/拆箱  
+    // Integer和int可视为相同语法  
+    Integer i5 = 5;  
+    System.out.println(i1); //1  
+    System.out.println(i2); //2  
+    System.out.println(i3); //3  
+    System.out.println(i4); //4  
+    System.out.println(i5); //5  
+}
 ```
 >小知识：JDK中,-128~127的Integer对象已经被自动创建好了，新建的时候其实是复用此地址值，而非新建。
 
 JDK5之后实现了自动装箱和自动拆箱。可以把Integer和int相同对待。
+
+常用**成员方法**：
+均为静态方法，类名调用。
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/e33a048bf11caced65ec4316a13d3a49.jpg)
+>三个类型转换方法均使用String类型作为返回值。因为int、long类型有局限(长度限制，不能以0开头等)。
+
+```java
+public static void main(String[] args) {  
+    //1.进制转换  
+    String num1 = Integer.toBinaryString(255);  
+    String num2 = Integer.toOctalString(255);  
+    String num3 = Integer.toHexString(255);  
+  
+    System.out.println(num1);   //11111111  
+    System.out.println(num2);   //377  
+    System.out.println(num3);   //ff  
+  
+    //2.类型转换  
+    String numStr = "10010";  
+    int num4 = Integer.parseInt(numStr);  
+    System.out.println(num4);   //10010  
+}
+```
+>**注意**：8种包装类中，除了`Character`，都有对应的静态`parseXxx()`的方法，进行类型转换。
+>`parseXxx()`方法常用于对键盘录入内容进行转换。
+
+```java
+public static void main(String[] args) {  
+    Scanner sc = new Scanner(System.in);  
+    //统一使用nextLine()录入  
+    String inputStr = sc.nextLine();  
+    //2.3
+  
+    //类型转换  
+    double inputNum = Double.parseDouble(inputStr);  
+    System.out.println(inputNum + 1);  //3.3
+}
+```
+
+***
+# 基本算法
+
+## 常见查找算法(7种)
+[基本查找](#基本查找)、二分查找、分块查找、差值查找、斐波那契查找、树表查找、哈希查找。
+### 基本查找
+
+
+## 常见排序算法(10种)
+
+
+
+
 
 ***
 
 # 综合练习
 
 
- ## （一）多态
+## (一)多态
 
 …..
 
-## （二）拼图小游戏(JavaFX)
+## (二)拼图小游戏(JavaFX)
 
+
+## (三)包装类小练习
