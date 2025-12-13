@@ -2205,7 +2205,7 @@ public class BinarySearchDemo {
 ```
 
 ### 插值查找 ，二分改进
-改进了mid的算法：
+改进了mid的算法，使其在每次插值时都能使`arr[mid]`更加靠近`key`的值。
 $$
 \text{mid} = \text{min} + \frac{\text{key} - \text{arr}[\text{min}]}{\text{arr}[\text{max}] - \text{arr}[\text{min}]} \times (\text{max} - \text{min})
 $$
