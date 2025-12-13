@@ -62,7 +62,7 @@ for (int i = 0; i < 3; i++) {
 
 
 
-# Scanner
+## Scanner
 
 ``````java
 public class Test {
@@ -2063,7 +2063,7 @@ public static void main(String[] args) {
 **如下：**
 ![image-20251117150311454](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251117150311454.png)
 
-#### Integer
+#### 以Integer为例
 JDK5前通过调用方法进行对象的创建和计算操作。
 ```java
 public static void main(String[] args) {  
@@ -2125,6 +2125,12 @@ public static void main(String[] args) {
     System.out.println(inputNum + 1);  //3.3
 }
 ```
+
+***
+# 基本算法
+
+
+
 
 
 
