@@ -2084,7 +2084,7 @@ public static void main(String[] args) {
     System.out.println(i5); //5  
 }
 ```
->小知识：JDK中,-128~127的Integer对象已经被自动创建好了，新建的时候其实是复用此地址值，而非新建。
+>小知识：JDK中,-128~127的Integer对象已经被自动创建好了，新建的时候其实是复用此地址值，而非新建对象。
 
 JDK5之后实现了自动装箱和自动拆箱。可以把Integer和int相同对待。
 
