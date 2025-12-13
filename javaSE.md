@@ -2088,6 +2088,9 @@ public static void main(String[] args) {
 
 JDK5之后实现了自动装箱和自动拆箱。可以把Integer和int相同对待。
 
+常用**成员方法**：
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/e33a048bf11caced65ec4316a13d3a49.jpg)
+
 ***
 
 # 综合练习
