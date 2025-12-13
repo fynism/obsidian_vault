@@ -2204,7 +2204,10 @@ public class BinarySearchDemo {
 }
 ```
 
+### 插值查找 ，二分改进
+```
 
+```
 
 ***
 ## 常见排序算法(10种)
