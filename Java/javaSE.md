@@ -2130,8 +2130,27 @@ public static void main(String[] args) {
 ***
 # 基本算法
 ### 递归
+**方法直接或间接地调用自身**来解决问题的编程方式。常包括：
+- **基础情况（Base Case）**：递归的终止条件，防止无限调用。
+- **递归情况（Recursive Case）**：将问题分解为更小的同类子问题，并调用自身求解。
+```java
+public static void main(String[] args) {  
+    int result = recursiveFactorial(5);  
+    System.out.println(result); //120  
+}  
+
+//递归求阶乘
+private static int recursiveFactorial(int num) {  
+    //基础情况
+    if (num == 2){  
+        return 2;  
+    }  
+    //递归情况
+    return num*recursiveFactorial(num-1);  
+}
+```
 ## 常见查找算法(7种)
-[基本查找](#基本查找)、二分查找、分块查找、差值查找、斐波那契查找、树表查找、哈希查找。
+[基本查找](#基本查找/顺序查找 Sequential Search)、二分查找、分块查找、差值查找、斐波那契查找、树表查找、哈希查找。
 ***
 ### 基本查找/顺序查找 Sequential Search
 最基本的查找算法，依次向后查找。
