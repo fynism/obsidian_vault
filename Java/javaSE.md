@@ -2395,6 +2395,7 @@ class Block {
 主要算法包括：冒泡排序，选择排序，插入排序，快速排序。
 ### 冒泡排序
 *最熟悉的一集。*
+相邻两个数字比较，大数/小数+上浮/下沉 。
 ```java
 public class BubbleSortDemo {  
     public static void main(String[] args) {  
@@ -2425,8 +2426,34 @@ public class BubbleSortDemo {
 }
 ```
 
-
-
+### 选择排序
+每次排序都选择**无序部分**的**最小/最大值**，将其与待排序索引位置交换。
+```java
+public static void main(String[] args) {  
+    ArrayList<Integer> numArr = new ArrayList<>(Arrays.asList(2, 3, 5, 4, 1, 10, 0, -6, 33, 156, 8, 9999));  
+  
+    selectionSort(numArr);  
+    System.out.println(numArr); //[-6, 2, 3, 0, 1, 8, 4, 5, 10, 33, 156, 9999]  
+}  
+  
+public static void selectionSort(ArrayList<Integer> numArr){  
+    for (int i = 0; i < numArr.size()-1; i++) {  
+        int minIndex = i;  
+  
+        //遍历无序部分  
+        for (int j = i+1; j < numArr.size(); j++) {  
+            if(numArr.get(i) > numArr.get(j)){  
+                minIndex = j;  
+                //每轮只交换一次  
+            }  
+        }  
+  
+        if(minIndex != i){  
+            swap(numArr,i,minIndex);  
+        }  
+    }  
+}  
+```
 
 ***
 
