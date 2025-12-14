@@ -2428,6 +2428,7 @@ public class BubbleSortDemo {
 
 ### 选择排序
 每次排序都选择**无序部分**的**最小/最大值**，将其与待排序索引位置交换。
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/6d39098fe54a08c914b9759bd2b5a54c.jpg)
 ```java
 public static void main(String[] args) {  
     ArrayList<Integer> numArr = new ArrayList<>(Arrays.asList(2, 3, 5, 4, 1, 10, 0, -6, 33, 156, 8, 9999));  
