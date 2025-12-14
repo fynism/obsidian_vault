@@ -2519,8 +2519,14 @@ public class InsertionSortDemo {
 ```
 ### 快速排序
 背景知识：[递归](#递归)。
-使用分区函数`partition()`将数组整理为`[<pivot..,pivot,>pivot..]`格式。并且递归调用。最终实现快速排序。
+使用分区函数`partition()`将数组整理为`[<pivot..,pivot,>pivot..]`格式。并且**递归**调用。最终实现快速排序。
 ```java
+public static void main(String[] args) {  
+    int[] numArr = {2, 3, 5, 4, 1, 10, 0, -6, 33, 156, 8, 9999};  
+    quickSort(numArr);  
+    System.out.println(Arrays.toString(numArr));    //[-6, 0, 1, 2, 3, 4, 5, 8, 10, 33, 156, 9999]  
+}
+
 public static void quickSort(int[] arr) {
     if (arr == null || arr.length <= 1) return;
     quickSort(arr, 0, arr.length - 1);
