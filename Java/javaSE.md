@@ -1354,15 +1354,16 @@ E 为**泛型**,代表了ArrayList中存储的数据类型.
 boolean	add(E e)
 
 //R
-E	remove(int index)
-boolean	remove(Object o)
+E	get(int index)
+int	indexOf(Object o)
 
 //U
 E	set(int index, E element)
 
 //D
-E	get(int index)
-int	indexOf(Object o)
+E	remove(int index)
+boolean	remove(Object o)
+
 ````
 
 # 常用API
