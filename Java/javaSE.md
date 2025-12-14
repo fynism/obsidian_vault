@@ -2205,8 +2205,8 @@ public class BinarySearchDemo {
 ```
 
 ### 插值查找 
-**基于插值算法的二分改进。**
-改进了mid的算法，使其在每次插值时都能使`arr[mid]`更加靠近`key`的值。适用于数据分布均匀的数组。
+*基于**插值算法**的二分改进。*
+改进了mid的算法，使其在每次插值时都能使`arr[mid]`更加靠近`key`的值。适用于数据**分布均匀**的数组。
 $$
 \text{mid} = \text{min} + \frac{\text{key} - \text{arr}[\text{min}]}{\text{arr}[\text{max}] - \text{arr}[\text{min}]} \times (\text{max} - \text{min})
 $$
@@ -2244,7 +2244,7 @@ public class InterpolationSearchDemo {
 ```
 
 ### 斐波那契查找
-**基于黄金分割比的二分改进**。
+*基于**黄金分割比**的二分改进。*
 基于黄金分割比进行`mid`的计算。
 $$
 \text{mid} = \text{min} + \text{黄金分割点左半边长度} - 1
@@ -2257,10 +2257,137 @@ $$
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/6453d00dfdc2b1ff4e767cc1045abacd.jpg)
 **分块原则：**
 1. 前一块中**最大**数据，小于后一块中**所有**数据。（块内无序，块间有序）
-2. 块的数量一般等于数字的个数开**根号**。*eg:16个数字通常分4块。*
+2. 块的数量一般等于数字的个数开**根号**。*eg:16个数字通常分4块。*c
 **核心思路：**
 	先确定数据处于哪一块，再在块内查找。
+```java
+public class BlockSearchDemo {  
+    public static void main(String[] args) {  
+        int[] arr = {16, 18, 5, 2,  
+                20, 25, 30, 33,  
+                60, 57, 34, 100};  
+  
+        //1.进行分块  
+        Block block1 = new Block(18, 0, 3);  
+        Block block2 = new Block(33, 4, 7);  
+        Block block3 = new Block(100, 8, 11);  
+  
+        //2.定义索引表  
+        ArrayList<Block> blockArr = new ArrayList<>();  
+        blockArr.add(block1);  
+        blockArr.add(block2);  
+        blockArr.add(block3);  
+  
+        //3.调用方法查找  
+        int result1 = blockSearch(10, blockArr, arr);  
+        System.out.println(result1);  
+  
+    }  
+  
+  
+    //定义查找方法  
+    public static int blockSearch(int key, ArrayList<Block> indexTable, int[] arr) {  
+  
+        //寻找块的Index  
+        int blockIndex = -1;  
+        for (int i = 0; i < indexTable.size(); i++) {  
+            //寻找第一个max大于key的块  
+            int j = indexTable.get(i).getMax();  
+            if (j >= key) {  
+                blockIndex = i;  
+                break;  
+            }  
+        }  
+        //未找到max大于key的块，则key不在数组中，直接返回-1  
+        if (blockIndex == -1) {  
+            return -1;  
+        }  
+  
+        //块内寻找key的Index  
+        int startIndex = indexTable.get(blockIndex).getStartIndex();  
+        int endIndex = indexTable.get(blockIndex).getEndIndex();  
+        for (int i = startIndex; i <= endIndex; i++) {  
+            if (arr[i] == key) {  
+                return i;  
+            }  
+        }  
+        return -1;  
+    }
+}  
 
+//标准JavaBean
+class Block {  
+    int max;  
+    int startIndex;  
+    int endIndex;  
+  
+    public Block() {  
+    }  
+  
+    public Block(int max, int startIndex, int endIndex) {  
+        this.max = max;  
+        this.startIndex = startIndex;  
+        this.endIndex = endIndex;  
+    }  
+  
+    /**  
+     * 获取  
+     *  
+     * @return max  
+     */    public int getMax() {  
+        return max;  
+    }  
+  
+    /**  
+     * 设置  
+     *  
+     * @param max  
+     */  
+    public void setMax(int max) {  
+        this.max = max;  
+    }  
+  
+    /**  
+     * 获取  
+     *  
+     * @return startIndex  
+     */    public int getStartIndex() {  
+        return startIndex;  
+    }  
+  
+    /**  
+     * 设置  
+     *  
+     * @param startIndex  
+     */  
+    public void setStartIndex(int startIndex) {  
+        this.startIndex = startIndex;  
+    }  
+  
+    /**  
+     * 获取  
+     *  
+     * @return endIndex  
+     */    public int getEndIndex() {  
+        return endIndex;  
+    }  
+  
+    /**  
+     * 设置  
+     *  
+     * @param endIndex  
+     */  
+    public void setEndIndex(int endIndex) {  
+        this.endIndex = endIndex;  
+    }  
+  
+    public String toString() {  
+        return "Block{max = " + max + ", startIndex = " + startIndex + ", endIndex = " + endIndex + "}";  
+    }  
+}
+```
+### 哈希查找
+*分块查找扩展，能够查找无规律的数据。*
 
 ***
 ## 常见排序算法(10种)
