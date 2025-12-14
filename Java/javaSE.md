@@ -2512,7 +2512,22 @@ public class InsertionSortDemo {
 ```
 ### 快速排序
 背景知识：[递归](#递归)。
+```java
+private static int partition(int[] arr, int left, int right) {
+    int pivot = arr[right];      // 1. 选最右边的元素作基准
+    int i = left - 1;            // 2. i 是“小于等于区”的右边界
 
+    for (int j = left; j < right; j++) {  // 3. j 遍历除 pivot 外的所有元素
+        if (arr[j] <= pivot) {
+            i++;
+            swap(arr, i, j);     // 把 ≤ pivot 的元素扔进左边区域
+        }
+    }
+
+    swap(arr, i + 1, right);     // 4. 把 pivot 放到正确位置
+    return i + 1;                // 5. 返回 pivot 的最终索引
+}
+```
 ***
 
 # 综合练习
