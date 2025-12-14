@@ -2130,7 +2130,8 @@ public static void main(String[] args) {
 ***
 ## Arrays
 一个操作数组的工具类。
-
+**常用方法**如下：
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/4684d85cb15a0a3ee9a19085fde1c230.jpg)
 
 ***
 # 基本算法
