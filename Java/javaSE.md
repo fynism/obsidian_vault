@@ -2512,7 +2512,7 @@ public class InsertionSortDemo {
 ```
 ### 快速排序
 背景知识：[递归](#递归)。
-使用分区函数将数组整理为`[<pivot,pivot,>pivot]`格式。并且递归调用。最终实现快速排序。
+使用分区函数`partition()`将数组整理为`[<pivot..,pivot,>pivot..]`格式。并且递归调用。最终实现快速排序。
 ```java
 public static void quickSort(int[] arr) {
     if (arr == null || arr.length <= 1) return;
@@ -2536,7 +2536,7 @@ private static void quickSort(int[] arr, int left, int right) {
 // 分区函数：将小于基准的放左边，大于的放右边，返回基准最终位置
 private static int partition(int[] arr, int left, int right) {
     int pivot = arr[right];  // 选最右元素为基准
-    int i = left - 1;        // i 是小于区的右边界
+    int i = left - 1;        // i 是<=pivot区的右边界
 
     // 遍历 [left, right - 1]
     for (int j = left; j < right; j++) {
