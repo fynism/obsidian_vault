@@ -2394,7 +2394,36 @@ class Block {
 ## 常见排序算法(10种)
 主要算法包括：冒泡排序，选择排序，插入排序，快速排序。
 ### 冒泡排序
-
+*最熟悉的一集。*
+```java
+public class BubbleSortDemo {  
+    public static void main(String[] args) {  
+        ArrayList<Integer> numArr = new ArrayList<>(Arrays.asList(2, 3, 5, 4, 1, 10, 0, -6, 33, 156, 8, 9999));  
+  
+        bubbleSort(numArr);  
+        System.out.println(numArr);  
+    }  
+  
+    public static void bubbleSort(ArrayList<Integer> numArr) {  
+        //外层遍历  
+        for (int j = 0; j < numArr.size() - 1; j++) {  
+            //第二层遍历  
+            for (int i = 0; i < numArr.size() - j - 1; i++) {  
+                if (numArr.get(i) > numArr.get(i + 1)) {  
+                    swap(numArr, i, i + 1);  
+                }  
+            }  
+        }  
+    }  
+  
+    public static void swap(ArrayList<Integer> arr, int firstIndex, int secondIndex) {  
+        int temp;  
+        temp = arr.get(firstIndex);  
+        arr.set(firstIndex, arr.get(secondIndex));  
+        arr.set(secondIndex, temp);  
+    }  
+}
+```
 
 
 
