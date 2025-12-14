@@ -2388,7 +2388,7 @@ class Block {
 ```
 ### 哈希查找
 *分块查找扩展，能够查找无规律的数据。*
-
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/0cb7c42491b42fc78a3c884176685930.jpg)
 ***
 ## 常见排序算法(10种)
 
