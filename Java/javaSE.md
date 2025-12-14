@@ -2512,20 +2512,48 @@ public class InsertionSortDemo {
 ```
 ### 快速排序
 背景知识：[递归](#递归)。
+使用分区函数将数组整理为`[<pivot,pivot,>pivot]`格式。并且递归调用。最终实现快速排序。
 ```java
-private static int partition(int[] arr, int left, int right) {
-    int pivot = arr[right];      // 1. 选最右边的元素作基准
-    int i = left - 1;            // 2. i 是“小于等于区”的右边界
+public static void quickSort(int[] arr) {
+    if (arr == null || arr.length <= 1) return;
+    quickSort(arr, 0, arr.length - 1);
+}
 
-    for (int j = left; j < right; j++) {  // 3. j 遍历除 pivot 外的所有元素
+// 递归快排：对 [left, right] 区间排序
+private static void quickSort(int[] arr, int left, int right) {
+    if (left >= right) return;  // 基础情况：区间无效或只有一个元素
+
+    // 1. 分区：选取基准（这里用最右边元素），并调整数组
+    int pivotIndex = partition(arr, left, right);
+
+    // 2. 递归排序基准左边
+    quickSort(arr, left, pivotIndex - 1);
+
+    // 3. 递归排序基准右边
+    quickSort(arr, pivotIndex + 1, right);
+}
+
+// 分区函数：将小于基准的放左边，大于的放右边，返回基准最终位置
+private static int partition(int[] arr, int left, int right) {
+    int pivot = arr[right];  // 选最右元素为基准
+    int i = left - 1;        // i 是小于区的右边界
+
+    // 遍历 [left, right - 1]
+    for (int j = left; j < right; j++) {
         if (arr[j] <= pivot) {
             i++;
-            swap(arr, i, j);     // 把 ≤ pivot 的元素扔进左边区域
+            // 交换 arr[i] 和 arr[j]
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
         }
     }
 
-    swap(arr, i + 1, right);     // 4. 把 pivot 放到正确位置
-    return i + 1;                // 5. 返回 pivot 的最终索引
+    // 将基准放到正确位置（i + 1）
+    arr[right] = arr[i + 1];
+    arr[i + 1] = pivot;
+
+    return i + 1;  // 返回基准最终索引
 }
 ```
 ***

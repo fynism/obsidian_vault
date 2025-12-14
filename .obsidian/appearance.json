@@ -5,7 +5,7 @@
     "line-height"
   ],
   "nativeMenus": false,
-  "monospaceFontFamily": "Cascadia Mono",
+  "monospaceFontFamily": "Consolas,Cascadia Mono",
   "interfaceFontFamily": "",
-  "baseFontSize": 17
+  "baseFontSize": 19
 }
