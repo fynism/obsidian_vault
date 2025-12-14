@@ -2129,7 +2129,7 @@ public static void main(String[] args) {
 
 ***
 # 基本算法
-
+### 递归
 ## 常见查找算法(7种)
 [基本查找](#基本查找)、二分查找、分块查找、差值查找、斐波那契查找、树表查找、哈希查找。
 ***
@@ -2457,6 +2457,43 @@ public static void selectionSort(ArrayList<Integer> numArr){
 ```
 
 ### 插入排序
+```java
+public class InsertionSortDemo {  
+    public static void main(String[] args) {  
+        int[] numArr = {2, 3, 5, 4, 1, 10, 0, -6, 33, 156, 8, 9999};  
+        insertionSort(numArr);  
+        printArr(numArr);  
+    }  
+  
+    public static void insertionSort(int[] arr) {  
+        // 1. 从第二个元素开始，依次处理无序部分  
+        for (int i = 1; i < arr.length; i++) {  
+            int key = arr[i];  // 当前要插入的元素  
+            int j = i - 1;  
+  
+            // 2. 在有序部分从右向左查找插入位置，同时后移元素  
+            while (j >= 0 && arr[j] > key) {  
+                arr[j + 1] = arr[j];  
+                j--;  
+            }  
+  
+            // 3. 插入到正确位置  
+            arr[j + 1] = key;  
+        }  
+    }  
+      
+    public static void printArr(int[] arr){  
+        StringJoiner sj1 = new StringJoiner(",","[","]");  
+        for (int i = 0; i < arr.length; i++) {  
+            sj1.add(Integer.toString(arr[i]));  
+        }  
+        System.out.println(sj1);  
+    }  
+}
+```
+### 快速排序
+背景知识：[递归](#递归)。
+
 ***
 
 # 综合练习
