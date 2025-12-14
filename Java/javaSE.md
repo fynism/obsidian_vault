@@ -2133,7 +2133,11 @@ public static void main(String[] args) {
 **常用方法**如下：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/4684d85cb15a0a3ee9a19085fde1c230.jpg)
 
-其中，最后一个方法的**排序规则**是``
+其中，最后一个方法的**排序规则**是`Comparator<? super T> c`类型。是一个接口。
+此时，应传递一个该接口的实现类对象为参数，我们可以使用**匿名内部类**。
+```
+
+```
 ***
 # 基本算法
 ### 递归
