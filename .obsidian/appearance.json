@@ -2,5 +2,6 @@
   "theme": "moonstone",
   "enabledCssSnippets": [
     "line-height"
-  ]
+  ],
+  "nativeMenus": true
 }
