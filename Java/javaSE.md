@@ -2176,6 +2176,7 @@ public static void main(String[] args) {
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251215112633118.png)
 中间加`->`改为:
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251215112830002.png)
+更省略的写法：
 
 
 ***
