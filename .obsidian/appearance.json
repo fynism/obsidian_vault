@@ -7,5 +7,9 @@
   "nativeMenus": false,
   "monospaceFontFamily": "Consolas,Cascadia Mono",
   "interfaceFontFamily": "",
+<<<<<<< HEAD
   "baseFontSize": 19
+=======
+  "baseFontSize": 15
+>>>>>>> origin/main
 }
