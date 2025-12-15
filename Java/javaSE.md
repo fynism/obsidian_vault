@@ -2169,7 +2169,11 @@ public static void main(String[] args) {
 ```
 
 *eg:*
-可以把:
+去除图中高亮部分
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251215112633118.png)
+改为:
+
+
 ```java
 Arrays.sort(numArr, new Comparator<Integer>() {  
         @Override  
