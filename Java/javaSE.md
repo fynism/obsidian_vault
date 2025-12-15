@@ -1348,6 +1348,14 @@ System.out.println(s1 == s4); //false
 *`Collection`是单列集合的祖宗接口*。它的功能**所有**单列集合都可以使用。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/e3ad069c2caf9dbd69525314b05fb364.jpg)
 
+**注意点：**
+1. `contains()`方法依赖存储类型的`equals()`方法实现。若泛型为**自定义类**，那么需要在javabean类中**重写**`equals()`方法。
+2. `add()`方法的返回值:
+	- 如果往`List`中添加元素，永远返回`true`。因为元素可重复。
+	- 如果往`Set`中添加元素，若不存在，返回`true`；若存在，返回`false`。
+3. `remove()`:
+	- `remove()`在`Collection`中定义的是共性的方法，所以此时不能通过索引删除，只能通过元素的对象删除。
+	- 删除成功返回`true`；失败返回`false`。
 ### ArrayList
 可以进行CRUD操作的列表.
 ```java
