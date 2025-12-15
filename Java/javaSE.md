@@ -90,7 +90,7 @@ public class Test {
 ``````
 
 
-## lambda表达式
+
 # 面向对象
 
 拿对应的东西解决相应的问题.使用已有对象（Scanner,Random）或者自己设计对象.
@@ -2157,6 +2157,30 @@ public static void main(String[] args) {
 }
 
 ```
+
+#### lambda表达式
+函数式编程的思想特点。忽略谁去做，关注**怎么做**。
+格式如下：
+
+```java
+()->{
+
+}
+```
+
+*eg:*
+可以把:
+```java
+Arrays.sort(numArr, new Comparator<Integer>() {  
+        @Override  
+        public int compare(Integer o1, Integer o2) {  
+            return o1-o2;  
+        }  
+    });  
+    
+//
+```
+
 ***
 # 基本算法
 ### 递归
