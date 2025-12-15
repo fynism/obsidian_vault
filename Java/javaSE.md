@@ -1362,7 +1362,8 @@ System.out.println(s1 == s4); //false
 迭代器不依赖索引。
 在Java中的类是`Iterator`。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/917a2846e69a282352bd9cf1b4dfa007.jpg)
-
+**常用方法:**
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/1df1b907e802966025639b5cea9e551c.jpg)
 
 #### 增强`for`遍历
 #### `Lambda`表达式遍历
