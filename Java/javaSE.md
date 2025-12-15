@@ -2172,7 +2172,7 @@ public static void main(String[] args) {
 - Lambda表达式可以用来简化[匿名内部类](#匿名内部类)的书写。
 
 *eg:*
-去除图中高亮部分
+去除图中被选择部分：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251215112633118.png)
 中间加`->`改为:
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251215112830002.png)
