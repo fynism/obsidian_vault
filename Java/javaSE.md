@@ -1366,6 +1366,21 @@ System.out.println(s1 == s4); //false
 **常用方法:**
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/1df1b907e802966025639b5cea9e551c.jpg)
 
+```java
+public static void main(String[] args) {  
+    ArrayList<Integer> numArr = new ArrayList(Arrays.asList(2, 3, 4, 5, 7, 8, 9, 10));  
+  
+    //获取迭代器对象  
+    Iterator<Integer> it1 = numArr.iterator();  
+  
+    //进行遍历  
+    while (it1.hasNext()) {  
+        System.out.print(it1.next() + " "); //2 3 4 5 7 8 9 10   
+}  
+}
+```
+**注意点：**
+1. 
 #### 增强`for`遍历
 
 #### `Lambda`表达式遍历
