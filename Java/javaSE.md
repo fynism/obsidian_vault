@@ -1393,7 +1393,20 @@ public static void main(String[] args) {
 增强for的底层就是**迭代器**，为了简化迭代器的代码。
 **适用范围**：所有的单列集合和数组。
 ```java
-
+public static void main(String[] args) {  
+    int[] numArr = {2,4,5,6,10};  
+    ArrayList<String> strArr= new ArrayList(Arrays.asList("as","if","yess","fk"));  
+	//增强for遍历
+    for (int i : numArr) {  
+        System.out.print(i + " ");  //2 4 5 6 10  
+    }  
+  
+    System.out.println();  
+  
+    for (String s : strArr) {  
+        System.out.print(s + " ");  //as if yess fk  
+    }  
+}
 ```
 #### `Lambda`表达式遍历
 
