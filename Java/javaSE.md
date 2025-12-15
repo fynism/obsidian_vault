@@ -1408,10 +1408,26 @@ public static void main(String[] args) {
     }  
 }
 ```
-#### `Lambda`表达式遍历
-
-
-
+#### `lambda`表达式遍历
+使用`forEach()`方法。对 `Iterable`的每个元素执行给定的操作，直到所有元素都被处理或动作引发异常。
+```java
+default void forEach(Consumer<? super T> action)
+```
+其中参数是一个被`@FunctionalIterface`标记的接口，可以用匿名内部类传参，用lambda表达式简化。
+```java
+public static void main(String[] args) {  
+    ArrayList<Integer> numArr = new ArrayList(Arrays.asList(2, 3, 4, 5, 7, 8, 9, 10));  
+    //使用forEach方法，匿名内部类传参数  
+    numArr.forEach(new Consumer<Integer>() {  
+        @Override  
+        //此处的integer依次表示集合中的每一个数据  
+        public void accept(Integer integer) {  
+            System.out.print(integer + " ");    //2 3 4 5 7 8 9 10   
+}  
+    });  
+}
+```
+Lambda表达式简化
 ***
 ### ArrayList
 可以进行CRUD操作的列表.
@@ -2246,10 +2262,11 @@ public static void main(String[] args) {
 **注意点:**
 - Lambda表达式可以用来简化[匿名内部类](#匿名内部类)的书写。
 - 接口中只能有一个抽象方法。
+- 能够使用lambda表达式简化的接口带有`@FunctionalInterface`标记。
 *eg:*
 去除图中被选择部分：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251215112633118.png)
-中间加`->`改为:
+中间加改为`->`，即为lambda表达式:
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251215112830002.png)
 更省略的写法：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251215140934019.png)
