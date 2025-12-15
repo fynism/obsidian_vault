@@ -2170,7 +2170,7 @@ public static void main(String[] args) {
 
 **注意点:**
 - Lambda表达式可以用来简化[匿名内部类](#匿名内部类)的书写。
-
+- 接口中只能有一个抽象方法。
 *eg:*
 去除图中被选择部分：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251215112633118.png)
@@ -2178,6 +2178,11 @@ public static void main(String[] args) {
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251215112830002.png)
 更省略的写法：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251215140934019.png)
+
+**可省略部分:**
+1. 参数类型可以不写。`Integer`
+2. 若只有一个参数，参数类型可以省略，同时`()`也可以省略。
+3. 若Lambda表达式的方法体只有一行，大括号，分号，`return`都可以不写。需要同时省略。
 
 ***
 # 基本算法
