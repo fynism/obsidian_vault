@@ -1358,6 +1358,7 @@ System.out.println(s1 == s4); //false
 	- 删除成功返回`true`；失败返回`false`。
 ### Collection通用遍历
 主要有3种方式。
+
 #### 迭代器遍历
 迭代器不依赖索引。
 在Java中的类是`Iterator`。
@@ -1366,6 +1367,7 @@ System.out.println(s1 == s4); //false
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/1df1b907e802966025639b5cea9e551c.jpg)
 
 #### 增强`for`遍历
+
 #### `Lambda`表达式遍历
 
 
