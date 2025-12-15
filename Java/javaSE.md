@@ -1356,6 +1356,8 @@ System.out.println(s1 == s4); //false
 3. `remove()`:
 	- `remove()`在`Collection`中定义的是共性的方法，所以此时不能通过索引删除，只能通过元素的对象删除。
 	- 删除成功返回`true`；失败返回`false`。
+
+***
 ### Collection通用遍历
 主要有3种方式。
 
@@ -1375,17 +1377,24 @@ public static void main(String[] args) {
   
     //进行遍历  
     while (it1.hasNext()) {  
-        System.out.print(it1.next() + " "); //2 3 4 5 7 8 9 10   
-}  
+        System.out.print(it1.next() + " "); //2 3 4 5 7 8 9 10  
+    }  
+  
+    //越界报错NoSuchElementException  
+    System.out.println(it1.next());  
 }
 ```
 **注意点：**
 1. 迭代器越界，报错`NoSuchElementException`。
 2. 迭代器遍历完毕，指针不会复位。
-3. 循环中只能用一次`next()`方法。
-4. 迭代器遍历时，不能使用集合的方法进行增加or删除。
+3. 循环中建议只用一次`next()`方法，防止越界。
+4. 迭代器遍历时，不能使用集合的方法进行增加or删除。只能使用`Iterator`中的`remove()`方法进行修改。
 #### 增强`for`遍历
+增强for的底层就是**迭代器**，为了简化迭代器的代码。
+**适用范围**：所有的单列集合和数组。
+```java
 
+```
 #### `Lambda`表达式遍历
 
 
