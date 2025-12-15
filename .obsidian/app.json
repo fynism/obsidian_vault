@@ -27,5 +27,5 @@
   "foldIndent": true,
   "tabSize": 4,
   "rightToLeft": false,
-  "promptDelete": false
+  "promptDelete": true
 }
