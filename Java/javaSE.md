@@ -2169,7 +2169,7 @@ public static void main(String[] args) {
 ```
 
 **注意点:**
-- Lambda表达式可以用来简化[匿名内部类](#匿名内部类)的书写。
+- Lambda表达式可以用来简化[匿名内部类](#匿名内部类(Anonymous Inner Class))的书写。
 
 *eg:*
 去除图中高亮部分
