@@ -1422,13 +1422,28 @@ public static void main(String[] args) {
         @Override  
         //此处的integer依次表示集合中的每一个数据  
         public void accept(Integer integer) {  
-            System.out.print(integer + " ");    //2 3 4 5 7 8 9 10   
-}  
+            System.out.print(integer);    //2 3 4 5 7 8 9 10   
+		}  
     });  
 }
 ```
-Lambda表达式简化
+Lambda表达式简化匿名内部类：
+```java
+numArr.forEach((Integer integer) -> {  
+        System.out.print(integer);    //2 3 4 5 7 8 9 10  
+});
+```
+若方法实现语句只有一行，还可以继续简化：
+```java
+numArr.forEach(integer -> System.out.print(integer));  //2 3 4 5 7 8 9 10
+```
+
 ***
+### List
+- 继承了`Collection`中的**所有**方法。
+- 有**索引**，增加了一些索引操作的方法。
+
+
 ### ArrayList
 可以进行CRUD操作的列表.
 ```java
