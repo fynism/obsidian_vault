@@ -2134,28 +2134,10 @@ public static void main(String[] args) {
 其中，最后一个方法的**排序规则**是`Comparator<? super T> c`类型。是一个接口。
 此时，应传递一个该接口的实现类对象为参数，我们可以使用**匿名内部类**。
 ```java
-public static void main(String[] args) {  
-    Integer[] numArr = {11,2,8,6,20,888,0};  
-    //匿名内部类作为参数  
-    Arrays.sort(numArr, new Comparator<Integer>() {  
-        //sort()底层使用插入排序实现。  
-        //如果返回值>=0,跟后面的比。  
-        //如果返回值<0，跟前面的比。  
-        //直到找到正确位置  
-  
-        @Override  
-        //参数：o1为无序序列中遍历得到的第一个数字。  
-        //     o2为在有序序列汇总的元素  
-        //简单来说返回o1-o2即为升序  
-        //          o2-o1 为降序  
-        public int compare(Integer o1, Integer o2) {  
-            return o1-o2;  
-        }  
-    });  
-    System.out.println(Arrays.toString(numArr));    //[0, 2, 6, 8, 11, 20, 888]  
-}
+
 
 ```
+
 
 #### lambda表达式
 函数式编程的思想特点。忽略谁去做，关注**怎么做**。
@@ -2175,8 +2157,6 @@ public static void main(String[] args) {
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251215112633118.png)
 中间加`->`改为:
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251215112830002.png)
-
-
 
 ***
 # 基本算法
