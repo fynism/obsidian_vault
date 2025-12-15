@@ -1334,9 +1334,21 @@ System.out.println(s1 == s4); //false
 所以,使用StringBuilder拼接字符串能够节省空间.
 
 # 集合
+集合体系结构可以分为**单列集合**和**双列集合**。
+- 单列集合(`Collection`)：在添加数据的时候，每次只能添加一个元素。
+- 双列集合(`Map`)：添加数据时，每次添加一对元素。
 
-## ArrayList
+## 单列集合
+单列集合体系结构简图：
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/5d08ee34f0f88da0c05edc4c593a04ea.jpg)
+- **List系列集合**：添加的元素是有序（存取的顺序相同）、可重复、有索引的。
+- **Set系列集合**：添加的元素是无序（存取顺序不一定相同）、不重复、无索引的。
 
+### Collection
+*`Collection`是单列集合的祖宗接口*。它的功能**所有**单列集合都可以使用。
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/e3ad069c2caf9dbd69525314b05fb364.jpg)
+
+### ArrayList
 可以进行CRUD操作的列表.
 ```java
 ArrayList<E> arr= new ArrayList<>();
@@ -1377,9 +1389,7 @@ boolean	remove(Object o)
 ****
 
 ### **System**
-
 工具类，包含一些与系统有关的方法。
-
 `exit()`终止当前运行的虚拟机。
 ```java
 public static void exit(int status)
