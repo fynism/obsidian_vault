@@ -2171,19 +2171,10 @@ public static void main(String[] args) {
 *eg:*
 去除图中高亮部分
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251215112633118.png)
-改为:
+中间加`->`改为:
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251215112830002.png)
 
 
-```java
-Arrays.sort(numArr, new Comparator<Integer>() {  
-        @Override  
-        public int compare(Integer o1, Integer o2) {  
-            return o1-o2;  
-        }  
-    });  
-    
-//
-```
 
 ***
 # 基本算法
