@@ -1380,7 +1380,10 @@ public static void main(String[] args) {
 }
 ```
 **注意点：**
-1. 
+1. 迭代器越界，报错`NoSuchElementException`。
+2. 迭代器遍历完毕，指针不会复位。
+3. 循环中只能用一次`next()`方法。
+4. 迭代器遍历时，不能使用集合的方法进行增加or删除。
 #### 增强`for`遍历
 
 #### `Lambda`表达式遍历
