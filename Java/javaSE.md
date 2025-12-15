@@ -1356,6 +1356,20 @@ System.out.println(s1 == s4); //false
 3. `remove()`:
 	- `remove()`在`Collection`中定义的是共性的方法，所以此时不能通过索引删除，只能通过元素的对象删除。
 	- 删除成功返回`true`；失败返回`false`。
+### Collection通用遍历
+主要有3种方式。
+#### 迭代器遍历
+迭代器不依赖索引。
+在Java中的类是`Iterator`。
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/917a2846e69a282352bd9cf1b4dfa007.jpg)
+
+
+#### 增强`for`遍历
+#### `Lambda`表达式遍历
+
+
+
+***
 ### ArrayList
 可以进行CRUD操作的列表.
 ```java
