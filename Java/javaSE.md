@@ -2154,9 +2154,10 @@ public static void main(String[] args) {
 ***
 # 异常
 代表程序可能出现的问题。
-
-
-
+Java异常体系：
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/1f085a225c0c8450ea007cf11c168071.jpg)
+- `RuntimeException`：运行时异常，编译阶段不会出现提示，运行时出现异常。(如：数组索引越界异常)
+- `其他异常`：编译时异常。
 ***
 # 基本算法
 
