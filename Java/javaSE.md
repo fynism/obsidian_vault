@@ -2156,13 +2156,30 @@ public static void main(String[] args) {
 代表程序可能出现的问题。
 Java异常体系：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/1f085a225c0c8450ea007cf11c168071.jpg)
-- `RuntimeException`：运行时异常，编译阶段不会出现提示，运行时出现异常。(如：数组索引越界异常)
-- `其他异常`：编译时异常直接继承于`Exception`。编译阶段就会出现错误提醒的异常。(如：日期解析异常)
 
-**编译时异常**在编译阶段必须手动处理。
+
+- **编译时异常**：直接继承于`Exception`。编译阶段就会出现错误提醒的异常。(如：日期解析异常)。在编译阶段必须手动处理。
 ```java
-
+public static void main(String[] args) throws ParseException {  
+    String dateStr = "2020-09-08";  
+  
+    SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");  
+    Date date1 = sdf1.parse(dateStr);  
+    System.out.println(date1);  
+}
 ```
+上述代码中，在`main()`函数后面手动添加`throws ParseException`才能够防止编译时异常。
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251216112014309.png)
+
+- **`RuntimeException`**：运行时异常，编译阶段不会出现提示，运行时出现异常。(如：数组索引越界异常)
+```java
+public static void main(String[] args) {  
+    //数组越界运行异常  
+    int[] arr = {1,2,3};  
+    System.out.println(arr[3]);  
+}
+```
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251216112445751.png)
 
 ***
 # 基本算法
