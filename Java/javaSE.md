@@ -2185,9 +2185,49 @@ public static void main(String[] args) {
 
 ## 异常的作用
 - 用来查询bug的关键信息。
-- 作为方法内部的一种特殊返回值，以便通知调用者底层的执行情况。
-***
+- 作为方法内部的一种特殊返回值，以便通知调用者底层的执行情况。**如下**：
+```java
+//Student类节选
+public class Student {
+	int age;
+...
+	public void setAge(int age) {  
+	    //设置年龄范围，超出就抛出异常  
+	    if (age > 50 || age <10){  
+	        throw new RuntimeException();  
+	    }else {  
+	        this.age = age;  
+	    }  
+	}
+...
+}
 
+//main函数
+public static void main(String[] args) {  
+    Student stu1 = new Student();  
+    stu1.setAge(60); //RuntimeException异常  
+}
+```
+***
+## 异常的处理方式
+1. **JVM默认处理方式**：
+	 - 直接使用红色字体打印在控制台。
+	 - 程序停止执行。
+	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251216121844198.png)
+2. **捕获异常**（自己处理）
+	多使用`try-catch`处理。
+	 ```java
+	 try{
+		可能出现异常的代码
+	 }catch(异常类名 变量名){
+		 异常处理代码
+	 }
+	 ```
+	 *eg:*
+	 ```
+	 
+	 ```
+***
 # 集合框架
 集合体系结构可以分为**单列集合**和**双列集合**。
 - 单列集合(`Collection`)：在添加数据的时候，每次只能添加一个元素。
