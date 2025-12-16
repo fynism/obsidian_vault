@@ -1333,6 +1333,8 @@ System.out.println(s1 == s4); //false
 ```
 所以,使用StringBuilder拼接字符串能够节省空间.
 
+# 基本算法
+
 # 常用API
 [API文档（中文）](https://www.matools.com/api/java8)
 [API文档（英文）]([Java Platform SE 8](https://docs.oracle.com/javase/8/docs/api/))
@@ -2185,7 +2187,6 @@ public static void main(String[] args) {
 - 用来查询bug的关键信息。
 - 作为方法内部的一种特殊返回值，以便通知调用者底层的执行情况。
 ***
-# 基本算法
 
 # 集合框架
 集合体系结构可以分为**单列集合**和**双列集合**。
