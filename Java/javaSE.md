@@ -2215,7 +2215,7 @@ public static void main(String[] args) {
 	 - 程序停止执行。
 	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251216121844198.png)
 2. **捕获异常**（自己处理）
-	多使用`try-catch`处理。可以在成功捕获到异常后执行`catch{}`中的代码。不影响`try-catch`之外的代码执行。
+	多使用`try-catch`处理。可以在**成功捕获**到异常后执行`catch{}`中的代码。不影响`try-catch`之外的代码执行。
 	 ```java
 	 try{
 		可能出现异常的代码
@@ -2224,8 +2224,20 @@ public static void main(String[] args) {
 	 }
 	 ```
 	 *eg:*
-	 ```
-	 
+	 ```java
+	 public static void main(String[] args) {  
+    Student stu1 = new Student();  
+    try {  
+        //可能出现异常的代码  
+        stu1.setAge(60); //dRuntimeException异常  
+    }catch (RuntimeException e){  
+        //若出现的异常与书写的异常相同,则成功捕获,执行catch{}中的代码。  
+        System.out.println("年龄超限");  
+    }  
+  
+    //不影响执行  
+    System.out.println("输入名字：");  
+}
 	 ```
 ***
 # 集合框架
