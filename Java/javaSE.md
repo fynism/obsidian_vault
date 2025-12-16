@@ -2181,7 +2181,9 @@ public static void main(String[] args) {
 ```
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251216112445751.png)
 
-
+## 异常的作用
+- 用来查询bug的关键信息。
+- 作为方法内部的一种特殊返回值，以便通知调用者底层的执行情况。
 ***
 # 基本算法
 
