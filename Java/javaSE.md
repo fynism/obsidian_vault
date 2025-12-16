@@ -1333,146 +1333,6 @@ System.out.println(s1 == s4); //false
 ```
 所以,使用StringBuilder拼接字符串能够节省空间.
 
-# 集合
-集合体系结构可以分为**单列集合**和**双列集合**。
-- 单列集合(`Collection`)：在添加数据的时候，每次只能添加一个元素。
-- 双列集合(`Map`)：添加数据时，每次添加一对元素。
-
-## 单列集合
-单列集合体系结构简图：
-![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/5d08ee34f0f88da0c05edc4c593a04ea.jpg)
-- **List系列集合**：添加的元素是有序（存取的顺序相同）、可重复、有索引的。
-- **Set系列集合**：添加的元素是无序（存取顺序不一定相同）、不重复、无索引的。
-
-### Collection
-*`Collection`是单列集合的祖宗接口*。它的功能**所有**单列集合都可以使用。
-![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/e3ad069c2caf9dbd69525314b05fb364.jpg)
-
-**注意点：**
-1. `contains()`方法依赖存储类型的`equals()`方法实现。若泛型为**自定义类**，那么需要在javabean类中**重写**`equals()`方法。
-2. `add()`方法的返回值:
-	- 如果往`List`中添加元素，永远返回`true`。因为元素可重复。
-	- 如果往`Set`中添加元素，若不存在，返回`true`；若存在，返回`false`。
-3. `remove()`:
-	- `remove()`在`Collection`中定义的是共性的方法，所以此时不能通过索引删除，只能通过元素的对象删除。
-	- 删除成功返回`true`；失败返回`false`。
-
-***
-### Collection通用遍历
-主要有3种方式。
-
-#### 迭代器遍历
-迭代器不依赖索引。
-在Java中的类是`Iterator`。
-![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/917a2846e69a282352bd9cf1b4dfa007.jpg)
-**常用方法:**
-![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/1df1b907e802966025639b5cea9e551c.jpg)
-
-```java
-public static void main(String[] args) {  
-    ArrayList<Integer> numArr = new ArrayList(Arrays.asList(2, 3, 4, 5, 7, 8, 9, 10));  
-  
-    //获取迭代器对象  
-    Iterator<Integer> it1 = numArr.iterator();  
-  
-    //进行遍历  
-    while (it1.hasNext()) {  
-        System.out.print(it1.next() + " "); //2 3 4 5 7 8 9 10  
-    }  
-  
-    //越界报错NoSuchElementException  
-    System.out.println(it1.next());  
-}
-```
-**注意点：**
-1. 迭代器越界，报错`NoSuchElementException`。
-2. 迭代器遍历完毕，指针不会复位。
-3. 循环中建议只用一次`next()`方法，防止越界。
-4. 迭代器遍历时，不能使用集合的方法进行增加or删除。只能使用`Iterator`中的`remove()`方法进行修改。
-#### 增强`for`遍历
-增强for的底层就是**迭代器**，为了简化迭代器的代码。
-**适用范围**：所有的单列集合和数组。
-```java
-public static void main(String[] args) {  
-    int[] numArr = {2,4,5,6,10};  
-    ArrayList<String> strArr= new ArrayList(Arrays.asList("as","if","yess","fk"));  
-	//增强for遍历
-    for (int i : numArr) {  
-        System.out.print(i + " ");  //2 4 5 6 10  
-    }  
-  
-    System.out.println();  
-  
-    for (String s : strArr) {  
-        System.out.print(s + " ");  //as if yess fk  
-    }  
-}
-```
-#### `lambda`表达式遍历
-使用`forEach()`方法。对 `Iterable`的每个元素执行给定的操作，直到所有元素都被处理或动作引发异常。
-```java
-default void forEach(Consumer<? super T> action)
-```
-其中参数是一个被`@FunctionalIterface`标记的接口，可以用匿名内部类传参，用lambda表达式简化。
-```java
-public static void main(String[] args) {  
-    ArrayList<Integer> numArr = new ArrayList(Arrays.asList(2, 3, 4, 5, 7, 8, 9, 10));  
-    //使用forEach方法，匿名内部类传参数  
-    numArr.forEach(new Consumer<Integer>() {  
-        @Override  
-        //此处的integer依次表示集合中的每一个数据  
-        public void accept(Integer integer) {  
-            System.out.print(integer);    //2 3 4 5 7 8 9 10   
-		}  
-    });  
-}
-```
-Lambda表达式简化匿名内部类：
-```java
-numArr.forEach((Integer integer) -> {  
-        System.out.print(integer);    //2 3 4 5 7 8 9 10  
-});
-```
-若方法实现语句只有一行，还可以继续简化：
-```java
-numArr.forEach(integer -> System.out.print(integer));  //2 3 4 5 7 8 9 10
-```
-
-***
-### List
-- 继承了`Collection`中的**所有**方法。
-- 有**索引**，增加了一些索引操作的方法。
-
-
-### ArrayList
-可以进行CRUD操作的列表.
-```java
-ArrayList<E> arr= new ArrayList<>();
-```
-E 为**泛型**,代表了ArrayList中存储的数据类型.
-泛型可为**引用**数据类型,不能为**基本**数据类型.
-如果要存储基本数据类型,需要使用对应**包装类**.
-
-![image-20251117150311454](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251117150311454.png)
-
-**常用方法**:
-````java
-//C
-boolean	add(E e)
-
-//R
-E	get(int index)
-int	indexOf(Object o)
-
-//U
-E	set(int index, E element)
-
-//D
-E	remove(int index)
-boolean	remove(Object o)
-
-````
-
 # 常用API
 [API文档（中文）](https://www.matools.com/api/java8)
 [API文档（英文）]([Java Platform SE 8](https://docs.oracle.com/javase/8/docs/api/))
@@ -2292,7 +2152,154 @@ public static void main(String[] args) {
 3. 若Lambda表达式的方法体只有一行，大括号，分号，`return`都可以不写。需要同时省略。
 
 ***
+# 异常
+代表程序可能出现的问题。
+
+
+
+***
 # 基本算法
+
+# 集合框架
+集合体系结构可以分为**单列集合**和**双列集合**。
+- 单列集合(`Collection`)：在添加数据的时候，每次只能添加一个元素。
+- 双列集合(`Map`)：添加数据时，每次添加一对元素。
+
+## 单列集合
+单列集合体系结构简图：
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/5d08ee34f0f88da0c05edc4c593a04ea.jpg)
+- **List系列集合**：添加的元素是有序（存取的顺序相同）、可重复、有索引的。
+- **Set系列集合**：添加的元素是无序（存取顺序不一定相同）、不重复、无索引的。
+
+### Collection
+*`Collection`是单列集合的祖宗接口*。它的功能**所有**单列集合都可以使用。
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/e3ad069c2caf9dbd69525314b05fb364.jpg)
+
+**注意点：**
+1. `contains()`方法依赖存储类型的`equals()`方法实现。若泛型为**自定义类**，那么需要在javabean类中**重写**`equals()`方法。
+2. `add()`方法的返回值:
+	- 如果往`List`中添加元素，永远返回`true`。因为元素可重复。
+	- 如果往`Set`中添加元素，若不存在，返回`true`；若存在，返回`false`。
+3. `remove()`:
+	- `remove()`在`Collection`中定义的是共性的方法，所以此时不能通过索引删除，只能通过元素的对象删除。
+	- 删除成功返回`true`；失败返回`false`。
+
+***
+### Collection通用遍历
+主要有3种方式。
+
+#### 迭代器遍历
+迭代器不依赖索引。
+在Java中的类是`Iterator`。
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/917a2846e69a282352bd9cf1b4dfa007.jpg)
+**常用方法:**
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/1df1b907e802966025639b5cea9e551c.jpg)
+
+```java
+public static void main(String[] args) {  
+    ArrayList<Integer> numArr = new ArrayList(Arrays.asList(2, 3, 4, 5, 7, 8, 9, 10));  
+  
+    //获取迭代器对象  
+    Iterator<Integer> it1 = numArr.iterator();  
+  
+    //进行遍历  
+    while (it1.hasNext()) {  
+        System.out.print(it1.next() + " "); //2 3 4 5 7 8 9 10  
+    }  
+  
+    //越界报错NoSuchElementException  
+    System.out.println(it1.next());  
+}
+```
+**注意点：**
+1. 迭代器越界，报错`NoSuchElementException`。
+2. 迭代器遍历完毕，指针不会复位。
+3. 循环中建议只用一次`next()`方法，防止越界。
+4. 迭代器遍历时，不能使用集合的方法进行增加or删除。只能使用`Iterator`中的`remove()`方法进行修改。
+#### 增强`for`遍历
+增强for的底层就是**迭代器**，为了简化迭代器的代码。
+**适用范围**：所有的单列集合和数组。
+```java
+public static void main(String[] args) {  
+    int[] numArr = {2,4,5,6,10};  
+    ArrayList<String> strArr= new ArrayList(Arrays.asList("as","if","yess","fk"));  
+	//增强for遍历
+    for (int i : numArr) {  
+        System.out.print(i + " ");  //2 4 5 6 10  
+    }  
+  
+    System.out.println();  
+  
+    for (String s : strArr) {  
+        System.out.print(s + " ");  //as if yess fk  
+    }  
+}
+```
+#### `lambda`表达式遍历
+使用`forEach()`方法。对 `Iterable`的每个元素执行给定的操作，直到所有元素都被处理或动作引发异常。
+```java
+default void forEach(Consumer<? super T> action)
+```
+其中参数是一个被`@FunctionalIterface`标记的接口，可以用匿名内部类传参，用lambda表达式简化。
+```java
+public static void main(String[] args) {  
+    ArrayList<Integer> numArr = new ArrayList(Arrays.asList(2, 3, 4, 5, 7, 8, 9, 10));  
+    //使用forEach方法，匿名内部类传参数  
+    numArr.forEach(new Consumer<Integer>() {  
+        @Override  
+        //此处的integer依次表示集合中的每一个数据  
+        public void accept(Integer integer) {  
+            System.out.print(integer);    //2 3 4 5 7 8 9 10   
+		}  
+    });  
+}
+```
+Lambda表达式简化匿名内部类：
+```java
+numArr.forEach((Integer integer) -> {  
+        System.out.print(integer);    //2 3 4 5 7 8 9 10  
+});
+```
+若方法实现语句只有一行，还可以继续简化：
+```java
+numArr.forEach(integer -> System.out.print(integer));  //2 3 4 5 7 8 9 10
+```
+
+***
+### List
+- 继承了`Collection`中的**所有**方法。
+- 有**索引**，增加了一些索引操作的方法。
+
+
+### ArrayList
+可以进行CRUD操作的列表.
+```java
+ArrayList<E> arr= new ArrayList<>();
+```
+E 为**泛型**,代表了ArrayList中存储的数据类型.
+泛型可为**引用**数据类型,不能为**基本**数据类型.
+如果要存储基本数据类型,需要使用对应**包装类**.
+
+![image-20251117150311454](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251117150311454.png)
+
+**常用方法**:
+````java
+//C
+boolean	add(E e)
+
+//R
+E	get(int index)
+int	indexOf(Object o)
+
+//U
+E	set(int index, E element)
+
+//D
+E	remove(int index)
+boolean	remove(Object o)
+
+````
+
 ### 递归
 **方法直接或间接地调用自身**来解决问题的编程方式。常包括：
 - **基础情况（Base Case）**：递归的终止条件，防止无限调用。
