@@ -2215,7 +2215,7 @@ public static void main(String[] args) {
 	 - 程序停止执行。
 	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251216121844198.png)
 2. **捕获异常**（自己处理）
-	多使用`try-catch`处理。可以在遇到异常的时候继续执行。
+	多使用`try-catch`处理。可以在成功捕获到异常后执行`catch{}`中的代码。不影响`try-catch`之外的代码执行。
 	 ```java
 	 try{
 		可能出现异常的代码
