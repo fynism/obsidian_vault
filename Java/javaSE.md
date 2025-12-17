@@ -2410,6 +2410,8 @@ public class CustomExceptionDemo1 {
 - **List系列集合**：添加的元素是有序（存取的顺序相同）、可重复、有索引的。
 - **Set系列集合**：添加的元素是无序（存取顺序不一定相同）、不重复、无索引的。
 
+
+
 ### Collection
 *`Collection`是单列集合的祖宗接口*。它的功能**所有**单列集合都可以使用。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/e3ad069c2caf9dbd69525314b05fb364.jpg)
@@ -2424,10 +2426,9 @@ public class CustomExceptionDemo1 {
 	- 删除成功返回`true`；失败返回`false`。
 
 ***
-### Collection通用遍历
+**Collection通用遍历**
 主要有3种方式。
-
-#### 迭代器遍历
+-  **迭代器遍历**
 迭代器不依赖索引。
 在Java中的类是`Iterator`。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/917a2846e69a282352bd9cf1b4dfa007.jpg)
@@ -2455,7 +2456,8 @@ public static void main(String[] args) {
 2. 迭代器遍历完毕，指针不会复位。
 3. 循环中建议只用一次`next()`方法，防止越界。
 4. 迭代器遍历时，不能使用集合的方法进行增加or删除。只能使用`Iterator`中的`remove()`方法进行修改。
-#### 增强`for`遍历
+
+ **增强`for`遍历**
 增强for的底层就是**迭代器**，为了简化迭代器的代码。
 **适用范围**：所有的单列集合和数组。
 ```java
@@ -2474,7 +2476,8 @@ public static void main(String[] args) {
     }  
 }
 ```
-#### `lambda`表达式遍历
+ 
+ **`lambda`表达式遍历**
 使用`forEach()`方法。对 `Iterable`的每个元素执行给定的操作，直到所有元素都被处理或动作引发异常。
 ```java
 default void forEach(Consumer<? super T> action)
@@ -2505,11 +2508,14 @@ numArr.forEach(integer -> System.out.print(integer));  //2 3 4 5 7 8 9 10
 ```
 
 ***
-### List
+#### List
 - 继承了`Collection`中的**所有**方法。
 - 有**索引**，增加了一些索引操作的方法。
+*** 
+**常见的5种遍历方法**：
 
 
+***
 ### ArrayList
 可以进行CRUD操作的列表.
 ```java
@@ -2540,8 +2546,7 @@ boolean	remove(Object o)
 ````
 
 # 基本算法
-
-### 递归
+## 递归
 **方法直接或间接地调用自身**来解决问题的编程方式。常包括：
 - **基础情况（Base Case）**：递归的终止条件，防止无限调用。
 - **递归情况（Recursive Case）**：将问题分解为更小的同类子问题，并调用自身求解。
