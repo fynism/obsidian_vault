@@ -2314,8 +2314,10 @@ public static int getMax(int[] arr) throws NullPointerException, ArrayIndexOutOf
 ## 自定义异常
 当Java中没有能够精确表示的异常，则使用自定义异常类，让控制台的报错更加**见名知意**。
 **步骤：**
-1. 定义异常类。
+1. 定义异常类。 名字+Exception。*如*：`StudentNameFormatException`
 2. 写继承关系。
+	- 运行时异常继承`RuntimeException`。
+	- 编译时异常直接继承`Exception`。
 3. 写上空参构造及带参构造。
 
 ***
