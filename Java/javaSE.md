@@ -2248,7 +2248,20 @@ public static void main(String[] args) {
 - 四问：出错，直接跳转到`catch(){}`，`try{}`中出错语句后面的语句不再执行；
 ***
 ## 异常成员方法
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/1776a0aec79fdea51a9bdf8eb9d9fc43.jpg)
 
+```java
+try {  
+    //数组越界运行异常  
+    int[] arr = {1,2,3};  
+    System.out.println(arr[4]);  
+}catch (IndexOutOfBoundsException e){  
+    String str = e.toString();  
+    String msg = e.getMessage();  
+    System.out.println(str);    //java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 3  
+    System.out.println(msg);    //Index 4 out of bounds for length 3  
+}
+```
 
 
 
