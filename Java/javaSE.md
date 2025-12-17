@@ -1334,8 +1334,6 @@ System.out.println(s1 == s4); //false
 ```
 所以,使用StringBuilder拼接字符串能够节省空间.
 
-# 基本算法
-
 # 常用API
 [API文档（中文）](https://www.matools.com/api/java8)
 [API文档（英文）]([Java Platform SE 8](https://docs.oracle.com/javase/8/docs/api/))
@@ -2540,6 +2538,8 @@ E	remove(int index)
 boolean	remove(Object o)
 
 ````
+
+# 基本算法
 
 ### 递归
 **方法直接或间接地调用自身**来解决问题的编程方式。常包括：
