@@ -14,7 +14,7 @@ idea 里的项目结构从大到小依次是**Project、Module、Package、Class
 
 在不同的Package中的类 是相互独立的，即使它们同名.
 
-可以使用**`import 包名.类名;`**来进行跨Package的使用.如  `import com.fengye.test.constructor.Player;`.
+可以使用`import 包名.类名;`来进行跨Package的使用.如  `import com.fengye.test.constructor.Player;`.
 
 ---
 
