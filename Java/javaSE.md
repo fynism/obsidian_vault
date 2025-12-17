@@ -2492,7 +2492,7 @@ public static void main(String[] args) {
         //此处的integer依次表示集合中的每一个数据  
         public void accept(Integer integer) {  
             System.out.print(integer);    //2 3 4 5 7 8 9 10   
-		}  
+		} 
     });  
 }
 ```

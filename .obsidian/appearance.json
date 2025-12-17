@@ -4,5 +4,7 @@
     "line-height"
   ],
   "nativeMenus": true,
-  "monospaceFontFamily": "Consolas"
+  "monospaceFontFamily": "Consolas",
+  "baseFontSizeAction": true,
+  "baseFontSize": 17
 }
