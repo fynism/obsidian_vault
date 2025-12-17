@@ -31,6 +31,7 @@ idea 里的项目结构从大到小依次是**Project、Module、Package、Class
 `Ctrl+D`向下复制一行.
 `Ctrl+N`全局搜索类.
 `Ctrl+F12`类内部搜索成员.
+`Ctrl+Alt+T`选择Surround with
 `Shift+Alt+⬇️`移动到下一行.
 `Shift + F6`批量修改变量名称.
 `Alt + Enter`列出报错所有解决方法.
