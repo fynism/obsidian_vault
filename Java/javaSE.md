@@ -2271,8 +2271,8 @@ try {
 }
 ```
 
-## 抛出异常
-`throws`和`throw`关键字。
+## 抛出异常 
+在方法中使用，告诉调用者出现异常。有`throws`和`throw`关键字。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/7ba91d2ba4a4158fb3974720910b26a7.jpg)
 ```java
 public static void main(String[] args) {  
