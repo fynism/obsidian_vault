@@ -2444,10 +2444,17 @@ public static void main(String[] args) {
   
     //进行遍历  
     while (it1.hasNext()) {  
-        System.out.print(it1.next() + " "); //2 3 4 5 7 8 9 10  
+        Integer i = it1.next();  
+        System.out.print(i + " "); //2 3 4 5 7 8 9 10  
+        if (i == 9){  
+            it1.remove();  
+        }  
     }  
-	
-	//遍历完成后迭代器依然指向最后一位
+  
+    //使用remove()方法去除了9元素  
+    System.out.println(numArr); //[2, 3, 4, 5, 7, 8, 10]  
+  
+    //遍历完成后迭代器依然指向最后一位  
     //越界报错NoSuchElementException  
     System.out.println(it1.next());  
 }
