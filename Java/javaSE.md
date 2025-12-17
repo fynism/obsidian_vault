@@ -2310,6 +2310,14 @@ public static int getMax(int[] arr) throws NullPointerException, ArrayIndexOutOf
     return max;  
 }
 ```
+
+## 自定义异常
+当Java中没有能够精确表示的异常，则使用自定义异常类，让控制台的报错更加**见名知意**。
+**步骤：**
+1. 定义异常类。
+2. 写继承关系。
+3. 写上空参构造及带参构造。
+
 ***
 # 集合框架
 集合体系结构可以分为**单列集合**和**双列集合**。
