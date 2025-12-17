@@ -2258,9 +2258,15 @@ try {
 }catch (IndexOutOfBoundsException e){  
     String str = e.toString();  
     String msg = e.getMessage();  
+  
     System.out.println(str);    //java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 3  
     System.out.println(msg);    //Index 4 out of bounds for length 3  
-}
+  
+    e.printStackTrace();  
+    //不会结束虚拟机  
+    //红色字体打印  
+    /*java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 3  
+        at com.fengye.Exception.ExceptionDemo5.main(ExceptionDemo5.java:8)*/}
 ```
 
 
