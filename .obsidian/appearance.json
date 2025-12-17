@@ -3,5 +3,6 @@
   "enabledCssSnippets": [
     "line-height"
   ],
-  "nativeMenus": true
+  "nativeMenus": true,
+  "monospaceFontFamily": "Consolas"
 }

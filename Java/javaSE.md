@@ -2516,7 +2516,9 @@ List中**独有**的方法：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/7c5f3001a4d406b6de82d4eff572d75a.jpg)
 *** 
 List中常见的5种**遍历方法**：
-=
+
+好的
+
 
 ***
 ### ArrayList
