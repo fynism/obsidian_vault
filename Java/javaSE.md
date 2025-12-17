@@ -2319,7 +2319,87 @@ public static int getMax(int[] arr) throws NullPointerException, ArrayIndexOutOf
 	- 运行时异常继承`RuntimeException`。
 	- 编译时异常直接继承`Exception`。
 3. 写上空参构造及带参构造。
+```java
 
+//自定义异常类StudentAgeOutOfBoundsException
+public class StudentAgeOutOfBoundsException extends RuntimeException{  
+    public StudentAgeOutOfBoundsException() {  
+    }  
+  
+    public StudentAgeOutOfBoundsException(String message) {  
+        super(message);  
+    }  
+}
+
+//自定义异常类StudentNameFormatException
+public class StudentNameFormatException extends RuntimeException{  
+    public StudentNameFormatException() {  
+    }  
+  
+    public StudentNameFormatException(String message) {  
+        super(message);  
+    }  
+}
+
+//Student类
+public class Student {
+	...
+	public void setAge(int age) {  
+	    //设置年龄范围，超出就抛出异常  
+	    if (age > 50 || age <10){  
+	        throw new StudentAgeOutOfBoundsException();  
+	    }  
+	    this.age = age;  
+	  
+	}
+	
+	public void setName(String name) {  
+	    if (name.length() > 10 || name.length()<3){  
+	        throw new StudentNameFormatException();  
+	    }  
+	    this.name = name;  
+	}
+	...
+}
+
+//测试类
+public class CustomExceptionDemo1 {  
+    public static void main(String[] args) {  
+        Student stu1 = new Student();  
+  
+        //创建一个Scanner对象  
+        Scanner sc = new Scanner(System.in);  
+  
+        //循环直到没有异常抛出  
+        while (true) {  
+            try {  
+                //获取用户名  
+                System.out.print("请输入用户名：");  
+                String name = sc.nextLine();  
+                stu1.setName(name);  
+  
+                //获取年龄  
+                System.out.print("请输入年龄：");  
+                String ageStr = sc.nextLine();  
+                int age = Integer.parseInt(ageStr);  
+                stu1.setAge(age);  
+  
+                //直到传递值后没有异常抛出结束循环  
+                break;  
+            } catch (NumberFormatException e) {  
+                System.err.println("输入格式错误：" + e.getMessage());  
+                System.out.println("请输入正确的数字格式！");  
+            } catch (StudentNameFormatException e) {  
+                System.err.println("姓名格式错误：" + e.getMessage());  
+            } catch (StudentAgeOutOfBoundsException e) {  
+                System.err.println("年龄超出范围：" + e.getMessage());  
+            }  
+        }  
+  
+        System.out.println(stu1);  
+    }  
+}
+```
 ***
 # 集合框架
 集合体系结构可以分为**单列集合**和**双列集合**。
