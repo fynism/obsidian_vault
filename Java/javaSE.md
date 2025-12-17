@@ -2511,8 +2511,11 @@ numArr.forEach(integer -> System.out.print(integer));  //2 3 4 5 7 8 9 10
 #### List
 - 继承了`Collection`中的**所有**方法。
 - 有**索引**，增加了一些索引操作的方法。
+
+List中**独有**的方法：
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/7c5f3001a4d406b6de82d4eff572d75a.jpg)
 *** 
-**常见的5种遍历方法**：
+List中常见的5种**遍历方法**：
 
 
 ***
