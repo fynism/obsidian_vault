@@ -2239,6 +2239,13 @@ public static void main(String[] args) {
     System.out.println("输入名字：");  
 }
 	 ```
+
+**"灵魂四问":**
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/b8c8e5849bb81de36fed30a05aa966c2.jpg)
+- 一问：正常顺序执行`try{}`中内容，不执行`catch{}`中的代码。
+- 二问：同种异常，可以正常捕获；不同异常，会报错，需要写多个`catch(){}`与之对应。
+- 三问：报错，停止执行下面的代码。
+- 四问：若被捕获，那么正常执行；未被捕获，报错后停止运行。
 ***
 # 集合框架
 集合体系结构可以分为**单列集合**和**双列集合**。
