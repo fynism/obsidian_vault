@@ -11,5 +11,15 @@
 
 .HyperMD-codeblock {
   line-height: 1.6; /* 或者您想要的数值，例如 1.2, 1.8 等 */
-  font-size: 20px;
+
+}
+
+.cm-hmd-codeblock{
+  font-size: 17px;
+  font-family: 'consolas';
+}
+
+.cm-comment {
+  font-style: italic;
+  color: #004d00; 
 }
