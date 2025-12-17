@@ -2274,7 +2274,42 @@ try {
 ## 抛出异常
 `throws`和`throw`关键字。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/7ba91d2ba4a4158fb3974720910b26a7.jpg)
-
+```java
+public static void main(String[] args) {  
+    int[] arr = {};  
+    try {  
+        getMax(arr);  
+    } catch (NullPointerException e) {  
+        System.out.println("空指针异常");  
+        e.printStackTrace();  
+    }catch (ArrayIndexOutOfBoundsException e){  
+        System.out.println("索引越界异常");  
+        e.printStackTrace();  
+    }  
+  
+    System.out.println("okay");  
+}  
+  
+//定义一个方法，能够返回数组中的最大值  
+public static int getMax(int[] arr) throws NullPointerException, ArrayIndexOutOfBoundsException{  
+    //若数组为空  
+    if(arr == null){  
+        throw new NullPointerException();  
+    }  
+    //若数组长度为0  
+    if(arr.length == 0){  
+        throw new ArrayIndexOutOfBoundsException();  
+    }  
+  
+    int max = arr[0];  
+    for (int i = 1; i < arr.length; i++) {  
+        if (max < arr[i]){  
+            max = arr[i];  
+        }  
+    }  
+    return max;  
+}
+```
 ***
 # 集合框架
 集合体系结构可以分为**单列集合**和**双列集合**。
