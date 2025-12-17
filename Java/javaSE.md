@@ -2264,11 +2264,14 @@ try {
   
     e.printStackTrace();  
     //不会结束虚拟机  
-    //红色字体打印  
+    //利用System.err.println()进行红色字体打印  
     /*java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 3  
-        at com.fengye.Exception.ExceptionDemo5.main(ExceptionDemo5.java:8)*/}
+        at com.fengye.Exception.ExceptionDemo5.main(ExceptionDemo5.java:8)*/
+}
 ```
 
+## 抛出异常
+`throws`和`throw`关键字。
 
 
 
