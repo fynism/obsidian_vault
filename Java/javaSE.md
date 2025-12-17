@@ -2446,7 +2446,8 @@ public static void main(String[] args) {
     while (it1.hasNext()) {  
         System.out.print(it1.next() + " "); //2 3 4 5 7 8 9 10  
     }  
-  
+	
+	//遍历完成后迭代器依然指向最后一位
     //越界报错NoSuchElementException  
     System.out.println(it1.next());  
 }
@@ -2472,7 +2473,7 @@ public static void main(String[] args) {
     System.out.println();  
   
     for (String s : strArr) {  
-        System.out.print(s + " ");  //as if yess fk  
+        System.out.print(s + " ");  //as if yess fk
     }  
 }
 ```
@@ -2516,8 +2517,13 @@ List中**独有**的方法：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/7c5f3001a4d406b6de82d4eff572d75a.jpg)
 *** 
 List中常见的5种**遍历方法**：
+迭代器遍历、增强for遍历、Lambda表达式遍历;(与`Collection`中相同)
+普通for循环(使用索引)、**列表迭代器遍历**。
 
+列表迭代器`ListIterator`是`Iterator`的子类。
+```java
 
+```
 
 ***
 ### ArrayList
