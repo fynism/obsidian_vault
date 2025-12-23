@@ -2462,7 +2462,7 @@ public static void main(String[] args) {
 3. 循环中建议只用一次`next()`方法，防止越界。
 4. 迭代器遍历时，不能使用集合的方法进行增加or删除。只能使用`Iterator`中的`remove()`方法进行修改。
 
- **增强`for`遍历**
+ - **增强`for`遍历**
 增强for的底层就是**迭代器**，为了简化迭代器的代码。
 **适用范围**：所有的单列集合和数组。
 ```java
@@ -2482,7 +2482,7 @@ public static void main(String[] args) {
 }
 ```
  
- **`lambda`表达式遍历**
+ - **`forEach()`+`lambda`表达式遍历**
 使用`forEach()`方法。对 `Iterable`的每个元素执行给定的操作，直到所有元素都被处理或动作引发异常。
 ```java
 default void forEach(Consumer<? super T> action)
@@ -2507,7 +2507,7 @@ numArr.forEach((Integer integer) -> {
         System.out.print(integer);    //2 3 4 5 7 8 9 10  
 });
 ```
-若方法实现语句只有一行，还可以继续简化：
+若方法实现语句只有一行，还可以继续简化为：
 ```java
 numArr.forEach(integer -> System.out.print(integer));  //2 3 4 5 7 8 9 10
 ```
