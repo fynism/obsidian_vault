@@ -2318,7 +2318,6 @@ public static int getMax(int[] arr) throws NullPointerException, ArrayIndexOutOf
 	- 编译时异常直接继承`Exception`。
 3. 写上空参构造及带参构造。
 ```java
-
 //自定义异常类StudentAgeOutOfBoundsException
 public class StudentAgeOutOfBoundsException extends RuntimeException{  
     public StudentAgeOutOfBoundsException() {  
@@ -2409,8 +2408,6 @@ public class CustomExceptionDemo1 {
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/5d08ee34f0f88da0c05edc4c593a04ea.jpg)
 - **List系列集合**：添加的元素是有序（存取的顺序相同）、可重复、有索引的。
 - **Set系列集合**：添加的元素是无序（存取顺序不一定相同）、不重复、无索引的。
-
-
 
 ### Collection
 *`Collection`是单列集合的祖宗接口*。它的功能**所有**单列集合都可以使用。
