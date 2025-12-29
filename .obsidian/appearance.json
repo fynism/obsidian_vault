@@ -1,10 +1,10 @@
 {
-  "theme": "moonstone",
+  "theme": "system",
   "enabledCssSnippets": [
     "line-height"
   ],
   "nativeMenus": true,
   "monospaceFontFamily": "Consolas",
   "baseFontSizeAction": true,
-  "baseFontSize": 17
+  "baseFontSize": 15
 }
