@@ -2234,7 +2234,6 @@ public class Student {
 	        throw new StudentAgeOutOfBoundsException();  
 	    }  
 	    this.age = age;  
-	  
 	}
 	
 	public void setName(String name) {  
