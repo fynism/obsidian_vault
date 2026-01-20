@@ -92,7 +92,6 @@ public class Test {
 ## 设计类和对象
 
 >[!example]
-
 ````java
 public class Phone{
     //1.成员变量
@@ -108,20 +107,11 @@ public class Phone{
 ````
 
 >[!tip] 
->类名首字母大写，驼峰命名.
+>- 类名首字母大写，驼峰命名.
+>- 一个java文件中可以定义多个class，但是用public修饰的只能有一个，而且类名必须成为代码文件名.
 
-
-> 一个java文件中可以定义多个class，但是用public修饰的只能有一个，而且类名必须成为代码文件名.
-
-
-
-用来描述一类事物的类叫做**==javabean==**类.
-
+用来描述一类事物的类叫做==javabean==类.
 javabean类中不含main方法.
-
-
-
-
 
 ## 封装（Encapsulation）
 
@@ -129,20 +119,13 @@ javabean类中不含main方法.
 
 对象代表什么，就得将对象相关的数据以及数据对应的行为封装.
 
->  例如，人画圆.需要将draw()方法封装在Circle类中而非Person类中
-
-
+>[!note]  例如，人画圆.需要将draw()方法封装在Circle类中而非Person类中
 
 **private**修饰的成员只能在本类中访问.
-
-封装常使用getter/setter方法访问类中的成员.
-
-
+封装常使用`getter/setter`方法访问类中的成员.
 
 ## this关键字
-
 为了区分局部变量和成员变量.
-
 ````java
 public class Player {
     private int age =10;
@@ -161,17 +144,12 @@ public class Player {
 	//输出10
 ````
 
-
-
 ## 构造方法 constructor
 
 创建对象的时候进行初始化.
-
 - 方法名与类名相同
 - 没有返回值类型.连void都没.
 - 没有返回值，不能由return带回返回结果.
-
-
 
 主要有**无参构造**和**带参构造**.
 
@@ -209,24 +187,15 @@ public class Player {
 
 > 默认存在无参构造.但若手动定义了有参构造，那么默认的无参构造就没了，需要手写.
 
-
-
 ## 标准javabean类
-
 1. 类名清晰，驼峰命名.
-
 2. 所有成员变量使用**private**修饰.
-
 3. 提供至少2个构造方法.
-
    - **无参构造**
    - **带参构造**
-
-4. 带有公共的 **getter/setter** 方法
-
+1. 带有公共的 **getter/setter** 方法
 **额外规范**：
-
-5. 重写需要在类内重新实现的方法，比如toString(),equals()等.
+2. 重写需要在类内重新实现的方法，比如toString(),equals()等.
 >[!example]-
 `````java
 @Override
@@ -235,18 +204,12 @@ public String toString() {
 }
 `````
 
-
-
 **生成标准javabean的快捷键：**
 `alt + insert `
-
 还有更快捷 ，一个叫做**PTG**的 plugins.右键单击.
-
 ![image-20251112201041812](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251112201041812.png)
 
-> 我草，这太爽了也
-
-
+>[!success] 我草，这太爽了也
 
 ## 对象内存图
 

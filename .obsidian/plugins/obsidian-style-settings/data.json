@@ -1,3 +1,4 @@
 {
-  "minimal-style@@tabs-style": "tabs-modern"
+  "minimal-style@@tabs-style": "tabs-modern",
+  "minimal-style@@callouts-style": "callouts-default"
 }
