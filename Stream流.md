@@ -8,7 +8,7 @@
 **先获取 stream 流**
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260121040202271.png)
 
-> [!example] 单列集合中
+> [!hint] 双列集合中无法直接使用 stream 流，需要进行转换操作。
 ```java
 
 ```
