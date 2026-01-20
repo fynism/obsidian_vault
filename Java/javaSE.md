@@ -113,7 +113,8 @@ public class Phone{
 }
 ````
 
-> 类名首字母大写，驼峰命名.
+>[!tip] 
+>类名首字母大写，驼峰命名.
 
 
 > 一个java文件中可以定义多个class，但是用public修饰的只能有一个，而且类名必须成为代码文件名.
@@ -232,7 +233,7 @@ public class Player {
 **额外规范**：
 
 5. 重写需要在类内重新实现的方法，比如toString(),equals()等.
-*eg:*
+>[!example]-
 `````java
 @Override
 public String toString() {
@@ -243,12 +244,9 @@ public String toString() {
 
 
 **生成标准javabean的快捷键：**
+`alt + insert `
 
-`**alt + insert**` 
-
-
-
-还有更快捷 ，一个叫做PTG的 plugins.右键单击.
+还有更快捷 ，一个叫做**PTG**的 plugins.右键单击.
 
 ![image-20251112201041812](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251112201041812.png)
 
@@ -315,8 +313,6 @@ b = a;  //  b的值是10
 
 但是引用数据类型只会赋给其他变量自己指向的地址.
 
-
-
 ## this的本质
 
 this的本质是所在方法调用者的地址值.
@@ -366,17 +362,15 @@ public class StudentTest {
 
 
 ### 静态方法
-
 - 多用于测试类和[工具类](#utilClass),javabean类中很少用.
 
 #### 工具类 <a id="utilClass"></a>
-
 - 见名知意
 - 私有化构造方法
 - 方法都为静态
 
-**eg:**
-
+>[!example]
+>创建一个Array工具类
 ```````java
 //工具类
 public class ArrayUtil {
