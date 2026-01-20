@@ -56,9 +56,6 @@ for (int i = 0; i < 3; i++) {
 ``````
 
 类似的,`xx.forr`为倒序for循环。
-
-
-
 ## Scanner
 
 ``````java
@@ -94,7 +91,7 @@ public class Test {
 
 ## 设计类和对象
 
-*eg:*
+>[!example]
 
 ````java
 public class Phone{
@@ -817,7 +814,7 @@ class Person {
 **特点：**
 抽象方法在子类中**必须**被**重写**。
 
-**eg:**   
+*>[!example]*   
 ```java
 public abstract void work();
 ```
@@ -829,7 +826,7 @@ public abstract void work();
 **定义：**
 若一个类中存在**抽象方法**，那么该类必须声明为**抽象类**。
 
-**eg：**
+*>[!example]*
 ```java
 public abstract class Employee{}
 ```
@@ -1328,10 +1325,7 @@ public static long currentTimeMillis()
 ```
 可以获取程序运行时间。
 
-
-
 ### Runtime
-
 虚拟机运行环境。
 
 ![image-20251125154434503](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251125154434503.png)
@@ -1370,9 +1364,7 @@ public class RuntimeDemo {
 > `shutdown -a`意为取消关机。
 
 *******
-
 ### Object
-
 是java中的顶级父类。
 - 所有的类都直接/间接继承于Object
 - 所有类都能访问其方法
@@ -1388,19 +1380,14 @@ clone()存在**浅克隆**和**深克隆**。
 **浅克隆/浅拷贝:**
 基本数据类型直接拷贝**值**，引用数据类型拷贝**地址**。
 会存在问题：拷贝的对象中的引用数据类型与原对象中的共用。
-
 ![image-20251126152638496](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251126152638496.png)
 
 **深克隆/深拷贝:**
 基本数据类型直接拷贝值，**但是**引用数据类型会创建**新**的对象。除了String，其存储在串池中，会**复用**。
 
 ![image-20251126153026034](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251126153026034.png) 
-
-
-
-*****
-
-*eg:*
+****
+>[!example]
 ```java
 public class ObjectDemo {
     public static void main(String[] args) throws CloneNotSupportedException {
@@ -2103,7 +2090,7 @@ public static void main(String[] args) {
 - Lambda表达式可以用来简化[匿名内部类](#匿名内部类)的书写。
 - 接口中只能有一个抽象方法。
 - 能够使用lambda表达式简化的接口带有`@FunctionalInterface`标记。
-*eg:*
+>[!example]
 去除图中被选择部分：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20251215112633118.png)
 中间加改为`->`，即为lambda表达式:
@@ -2186,7 +2173,8 @@ public static void main(String[] args) {
 		 异常处理代码
 	 }
 	 ```
-	 *eg:*
+	
+	 ***eg:***
 	 ```java
 	 public static void main(String[] args) {  
     Student stu1 = new Student();  

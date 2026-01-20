@@ -1,6 +1,8 @@
 {
-  "theme": "system",
-  "enabledCssSnippets": [],
+  "theme": "moonstone",
+  "enabledCssSnippets": [
+    "line-height"
+  ],
   "nativeMenus": false,
   "monospaceFontFamily": "Consolas",
   "baseFontSizeAction": true,
