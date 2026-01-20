@@ -1497,7 +1497,7 @@ public BigDecimal divide(BigDecimal divisor,
 
 ### 正则表达式 Regex
 
-[查看语法详解](Regex.md)
+[[Regex]]
 java中正则表达式以*String*形式表示。
 
 **作用：**
