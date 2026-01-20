@@ -1,10 +1,9 @@
 {
   "theme": "system",
-  "enabledCssSnippets": [
-    "line-height"
-  ],
-  "nativeMenus": true,
+  "enabledCssSnippets": [],
+  "nativeMenus": false,
   "monospaceFontFamily": "Consolas",
   "baseFontSizeAction": true,
-  "baseFontSize": 17
+  "baseFontSize": 17,
+  "cssTheme": "Minimal"
 }
