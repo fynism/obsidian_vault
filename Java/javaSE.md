@@ -1,22 +1,14 @@
 [TOC]
-
 # 参考
 [API文档（中文）](https://www.matools.com/api/java8)
-
 # 基础小知识
-
 ## 项目结构
-
 idea 里的项目结构从大到小依次是**Project、Module、Package、Class**。
-
 在不同的Package中的类 是相互独立的，即使它们同名.
-
 可以使用`import 包名.类名;`来进行跨Package的使用.如  `import com.fengye.test.constructor.Player;`.
 
 ---
-
 ## IDEA 快捷键
-
 `ctrl+alt+L`格式化代码.
 `ctrl+Insert`快捷创建javabean .
 创建空参构造可以点两下`Tab.`
@@ -33,12 +25,8 @@ idea 里的项目结构从大到小依次是**Project、Module、Package、Class
 `Shift + F6`批量修改变量名称.
 `Alt + Enter`列出报错所有解决方法.
 
-
-
 ## for循环 语法糖
-
 `列表.fori` 即为列表长度的for循环
-
 ````java
 char[] ch = {'a','b','c'};
 //ch.fori
@@ -47,7 +35,6 @@ for (int i = 0; i < ch.length; i++) {
 ````
 
 `number.fori`即为几次的for循环
-
 ``````java	
 //3.fori
 for (int i = 0; i < 3; i++) {
@@ -57,7 +44,6 @@ for (int i = 0; i < 3; i++) {
 
 类似的,`xx.forr`为倒序for循环。
 ## Scanner
-
 ``````java
 public class Test {
     public static void main(String[] args) {
@@ -83,12 +69,8 @@ public class Test {
 }
 ``````
 
-
-
 # 面向对象
-
 拿对应的东西解决相应的问题.使用已有对象（Scanner,Random）或者自己设计对象.
-
 ## 设计类和对象
 
 >[!example]
@@ -114,11 +96,8 @@ public class Phone{
 javabean类中不含main方法.
 
 ## 封装（Encapsulation）
-
 正确设计一个类.
-
 对象代表什么，就得将对象相关的数据以及数据对应的行为封装.
-
 >[!note]  例如，人画圆.需要将draw()方法封装在Circle类中而非Person类中
 
 **private**修饰的成员只能在本类中访问.
@@ -145,14 +124,12 @@ public class Player {
 ````
 
 ## 构造方法 constructor
-
 创建对象的时候进行初始化.
 - 方法名与类名相同
 - 没有返回值类型.连void都没.
 - 没有返回值，不能由return带回返回结果.
 
 主要有**无参构造**和**带参构造**.
-
 ``````````java
 package com.fengye.test.constructor;
 
@@ -185,15 +162,14 @@ public class Player {
 
 ``````````
 
-> 默认存在无参构造.但若手动定义了有参构造，那么默认的无参构造就没了，需要手写.
-
+>[!tip] 默认存在无参构造.但若手动定义了有参构造，那么默认的无参构造就没了，需要手写.
 ## 标准javabean类
 1. 类名清晰，驼峰命名.
 2. 所有成员变量使用**private**修饰.
 3. 提供至少2个构造方法.
    - **无参构造**
    - **带参构造**
-1. 带有公共的 **getter/setter** 方法
+1. 带有公共的 **getter/setter** 方法 
 **额外规范**：
 2. 重写需要在类内重新实现的方法，比如toString(),equals()等.
 >[!example]-
