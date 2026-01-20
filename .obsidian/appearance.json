@@ -1,8 +1,6 @@
 {
   "theme": "obsidian",
-  "enabledCssSnippets": [
-    "line-height"
-  ],
+  "enabledCssSnippets": [],
   "nativeMenus": false,
   "monospaceFontFamily": "Consolas",
   "baseFontSizeAction": true,

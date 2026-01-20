@@ -19,5 +19,14 @@
   "minimal-style@@tx1@@dark": "#EBEBEB",
   "minimal-style@@bold-modifier": 200,
   "minimal-style@@file-header-visibility": "minimal-tab-title-hover",
-  "minimal-style@@frame-background@@dark": "#2145B2"
+  "minimal-style@@frame-background@@dark": "#2145B2",
+  "minimal-style@@bg2@@dark": "#394550",
+  "minimal-style@@sidebar-tabs-names": "tab-names-off",
+  "minimal-style@@sidebar-tabs-style": "sidebar-tabs-default",
+  "minimal-style@@tx2@@dark": "#ECECEC",
+  "minimal-style@@trim-cols": true,
+  "minimal-style@@dataview-inline-lists": false,
+  "minimal-style@@max-col-width": "18em",
+  "minimal-style@@active-line-on": true,
+  "minimal-style@@folding-offset": 45
 }
