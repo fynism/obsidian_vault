@@ -1,10 +1,12 @@
 {
   "theme": "obsidian",
-  "enabledCssSnippets": [],
+  "enabledCssSnippets": [
+    "line-height"
+  ],
   "nativeMenus": false,
   "monospaceFontFamily": "Consolas",
   "baseFontSizeAction": true,
-  "baseFontSize": 20,
+  "baseFontSize": 18,
   "cssTheme": "Minimal",
   "textFontFamily": "霞鹜文楷 GB,霞鹜臻楷 GB"
 }

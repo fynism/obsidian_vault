@@ -28,5 +28,6 @@
   "minimal-style@@dataview-inline-lists": false,
   "minimal-style@@max-col-width": "18em",
   "minimal-style@@active-line-on": true,
-  "minimal-style@@folding-offset": 45
+  "minimal-style@@line-number-color@@dark": "#CFCFCF",
+  "minimal-style@@folding-offset": 47
 }

@@ -1,5 +1,5 @@
 {
-  "showLineNumber": false,
+  "showLineNumber": true,
   "mobileToolbarCommands": [
     "editor:undo",
     "editor:redo",
@@ -23,9 +23,11 @@
     "editor:unindent-list",
     "editor:configure-toolbar"
   ],
-  "readableLineLength": false,
+  "readableLineLength": true,
   "foldIndent": true,
   "tabSize": 4,
   "rightToLeft": false,
-  "promptDelete": true
+  "promptDelete": true,
+  "strictLineBreaks": false,
+  "spellcheck": false
 }
