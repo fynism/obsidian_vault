@@ -1,4 +1,5 @@
 {
   "minimal-style@@tabs-style": "tabs-modern",
-  "minimal-style@@callouts-style": "callouts-default"
+  "minimal-style@@callouts-style": "callouts-default",
+  "blue-topaz-theme@@color-scheme-options": "color-scheme-options-topaz-nord"
 }
