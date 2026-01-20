@@ -5,7 +5,7 @@
  1. 先得到一条 Steam 流。
  2. 利用 Stream 流中的 API 进行过滤、转换、打印等操作。分为**中间方法**和**终结方法**。
 
-**先获取 stream 流**
+## **获取 stream 流**
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260121040202271.png)
 
 > [!hint] 双列集合中无法直接使用 stream 流，需要进行转换操作。
