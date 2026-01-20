@@ -7,5 +7,6 @@
   "monospaceFontFamily": "Consolas",
   "baseFontSizeAction": true,
   "baseFontSize": 17,
-  "cssTheme": "Minimal"
+  "cssTheme": "Minimal",
+  "textFontFamily": ""
 }

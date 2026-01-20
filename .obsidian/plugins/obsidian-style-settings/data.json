@@ -11,5 +11,13 @@
   "minimal-style@@h4-weight": 600,
   "minimal-style@@bold-color@@dark": "#FF7732",
   "minimal-style@@italic-color@@dark": "#37E6FF",
-  "minimal-style@@h1-l": true
+  "minimal-style@@h1-l": false,
+  "minimal-style@@h1-style": "normal",
+  "minimal-style@@h1-variant": "normal",
+  "minimal-style@@icon-muted": 0.6,
+  "minimal-style@@hl1@@dark": "#176D1E",
+  "minimal-style@@tx1@@dark": "#EBEBEB",
+  "minimal-style@@bold-modifier": 200,
+  "minimal-style@@file-header-visibility": "minimal-tab-title-hover",
+  "minimal-style@@frame-background@@dark": "#2145B2"
 }
