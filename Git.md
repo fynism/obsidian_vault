@@ -29,3 +29,12 @@ $ git add readme.txt
 > [!notice] 按照廖雪峰老师的话说：如果没有任何消息，那就对了。Unix 的哲学是“没有消息就是好消息”。
 
 3. 用 `git commit -m <message>` 命令把这一次的改动提交。
+```
+$ git commit -m "init readme file"
+[master (root-commit) ee77b91] init readme file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.txt
+```
+其中，``-m`` 后面双引号中的部分是这次提交的**说明**。每一次 `commit` 都要加上，对自己和别人理解都很重要。
+
+> []
