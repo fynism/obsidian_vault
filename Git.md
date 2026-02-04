@@ -39,10 +39,12 @@ $ git commit -m "init readme file"
 
 > [!question] 为什么 `add` 和 `commit` 要分开写嘞？
 
-> [!notice] 因为每次 `commit` 能够提交多个已经 `add` 的文件。
-``````plain
+> [!notice] 因为每次 `commit` 能够提交多个文件，所以我可以每次 `add` 多个b。
+```plain
 $ git add file1.txt
 $ git add file2.txt file3.txt
 $ git commit -m "add 3 files."
 ```
 
+# 3. 基本操作
+## 版本回退
