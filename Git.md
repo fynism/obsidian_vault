@@ -3,4 +3,23 @@
 # 1. 起源
 我超，原来 Git 是 linux 的创始人嫌当时的版本管理系统(SVN)不好用，直接手搓的吗。。**好几把吊**。。
 
-# 2. 
+# 2. 创建仓库(Repository)
+要使用 Git，首先便要创建一个**仓库(Repository)**。
+1. 在合适路径下创建目录(以 linux 为例)：
+```
+$ mkdir learngit
+$ cd learngit
+$ pwd
+/Users/michael/learngit
+```
+2. 使用 `git init` 初始化仓库
+```
+$ git init
+Initialized empty Git repository in D:/fengye/GitTest/.git/
+```
+
+Git 仓库就建好了，并且出现了一个名为 `.git` 的目录。
+
+如果我想要**添加**一个文件(``readme. txt``) 到仓库中，步骤如下：
+1. 把 ``readme. txt`` 放到仓库目录下。
+2. 用 `git add` 命令把
