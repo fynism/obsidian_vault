@@ -37,4 +37,12 @@ $ git commit -m "init readme file"
 ```
 其中，``-m`` 后面双引号中的部分是这次提交的**说明**。每一次 `commit` 都要加上，对自己和别人理解都很重要。
 
-> []
+> [!question] 为什么 `add` 和 `commit` 要分开写嘞？
+
+> [!notice] 因为每次 `commit` 能够提交多个已经 `add` 的文件。
+``````plain
+$ git add file1.txt
+$ git add file2.txt file3.txt
+$ git commit -m "add 3 files."
+```
+
