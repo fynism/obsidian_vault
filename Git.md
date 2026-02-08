@@ -3,7 +3,10 @@
 # （一）、 起源
 我超，原来 Git 是 linux 的创始人嫌当时的版本管理系统(SVN)不好用，直接手搓的吗。。**好几把吊**。。
 
-# （二）、 创建仓库(Repository)
+# （二）、创建仓库(Repository)
+在此步骤中，开始进行一些基本的git 操作。可用命令如下：
+`git init`, `git add <filename>`, `git commit <filename> -m "commit notes"`
+
 要使用 Git，首先便要创建一个**仓库(Repository)**。
 1. 在合适路径下创建目录(以 linux 为例)：
 ```
@@ -48,7 +51,9 @@ $ git commit -m "add 3 files."
 
 # （三）、 基本操作
 ## 1.版本回退
-每次使用 `commit` 就相当于在版本库中保存一个快照，一旦发生什么错误便能够回退到指定版本。
+每次使用 `commit` 就相当于在版本库中保存一个快照，一旦发生什么错误便能够回退到指定 `commit` 的 版本。可用命令如下：
+`git reset...`, `git log`, `git reflog`
+
 **版本回退的步骤如下：**
 1. 使用 `git log` 能够看到所有的 `commit` 记录。使用 `git log --pretty=one-line` 能够让它们显示在一行内。
 ```
@@ -106,7 +111,7 @@ ee77b91 HEAD@{5}: commit (initial): init readme file
 1. 工作区与暂存区中都没有修改发生：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260209013921898.png)
 2. 文件在工作区中被修改，但是没有进行 `git add`，即没有进入暂存区：
-![[Pasted image 20260209014234.png]]
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/Pasted%20image%2020260209014234.png)
 3. 文件被 add 到暂存区，但是还没有 commit 到分支。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260209014857192.png)
 ***
