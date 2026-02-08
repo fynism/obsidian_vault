@@ -107,4 +107,5 @@ ee77b91 HEAD@{5}: commit (initial): init readme file
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260209013921898.png)
 2. 文件在工作区中被修改，但是没有进行 `git add`，即没有进入暂存区：
 ![[Pasted image 20260209014234.png]]
-3. 文件在
+3. 文件被 add 到暂存区，但是还没有 commit 到分支。
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260209014857192.png)

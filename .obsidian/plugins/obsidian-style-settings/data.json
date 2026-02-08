@@ -29,5 +29,7 @@
   "minimal-style@@max-col-width": "18em",
   "minimal-style@@active-line-on": true,
   "minimal-style@@line-number-color@@dark": "#CFCFCF",
-  "minimal-style@@folding-offset": 47
+  "minimal-style@@folding-offset": 47,
+  "minimal-style@@tx3@@light": "#9F89FF",
+  "minimal-style@@tx3@@dark": "#9F89FF"
 }
