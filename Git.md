@@ -1,9 +1,9 @@
 一直以来，总是听说 Git 这个东西，也知道它是能够进行版本控制的一个软件。我是自比游戏存档的机制来理解它的，但是在使用中，我发现 Git 与游戏存档的机制又相去甚远。各种指令 `pull`、`push`、`fork`... 让我眼花缭乱。在我的以就业为核心导向的学习过程中，我想要也必须更加深入、系统地了解 Git。于是便有了此文，以作学习笔记兼查找时可用的工具书。
 
-# 1. 起源
+# （一）、 起源
 我超，原来 Git 是 linux 的创始人嫌当时的版本管理系统(SVN)不好用，直接手搓的吗。。**好几把吊**。。
 
-# 2. 创建仓库(Repository)
+# （二）、 创建仓库(Repository)
 要使用 Git，首先便要创建一个**仓库(Repository)**。
 1. 在合适路径下创建目录(以 linux 为例)：
 ```
@@ -46,8 +46,8 @@ $ git add file2.txt file3.txt
 $ git commit -m "add 3 files."
 ```
 
-# 3. 基本操作
-## 版本回退
+# （三）、 基本操作
+## 1.版本回退
 每次使用 `commit` 就相当于在版本库中保存一个快照，一旦发生什么错误便能够回退到指定版本。
 **版本回退的步骤如下：**
 1. 使用 `git log` 能够看到所有的 `commit` 记录。使用 `git log --pretty=one-line` 能够让它们显示在一行内。
@@ -90,7 +90,7 @@ ee77b91 HEAD@{5}: commit (initial): init readme file
 ```
 这样，根据历史命令中**前面**的版本号就能够知道原来的版本号是啥了。
 ***
-## Git 主要区域的概念以及修改管理
+## 2.Git 主要区域的概念以及修改管理
 
 在 git 的版本管理中，存在着几种种概念: 工作区(Working Directory、暂存区(Stage)、版本库(Repo) 等。
 - **工作区**是在电脑中能够直接看到的文件夹中的内容。
@@ -109,3 +109,13 @@ ee77b91 HEAD@{5}: commit (initial): init readme file
 ![[Pasted image 20260209014234.png]]
 3. 文件被 add 到暂存区，但是还没有 commit 到分支。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260209014857192.png)
+***
+
+## 3. 撤销修改
+如果你想要撤销文件的修改，那么可以使用以下命令：
+`git checkout -- <filename>`, `git reset HEAD <filename>`
+1. 撤销**工作区**里的修改。
+	可使用 `git checkout -- <filename>` 命令。此命令可以使工作区中的文件回到最近一次 `add` 或者 `commit` 之后的状态，即上一次**没有修改发生**的状态。
+> [!notice] 注意区分 `git checkout -- <filename>` 和 `git checkout <filename>`。尽管他俩只差了 `--`，但是表示的意义完全不同，后者表示的是分支中的操作。
+2. 撤销**暂存区**里的修改。
+	可使用 `git reset HEAD <filename>` 命令。此命令可以使**暂存区**中的修改回退到**工作区**中的修改。即相当于撤回所有已经 `add` 的修改。
