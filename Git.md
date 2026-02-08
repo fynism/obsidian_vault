@@ -90,3 +90,20 @@ ee77b91 HEAD@{5}: commit (initial): init readme file
 ```
 这样，根据历史命令中**前面**的版本号就能够知道原来的版本号是啥了。
 ***
+## Git 主要区域的概念以及修改管理
+
+在 git 的版本管理中，存在着几种种概念: 工作区(Working Directory、暂存区(Stage)、版本库(Repo) 等。
+- **工作区**是在电脑中能够直接看到的文件夹中的内容。
+- **暂存区**是指将工作区中的文件进行 `git add` 操作后文件进入的区域。暂存区包含在版本库中。
+- 文件在暂存区后执行 `git commit` 操作后就保存到了**分支**。
+
+![repo.png (474×250)](https://liaoxuefeng.com/books/git/time-travel/working-stage/repo.png)
+
+***
+值得注意的是，git 是以**修改**来进行版本管理的系统，而非以文件的形式。
+
+可以使用 `git status` 来查看 git 现在的状态(能够看到各种修改)。
+- 工作区与暂存区中都没有修改发生：
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260209013921898.png)
+- 文件在工作区中被修改，但是没有进行 `git add`，即没有进入暂存区：
+- 
