@@ -103,7 +103,8 @@ ee77b91 HEAD@{5}: commit (initial): init readme file
 值得注意的是，git 是以**修改**来进行版本管理的系统，而非以文件的形式。
 
 可以使用 `git status` 来查看 git 现在的状态(能够看到各种修改)。
-- 工作区与暂存区中都没有修改发生：
+1. 工作区与暂存区中都没有修改发生：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260209013921898.png)
-- 文件在工作区中被修改，但是没有进行 `git add`，即没有进入暂存区：
-- 
+2. 文件在工作区中被修改，但是没有进行 `git add`，即没有进入暂存区：
+![[Pasted image 20260209014234.png]]
+3. 文件在
