@@ -89,5 +89,4 @@ ee77b91 HEAD@{3}: reset: moving to HEAD^
 ee77b91 HEAD@{5}: commit (initial): init readme file
 ```
 这样，根据历史命令中**前面**的版本号就能够知道原来的版本号是啥了。
-
 ***
