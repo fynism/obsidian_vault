@@ -124,3 +124,5 @@ ee77b91 HEAD@{5}: commit (initial): init readme file
 > [!notice] 注意区分 `git checkout -- <filename>` 和 `git checkout <filename>`。尽管他俩只差了 `--`，但是表示的意义完全不同，后者表示的是分支中的操作。
 2. 撤销**暂存区**里的修改。
 	可使用 `git reset HEAD <filename>` 命令。此命令可以使**暂存区**中的修改回退到**工作区**中的修改。即相当于撤回所有已经 `add` 的修改。
+
+# （四）远程仓库
