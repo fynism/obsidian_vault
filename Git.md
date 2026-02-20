@@ -138,4 +138,6 @@ ee77b91 HEAD@{5}: commit (initial): init readme file
 4. 使用 `git push -u origin main` 将**本地**提交推送到**远程**仓库。就能够在 GitHub 中看到推送的内容。
 	（第一次 push 需要加上 `-u` 参数，将本地的 main 分支和远程的 main 分支绑定起来。之后就可以直接写 `git push` 和 `git pull`）
 	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260220230620047.png)
-5. 
+5. 在之后，想要将本地修改同步到远程仓库，只需要在本地进行**提交**之后，执行 `git push`。同理想从远程仓库同步到本地，执行 `git pull`。
+	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260220231133357.png)
+	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260220231201040.png)
