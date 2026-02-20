@@ -142,3 +142,23 @@ ee77b91 HEAD@{5}: commit (initial): init readme file
 5. 在之后，想要将本地修改同步到远程仓库，只需要在本地进行**提交**之后，执行 `git push`。同理想从远程仓库同步到本地，执行 `git pull`。
 	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260220231133357.png)
 	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260220231201040.png)
+
+# （五）分支管理
+分支相当于一个**平行时空**，在一个分支上进行的修改不会影响其他分支。
+- 使用 `git switch -c <name>` 表示**创建**并转到相应分支。如果不用新建，那么不用加 ` -c ` 参数。
+（老版本也使用 `git checkout <name>` 来表示分支的转换，但是容易和之前的撤销修改部分混淆，`switch` 是 git 新版本更加符合直觉的操作方法。）
+- 使用 `git merge <name>` 来把相应分支上的内容合并到**现有**分支。
+- 使用 `git branch` 来**查看**现有分支情况。前面带有 `*` 的是**当前所在**的分支。
+- 使用 `git branch -d <name>` 来**删除**相应的已经合并入 `main` 分支、不再需要的分支。
+
+**创建一个分支，在其上进行开发并将其合并到 `main` 分支：**
+1. 使用 `git switch -c dev` **创建**并转到 `dev` 分支。
+	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260220234913798.png)
+2. 在该分支上进行开发并 `commit`。
+3. 转回 `main` 分支，将 `dev` 分支的内容与之合并。`git switch main`, `git merge dev`
+	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260220235202967.png)
+4. 如果不再需要此分支，那么直接删除。`git branch -d dev`
+	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260220235458150.png)
+
+## 合并冲突
+在合并两个分支的时候，如果两个文件进行了不同的修改，就会出现**冲突**。
