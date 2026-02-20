@@ -168,6 +168,24 @@ ee77b91 HEAD@{5}: commit (initial): init readme file
 在合并两个分支的时候，如果两个文件进行了不同的修改，就会出现**冲突**。这个笔记就出现过好几次这样的情况。
 
 **例：**
-1. 我新建了一个 `feature` 分支。在这个分支中，我在 `README.md ` 的最后一行加了一句 ` this is from feature1. ` 并且将其 ` commit `。
+1. 我新建了一个 `feature` 分支。在这个分支中，我在 `README.md ` 的最后一行加了一句 ` this is from feature1. ` 并且将其 `commit`。
 	
-2. 我又回到了 `main` 分支。在这个分支中，我在 `README.md ` 的最后一行加了一句 ` this is from main branch. `
+2. 我又回到了 `main` 分支。在这个分支中，我在 `README.md ` 的最后一行加了一句 ` this is from main branch. `，并且将其 `commit`。
+	
+3. 当我尝试合并两个分支 `git merge feature1` 时，出现了错误：
+	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260221004049791.png)
+	而 `README.md` 中最后一行内容变成了：
+	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260221004420034.png)
+	用 `<<<`, `>>>`, `===` 详细标出了两分支冲突的部分。
+	
+4. 怎么**解决**呢？这个时候要手动**保留**想要修改的部分，去掉 `<<<`, `>>>`, `===` 之后，进行一个**新的提交**。
+	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260221004943451.png)
+	
+	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260221004857086.png)
+	
+	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260221005443140.png)
+5. 最后，删除 `feature1` 分支。`git branch -d feature1`。冲突解决完毕。
+
+## 3. 分支管理策略
+这一部分，廖雪峰和 Gemini 给了我相似但细节处有些不相同的知识点。
+
