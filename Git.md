@@ -3,7 +3,7 @@
 # （一）、 起源
 我超，原来 Git 是 linux 的创始人嫌当时的版本管理系统(SVN)不好用，直接手搓的吗。。**好几把吊**。。
 
-# （二）、创建仓库(Repository)
+# （二）、创建仓库 repo
 在此步骤中，开始进行一些基本的git 操作。可用命令如下：
 `git init`, `git add <filename>`, `git commit <filename> -m "commit notes"`
 
@@ -126,6 +126,7 @@ ee77b91 HEAD@{5}: commit (initial): init readme file
 	可使用 `git reset HEAD <filename>` 命令。此命令可以使**暂存区**中的修改回退到**工作区**中的修改。即相当于撤回所有已经 `add` 的修改。
 
 # （四）远程仓库
+
 使用 `git push` 和 `git pull` 命令能够进行本地仓库与远程仓库的同步。
 在推送本地 git 仓库到**远程空仓库**的时候使用 `git remote add URL` 来进行本地仓库与远程仓库的绑定。
 当然，如果是使用 GitHub 上的**现有仓库**从零开发，使用 `git clone URL` 克隆到本地是最好的方法。
@@ -145,6 +146,7 @@ ee77b91 HEAD@{5}: commit (initial): init readme file
 
 # （五）分支管理
 分支相当于一个**平行时空**，在一个分支上进行的修改不会影响其他分支。
+## 1. 创建与合并
 - 使用 `git switch -c <name>` 表示**创建**并转到相应分支。如果不用新建，那么不用加 ` -c ` 参数。
 （老版本也使用 `git checkout <name>` 来表示分支的转换，但是容易和之前的撤销修改部分混淆，`switch` 是 git 新版本更加符合直觉的操作方法。）
 - 使用 `git merge <name>` 来把相应分支上的内容合并到**现有**分支。
@@ -160,5 +162,5 @@ ee77b91 HEAD@{5}: commit (initial): init readme file
 4. 如果不再需要此分支，那么直接删除。`git branch -d dev`
 	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260220235458150.png)
 
-## 合并冲突
+## 2.合并冲突
 在合并两个分支的时候，如果两个文件进行了不同的修改，就会出现**冲突**。
