@@ -127,7 +127,8 @@ ee77b91 HEAD@{5}: commit (initial): init readme file
 
 # （四）远程仓库
 使用 `git push` 和 `git pull` 命令能够进行本地仓库与远程仓库的同步。
-使用 `git remote add URL` 来进行本地仓库与远程仓库的绑定。
+在推送本地 git 仓库到**远程空仓库**的时候使用 `git remote add URL` 来进行本地仓库与远程仓库的绑定。
+当然，如果是使用 GitHub 上的**现有仓库**从零开发，使用 `git clone URL` 克隆到本地是最好的方法。
 
 **创建并连接一个远程仓库：**
 > （连接远程仓库似乎有好几种方式，这里以在本地新建一个 git 仓库为例。）
