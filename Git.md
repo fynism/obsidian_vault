@@ -162,5 +162,12 @@ ee77b91 HEAD@{5}: commit (initial): init readme file
 4. 如果不再需要此分支，那么直接删除。`git branch -d dev`
 	![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260220235458150.png)
 
+***
+
 ## 2.合并冲突
-在合并两个分支的时候，如果两个文件进行了不同的修改，就会出现**冲突**。
+在合并两个分支的时候，如果两个文件进行了不同的修改，就会出现**冲突**。这个笔记就出现过好几次这样的情况。
+
+**例：**
+1. 我新建了一个 `feature` 分支。在这个分支中，我在 `README.md ` 的最后一行加了一句 ` this is from feature1. ` 并且将其 ` commit `。
+	
+2. 我又回到了 `main` 分支。在这个分支中，我在 `README.md ` 的最后一行加了一句 ` this is from main branch. `
