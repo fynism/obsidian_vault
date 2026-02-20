@@ -126,3 +126,5 @@ ee77b91 HEAD@{5}: commit (initial): init readme file
 	可使用 `git reset HEAD <filename>` 命令。此命令可以使**暂存区**中的修改回退到**工作区**中的修改。即相当于撤回所有已经 `add` 的修改。
 
 # （四）远程仓库
+使用 `git push` 和 `git pull` 命令能够进行本地仓库与远程仓库的同步。
+
