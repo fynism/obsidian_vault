@@ -2427,31 +2427,13 @@ E 为**泛型**,代表了ArrayList中存储的数据类型.
 
 ![image-20251117150311454](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/image-20251117150311454.png)
 
-**常用方法**:
-````java
-//C
-boolean	add(E e)
-
-//R
-E	get(int index)
-int	indexOf(Object o)
-
-//U
-E	set(int index, E element)
-
-//D
-E	remove(int index)
-boolean	remove(Object o)
-
-````
-
-
+**特点：**
+1. 查询速度快：依靠索引查询。
+2. 增删效率低：修改之后，被修改数据之后的所有数据的索引都需要变动。
+***
+# Stream 流
 流的核心操作是**过滤**。
 结合 Lambda 表达式简化集合、数组的操作。
-***
-
-# Stream 流
-
 ## **使用步骤**
  1. 先得到一条 Stream 流。
  2. 利用 Stream 流中的 API 进行过滤、转换、打印等操作。分为**中间方法**和**终结方法**。
