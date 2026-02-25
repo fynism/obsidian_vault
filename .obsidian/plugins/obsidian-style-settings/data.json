@@ -31,5 +31,9 @@
   "minimal-style@@line-number-color@@dark": "#CFCFCF",
   "minimal-style@@folding-offset": 47,
   "minimal-style@@tx3@@light": "#9F89FF",
-  "minimal-style@@tx3@@dark": "#9F89FF"
+  "minimal-style@@tx3@@dark": "#9F89FF",
+  "minimal-style@@image-grid-fit": "contain",
+  "minimal-style@@image-radius": 4,
+  "minimal-style@@image-muted": 0.6,
+  "minimal-style@@image-blend-light": false
 }
