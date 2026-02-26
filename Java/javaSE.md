@@ -2534,6 +2534,30 @@ public class Student {
 }
 
 //测试类
+public static void main(String[] args) {  
+    //我想要掌握HashSet的去重操作  
+    Student s1 = new Student("小张", 18);  
+    Student s2 = new Student("小张", 18);  
+    Student s3 = new Student("小吴", 18);  
+    Student s4 = new Student("小李", 18);  
+    Student s5 = new Student("小李", 18);  
+    Student s6 = new Student("小李", 18);  
+  
+    Set<Student> hs = new HashSet<Student>();  
+    hs.add(s1);  
+    hs.add(s2);  
+    hs.add(s3);  
+    hs.add(s4);  
+    hs.add(s5);  
+    hs.add(s6);  
+    System.out.println(hs);
+    
+   /*
+[Student{name='小李', age=18}
+, Student{name='小张', age=18}
+, Student{name='小吴', age=18}
+]
+*/
 
 ```
 
