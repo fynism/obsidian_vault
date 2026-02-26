@@ -2494,7 +2494,50 @@ JDK 8 后
 #### HashSet 去重操作
 在 Java 中，创建对象的 `HashCode()` 的值是根据其**地址**得到的。所以尽管两个对象的内容完全**相同**，其使用默认方法得到的**哈希值**也**不同**。这会导致在 HashSet 中存入时出现相同的元素。
 所以，我们可以重写类中的 `HashCode()` 和 `quals()` 方法。
-> [!notice] 为什么还要重写 `equals()`
+> [!notice] 为什么还要重写 `equals()`? 
+> 因为可能存在哈希值相同但是内容不相等的情况。
+
+```java
+//Student.java
+public class Student {  
+    private String name;  
+    private int age;  
+  
+    public Student(String name, int age) {  
+        this.name = name;  
+        this.age = age;  
+    }  
+  
+    public Student() {  
+    }  
+  
+    @Override  
+    public String toString() {  
+        return "Student{" +  
+                "name='" + name + '\'' +  
+                ", age=" + age +  
+                '}'+ "\n";  
+    }  
+    //重写hashCode()和equals()方法  
+  
+    @Override  
+    public boolean equals(Object o) {  
+        if (o == null || getClass() != o.getClass()) return false;  
+        Student student = (Student) o;  
+        return age == student.age && Objects.equals(name, student.name);  
+    }  
+  
+    @Override  
+    public int hashCode() {  
+        return Objects.hash(name, age);  
+    }  
+}
+
+//测试类
+
+```
+
+
 ***
 # Stream 流
 流的核心操作是**过滤**。
