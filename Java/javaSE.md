@@ -2492,7 +2492,9 @@ JDK 8 后
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/Pasted%20image%2020260226153441.png)
 
 #### HashSet 去重操作
-在 Java 中，创建对象的
+在 Java 中，创建对象的 `HashCode()` 的值是根据其**地址**得到的。所以尽管两个对象的内容完全**相同**，其使用默认方法得到的**哈希值**也**不同**。这会导致在 HashSet 中存入时出现相同的元素。
+所以，我们可以重写类中的 `HashCode()` 和 `quals()` 方法。
+
 ***
 # Stream 流
 流的核心操作是**过滤**。
