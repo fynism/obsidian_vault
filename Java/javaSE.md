@@ -2635,6 +2635,9 @@ public class Teacher implements Comparable<Teacher>{
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226223015013.png)
 
 ***
+## 双列集合 Map
+特点：Map 中的数据以键值对的
+
 # Stream 流
 流的核心操作是**过滤**。
 结合 Lambda 表达式简化集合、数组的操作。
