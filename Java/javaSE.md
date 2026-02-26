@@ -2636,7 +2636,9 @@ public class Teacher implements Comparable<Teacher>{
 
 ***
 ## 双列集合 Map
-特点：Map 中的数据以键值对的
+特点：
+- Map 中的数据以键值对的形式存储。如 `[key1 = value1, key2 = value2],...`
+- Map 集合中的键是不可以重复的，但是值可以重复。
 
 # Stream 流
 流的核心操作是**过滤**。
