@@ -2569,7 +2569,9 @@ public static void main(String[] args) {
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226162603153.png)
 
 ##### LInkedHashSet 部分源码分析
-
+进行一些必要的源码分析与鉴赏。
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226212257969.png)
+这是 `LinkedHashSet` 的无参构造方法。它调用了父类 `HashSet` 中的构造方法，创建了一个 `HashMap` 。其中的 `initialCapacity` 是初始容量，`loadFactor`
 
 
 ***
