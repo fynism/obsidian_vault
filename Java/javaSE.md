@@ -2484,6 +2484,9 @@ LinkedList 底层基于**双链表**实现的。
 **HashSet** 底层是基于哈希表存储的。
 - 在 JDK 8 之前，哈希表是 **数组+链表**。
 - 在 JDK 8 之后，哈希表是 **数组+链表+红黑树**。
+
+****示例图*
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226153202834.png)
 ***
 # Stream 流
 流的核心操作是**过滤**。
