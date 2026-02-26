@@ -2592,11 +2592,11 @@ public static void main(String[] args) {
     Teacher t4 = new Teacher("小李", 18, 8000.0);  
     Teacher t5 = new Teacher("123",88,3365.2);  
   
-    //1.传入Comparator接口的实现类对象  
+    //2.传入Comparator接口的实现类对象  
     TreeSet<Teacher> ts = new TreeSet<>(new Comparator<Teacher>() {  
         @Override
         public int compare(Teacher o1, Teacher o2) {  
-            return o1.getAge()-o2.getAge();  
+            return Double.compare(o1.getSalary(), o2.getSalary());  
         }  
     });  
     ts.add(t1);  
@@ -2620,12 +2620,12 @@ public class Teacher implements Comparable<Teacher>{
     private int age;  
     private double  salary;  
   
-    //......
+    //methods and getter/setters......
   
     //1.重写compareTo()方法  
     @Override  
     public int compareTo(Teacher o) {  
-        return this.age - o.age;  
+	return Double.compare(this.salary,o.salary);
     }  
 }
 ```
