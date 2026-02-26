@@ -2581,8 +2581,8 @@ public static void main(String[] args) {
 - `Node` 类就是哈希表中的某一个结点。它有一个 `next` 成员变量，使其能在某一个结点上能够形成**链表**结构，符合理论。
 
 #### TreeSet
-一种能够把输入数据排序输出的 Set。底层基于红黑树实现。
-TreeSet 比较的特性是通过 `Comparator` 实现的。下面给出一个例子
+一种能够把输入数据**排序**输出的 Set。底层基于红黑树实现。
+TreeSet 比较的特性是通过 `Comparator` 实现的。下面给出一个例子。（第一种方法的 **lambda 表达式**简化版可以参考 `Arrays` 中讲 `sort()` 方法那一部分）
 ```java
 //学习一下TreeSet的比较的特性  
 public static void main(String[] args) {  
