@@ -2486,7 +2486,11 @@ LinkedList 底层基于**双链表**实现的。
 - 在 JDK 8 之后，哈希表是 **数组+链表+红黑树**。
 
 ****示例图*
+JDK 8 前
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226153202834.png)
+
+**JDK 8 后**
+![[Pasted image 20260226153441.png]]
 ***
 # Stream 流
 流的核心操作是**过滤**。
