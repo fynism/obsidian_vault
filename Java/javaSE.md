@@ -2561,7 +2561,9 @@ public static void main(String[] args) {
 
 ```
 
-
+#### LinkedHashSet 底层原理
+它和 HashSet 一样，也是基于**数组+链表+红黑树**实现的。
+不同的是，它的没个元素都多了一个
 ***
 # Stream 流
 流的核心操作是**过滤**。
