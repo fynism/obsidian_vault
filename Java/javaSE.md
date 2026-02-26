@@ -2490,6 +2490,9 @@ JDK 8 前
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226153202834.png)
 JDK 8 后
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/Pasted%20image%2020260226153441.png)
+
+#### HashSet 去重操作
+在 Java 中，创建对象的
 ***
 # Stream 流
 流的核心操作是**过滤**。
