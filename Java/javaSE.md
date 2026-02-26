@@ -2488,8 +2488,8 @@ LinkedList 底层基于**双链表**实现的。
 ****示例图*
 JDK 8 前
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226153202834.png)
-**JDK 8 后**
-![[Pasted image 20260226153441.png]]
+JDK 8 后
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/Pasted%20image%2020260226153441.png)
 ***
 # Stream 流
 流的核心操作是**过滤**。
