@@ -2578,8 +2578,9 @@ public static void main(String[] args) {
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226213249013.png)
 - 这两个部分分别是 `LinkedHashSet` 所依赖的 `LinkedHashMap` 中的成员。
 - `Entry` 类存储了双链表的指针，提供**双链表**的机制。使得 `LinkedHashSet` 能够有序读取。
-- `Node` 类就是哈希表中的某一个结点。它有一个 `next`成员变量，表示了它能够进行
+- `Node` 类就是哈希表中的某一个结点。它有一个 `next` 成员变量，使其能在某一个结点上能够形成**链表**结构，符合理论。
 
+#### TreeSet
 ***
 # Stream 流
 流的核心操作是**过滤**。
