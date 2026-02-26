@@ -2637,12 +2637,12 @@ public class Teacher implements Comparable<Teacher>{
 ***
 ## 双列集合 Map
 **特点：**
-- Map 中的数据以**键值对**的形式存储。如 `[key1 = value1, key2 = value2],...`
-- Map 集合中的**键**是**不可以重复**的，但是**值可以重复**。
+- `Map` 中的数据以**键值对**的形式存储。如 `[key1 = value1 , key2 = value2] , ...`
+- `Map`集合中的**键**是**不可以重复**的，但是**值可以重复**。
 
 ****体系结构图***
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226223607839.png)
-
+上图中可以看到，`Map` 集合的子类集合和 `Set` 很相似。它们的特点也很相似，只不过 ` Map` 中多了一个**值**。
 
 
 
