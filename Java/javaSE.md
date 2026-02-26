@@ -2644,6 +2644,8 @@ public class Teacher implements Comparable<Teacher>{
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226223607839.png)
 上图中可以看到，`Map` 集合的子类集合和 `Set` 很相似。它们的特点也很相似，只不过 ` Map` 中多了一个**值**。
 
+**常用方法：**
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226224137865.png)
 
 
 
