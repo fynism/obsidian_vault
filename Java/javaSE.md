@@ -2629,6 +2629,11 @@ public class Teacher implements Comparable<Teacher>{
     }  
 }
 ```
+
+***
+### 单列集合小结
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226223015013.png)
+
 ***
 # Stream 流
 流的核心操作是**过滤**。
