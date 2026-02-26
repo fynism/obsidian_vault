@@ -2581,7 +2581,7 @@ public static void main(String[] args) {
 - `Node` 类就是哈希表中的某一个结点。它有一个 `next` 成员变量，使其能在某一个结点上能够形成**链表**结构，符合理论。
 
 #### TreeSet
-
+一种能够把输入数据
 ***
 # Stream 流
 流的核心操作是**过滤**。
