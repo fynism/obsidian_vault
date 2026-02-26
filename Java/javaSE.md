@@ -2289,13 +2289,12 @@ public class CustomExceptionDemo1 {
 - 单列集合(`Collection`)：在添加数据的时候，每次只能添加一个元素。
 - 双列集合(`Map`)：添加数据时，每次添加一对元素。
 
-## 单列集合
+## 单列集合 Collection
 单列集合体系结构简图：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/5d08ee34f0f88da0c05edc4c593a04ea.jpg)
 - **List系列集合**：添加的元素是有序（存取的顺序相同）、可重复、有索引的。
 - **Set系列集合**：添加的元素是无序（存取顺序不一定相同）、不重复、无索引的。
-
-### Collection
+***
 *`Collection`是单列集合的祖宗接口*。它的功能**所有**单列集合都可以使用。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/e3ad069c2caf9dbd69525314b05fb364.jpg)
 
@@ -2399,7 +2398,7 @@ numArr.forEach(integer -> System.out.print(integer));  //2 3 4 5 7 8 9 10
 ```
 
 ***
-#### List
+### List
 - 继承了`Collection`中的**所有**方法。
 - 有**索引**，增加了一些索引操作的方法。
 
@@ -2416,7 +2415,7 @@ List中常见的5种**遍历方法**：
 ```
 
 ***
-##### ArrayList
+#### ArrayList
 可以进行CRUD操作的列表.
 ```java
 ArrayList<E> arr= new ArrayList<>();
@@ -2431,7 +2430,7 @@ E 为**泛型**,代表了ArrayList中存储的数据类型.
 1. 查询速度快：依靠索引查询。
 2. 增删效率低：修改之后，被修改数据之后的所有数据物理位置都需要迁移。
 
-###### 扩容机制
+##### 扩容机制
 因为 ArrayList 底层是基于**数组**实现的，本身长度不可变。为了节省内存容量和实现长度可变，ArrayList 引入了扩容机制。
 1.   在 `new ArrayList` 的时候，第一次创建的其实是一个**空的静态数组**。这是为了节省内存。
 	- 在 `add` 第一个元素之后，这才会给 ArrayList **第一次**分配内存，默认长度为 10。
@@ -2451,7 +2450,7 @@ List<String> list = new ArrayList<>(10000);
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226003228889.png)
 
 ***
-##### LinkedList
+#### LinkedList
 LinkedList 底层基于**双链表**实现的。
 **特点：**
 1. 查询慢：需要通过头结点开始向后找。
@@ -2466,8 +2465,17 @@ LinkedList 底层基于**双链表**实现的。
  因为对首尾元素操作极快，常被用作**队列(queue)** 和**栈(stack)** 的实现方式。因为**入队(栈)/出队(栈)** 操作只在首尾进行。
 
 ***
-#### Set
-**特点：** 无序：添加和获取数据的顺序不一致；不重复；无索引。
+### Set
+和 `List` 同级别的，另一种单列集合的形式。
+
+**特点：** **无序**：添加和获取数据的顺序不一致；**不重复**；**无索引**。
+- HashSet: 无序，不重复，无索引。
+- LinkedHashSet: **有序**、不重复、无索引。
+- TreeSet：**可排序**、不重复、无索引。
+
+**方法：** `Set` 中的常用方法进本上就是 ` Collections ` 中提供的。因为 `Set` 无序，所以没有索引相关的 `getxx()` 系列方法。
+
+##### HashSet 底层原理
 
 ***
 # Stream 流
