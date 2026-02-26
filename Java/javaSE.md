@@ -2576,7 +2576,9 @@ public static void main(String[] args) {
 
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226213225323.png)
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226213249013.png)
-- 这两个部分分别是 `LinkedHashSet` 所依赖的 `LinkedHashMap` 中的
+- 这两个部分分别是 `LinkedHashSet` 所依赖的 `LinkedHashMap` 中的成员。
+- `Entry` 类存储了双链表的指针，提供**双链表**的机制。使得 `LinkedHashSet` 能够有序读取。
+- `Node` 类就是哈希表中的某一个结点。它有一个 `next`成员变量，表示了它能够进行
 
 ***
 # Stream 流
