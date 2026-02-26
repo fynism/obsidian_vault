@@ -2564,6 +2564,8 @@ public static void main(String[] args) {
 #### LinkedHashSet 底层原理
 它和 HashSet 一样，也是基于**数组+链表+红黑树**实现的。
 不同的是，它的每个元素都多了一个**双链表机制(头/尾指针)** 来实现有序的读取。
+
+****参考图***
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226162603153.png)
 
 ***
