@@ -2582,6 +2582,53 @@ public static void main(String[] args) {
 
 #### TreeSet
 一种能够把输入数据排序输出的 Set。底层基于红黑树实现。
+
+```java
+//学习一下TreeSet的比较的特性  
+public static void main(String[] args) {  
+    Teacher t1 = new Teacher("小张", 18, 5000.0);  
+    Teacher t2 = new Teacher("小林", 20, 6000.0);  
+    Teacher t3 = new Teacher("小王", 19, 7000.0);  
+    Teacher t4 = new Teacher("小李", 18, 8000.0);  
+    Teacher t5 = new Teacher("123",88,3365.2);  
+  
+    //1.传入Comparator接口的实现类对象  
+    TreeSet<Teacher> ts = new TreeSet<>(new Comparator<Teacher>() {  
+        @Override
+        public int compare(Teacher o1, Teacher o2) {  
+            return o1.getAge()-o2.getAge();  
+        }  
+    });  
+    ts.add(t1);  
+    ts.add(t2);  
+    ts.add(t3);  
+    ts.add(t4);  
+    ts.add(t5);  
+  
+    System.out.println(ts);  
+    //直接进行比较，会报错  
+    //1.可以在添加对象时，重写compareTo()方法  
+    //2.也可以在创建TreeSet对象时，传入Comparator接口的实现类对象  
+}
+```
+
+```java
+package com.fengye.test.TreeSetDemo;  
+  
+public class Teacher implements Comparable<Teacher>{  
+    private String name;  
+    private int age;  
+    private double  salary;  
+  
+    //......
+  
+    //1.重写compareTo()方法  
+    @Override  
+    public int compareTo(Teacher o) {  
+        return this.age - o.age;  
+    }  
+}
+```
 ***
 # Stream 流
 流的核心操作是**过滤**。
