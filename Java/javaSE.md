@@ -2475,7 +2475,7 @@ LinkedList 底层基于**双链表**实现的。
 
 **方法：** `Set` 中的常用方法进本上就是 ` Collections ` 中提供的。因为 `Set` 无序，所以没有索引相关的 `getxx()` 系列方法。
 
-##### HashSet 底层原理
+#### HashSet 底层原理
 
 ***
 # Stream 流
