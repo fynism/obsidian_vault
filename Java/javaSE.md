@@ -2572,7 +2572,9 @@ public static void main(String[] args) {
 进行一些必要的源码分析与鉴赏。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226212257969.png)
 - 这是 `LinkedHashSet` 的无参构造方法。它调用了父类 `HashSet` 中的构造方法，创建了一个 `HashMap` 。
-- 其中的 `initialCapacity` 是初始容量，`loadFactor` 是加载银因子。当创建的 `HashMap` (哈希表) 中的 `initialCapacity` * `loadFactor` (此处为 16 * 0.75 = 12)
+- 其中的 `initialCapacity` 是**初始容量**，`loadFactor` 是**加载因子**。当创建的 `HashMap` *(哈希表)* 中的 `initialCapacity` * `loadFactor` *(此处为 16 * 0.75 = 12)* 个位置被占用后，`这个LinkedHashSet` 就会扩容到原来的 2 倍 *(此处为32)* 。
+
+
 
 
 ***
