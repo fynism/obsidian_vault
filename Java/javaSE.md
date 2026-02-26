@@ -2582,7 +2582,7 @@ public static void main(String[] args) {
 
 #### TreeSet
 一种能够把输入数据排序输出的 Set。底层基于红黑树实现。
-
+TreeSet 比较的特性是通过 `Comparator` 实现的。下面给出一个例子
 ```java
 //学习一下TreeSet的比较的特性  
 public static void main(String[] args) {  
