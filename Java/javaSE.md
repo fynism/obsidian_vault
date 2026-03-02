@@ -2668,8 +2668,17 @@ for(String key:map.keySet()){
 
 2. 使用 Map 中的内部接口 ` Map.Entry`，把键值对看作一个整体去遍历。
 ```java
-
+//这是map中键值对的集合  
+Set<Map.Entry<String,String>> entrySet = map.entrySet();  
+  
+//遍历  
+for(Map.Entry<String,String> entry:entrySet){  
+    System.out.println("键:"+entry.getKey()+" 值:"+entry.getValue());  
+}
 ```
+
+3. 使用 `Lambda` 表达式，简化写法。
+4. 
 
 ***
 # Stream 流
