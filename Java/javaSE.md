@@ -2740,7 +2740,7 @@ public class streamDemo2 {
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260121043027022.png)
 
 ## 终结方法
-终结方法指的是调用完成之后的结果不会再返回新的 Stream，Stream 的处理到这一步就终结了。
+终结方法指的是调用完成之后的结果不会再返回**新的** Stream，Stream 的处理到这一步就终结了。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260302155011879.png)
 
 
