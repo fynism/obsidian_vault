@@ -2739,7 +2739,13 @@ public class streamDemo2 {
 ## 中间方法
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260121043027022.png)
 
+## 终结方法
+终结方法指的是调用完成之后的结果不会再返回新的 Stream，Stream 的处理到这一步就终结了。
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260302155011879.png)
 
+
+
+***
 # 基本算法
 ## 递归
 **方法直接或间接地调用自身**来解决问题的编程方式。常包括：
