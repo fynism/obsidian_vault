@@ -2648,7 +2648,10 @@ public class Teacher implements Comparable<Teacher>{
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260226224137865.png)
 
 ### Map 的遍历方式
+主要有以下三种方式：
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260302145831626.png)
 
+1. 使用``
 
 ***
 # Stream 流
