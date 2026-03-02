@@ -2678,7 +2678,13 @@ for(Map.Entry<String,String> entry:entrySet){
 ```
 
 3. 使用 `Lambda` 表达式，简化写法。
-4. 
+```java
+//使用forEach和Lambda表达式，只要在匿名内部类中写上想要对键值进行的操作即可
+map.forEach((key,value)->{  
+    System.out.println("lambda "+"键:"+key+" 值:"+value);  
+});
+```
+
 
 ***
 # Stream 流
