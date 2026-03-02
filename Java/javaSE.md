@@ -2721,7 +2721,7 @@ public class streamDemo2 {
         //双列集合中没有Stream方法，要先转换为单列集合  
         //方法一：使用keySet()方法获取键的set集合  
         hm1.keySet().stream().forEach(s -> System.out.println(s));  //aaa ccc ...  
-        //方法二：使用entrySet()方法获取键的set集合  
+        //方法二：使用entrySet()方法获取键值对的set集合  
         hm1.entrySet().stream().forEach(s -> System.out.println(s)); //aaa=1 ccc=3 ...  
   
         //数组中  
