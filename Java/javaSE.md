@@ -2699,7 +2699,7 @@ map.forEach((key,value)->{
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260121040202271.png)
 
 > [!注意] 
-> - 双列集合中无法直接使用 stream 流，需要进行转换操作。
+> - MAP 中无法直接使用 stream 流，需要进行转换操作。
 > - 数组需使用 Arrays 工具类中 stream () 方法。
 > - 零散数据需要使用 Stream 接口中的 of（）方法。
 ```java
