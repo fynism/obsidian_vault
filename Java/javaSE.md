@@ -2651,7 +2651,10 @@ public class Teacher implements Comparable<Teacher>{
 主要有以下三种方式：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260302145831626.png)
 
-1. 使用``
+1. 使用 Map 中的 `keySet()` 方法，直接获取所有键的集合(Set)，然后使用 `get()` 方法获取对应的值。
+```java
+
+```
 
 ***
 # Stream 流
