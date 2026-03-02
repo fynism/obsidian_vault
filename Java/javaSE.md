@@ -2677,7 +2677,8 @@ for(Map.Entry<String,String> entry:entrySet){
 }
 ```
 
-3. 使用 `Lambda` 表达式，简化写法。
+3. 使用匿名内部类和 `Lambda` 表达式 ，简化写法。
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260302151223616.png)
 ```java
 //使用forEach和Lambda表达式，只要在匿名内部类中写上想要对键值进行的操作即可
 map.forEach((key,value)->{  
