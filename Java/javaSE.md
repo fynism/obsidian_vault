@@ -3164,7 +3164,30 @@ private static int partition(int[] arr, int left, int right) {
 由 CPU 进行调度，从而能够同时处理多个事务。
 
 ## 创建线程
-方式一：继承自 `Thread` 类
+主要有三种方式：继承 `Thread` 类、实现 `Runnable` 接口、实现 `Callable` 接口。
+### 继承 Thread 类
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ***
 
