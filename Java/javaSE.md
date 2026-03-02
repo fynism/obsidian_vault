@@ -2743,7 +2743,45 @@ public class streamDemo2 {
 终结方法指的是调用完成之后的结果不会再返回**新的** Stream，Stream 的处理到这一步就终结了。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260302155011879.png)
 
-
+```java
+List<String> list = new ArrayList<>();  
+list.add("张三");  
+list.add("李四");  
+list.add("王五");  
+list.add("赵六");  
+list.add("赵六");  
+  
+//创建一个age list，存储年龄  
+List<Integer> ageList = new ArrayList<>();  
+ageList.add(18);  
+ageList.add(20);  
+ageList.add(22);  
+ageList.add(24);  
+ageList.add(26);  
+  
+  
+//中间方法  
+//filter条件过滤  
+list.stream().filter(name->name.startsWith("张")).forEach(System.out::println);  
+//去重  
+list.stream().distinct().forEach(System.out::println);  
+//合并concat 静态方法  
+Stream.concat(list.stream(), ageList.stream()).forEach(System.out::println);  
+//映射map  
+ageList.stream().map(age->age+10).forEach(System.out::println);  
+  
+//终结 方法  
+//forEach  
+list.stream().forEach(System.out::println);  
+//count  
+long count = list.stream().filter(name->name.startsWith("张")).count();  
+//min  
+Integer min = ageList.stream().min(Integer::compareTo).get();  
+System.out.println("min int: " + min);  
+//max  
+Integer max = ageList.stream().max(Integer::compareTo).get();  
+System.out.println("max int: " + max);
+```
 
 ***
 # 基本算法
@@ -3121,6 +3159,10 @@ private static int partition(int[] arr, int left, int right) {
 }
 ```
  
+***
+# 多线程
+
+
 ***
 
 # 综合练习
