@@ -3161,6 +3161,7 @@ private static int partition(int[] arr, int left, int right) {
  
 ***
 # 多线程
+由 CPU 进行调度，从而能否同时处理多个事务。
 
 
 ***
