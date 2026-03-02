@@ -3164,7 +3164,7 @@ private static int partition(int[] arr, int left, int right) {
 由 CPU 进行调度，从而能够同时处理多个事务。
 
 ## 创建线程
-
+方式一：继承自 `Thread` 类
 
 ***
 
