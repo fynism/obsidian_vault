@@ -2959,7 +2959,8 @@ class Block {
     int startIndex;  
     int endIndex;  
   //...
-  //Getter/Setters and Constructors
+  //Getter/Setters and Constructors..
+  //...
     }  
 }
 ```
