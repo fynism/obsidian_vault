@@ -2653,8 +2653,20 @@ public class Teacher implements Comparable<Teacher>{
 
 1. 使用 Map 中的 `keySet()` 方法，直接获取所有键的集合(Set)，然后使用 `get()` 方法获取对应的值。
 ```java
-
+Map<String,String> map = new HashMap<String,String>();  
+map.put("001","张三");  
+map.put("002","李四");  
+map.put("003","王五");  
+map.put("004","赵六");  
+  
+  
+//是这样的
+for(String key:map.keySet()){  
+    System.out.println(map.get(key));  
+}
 ```
+
+2. 使用 Map 中的内部接口 ` Map.Entry`，ba'ji
 
 ***
 # Stream 流
