@@ -2666,7 +2666,10 @@ for(String key:map.keySet()){
 }
 ```
 
-2. 使用 Map 中的内部接口 ` Map.Entry`，ba'ji
+2. 使用 Map 中的内部接口 ` Map.Entry`，把键值对看作一个整体去遍历。
+```java
+
+```
 
 ***
 # Stream 流
