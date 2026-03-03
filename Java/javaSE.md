@@ -3198,7 +3198,9 @@ public static void main(String[] args) {
 ### 实现 Runnable 接口
 声明一个实现 `Runnable` 接口的**任务类**，在该类中实现 `run()` 方法。在创建 `Thread` 对象的时候把该类作为参数传递，然后能够启动线程。
 
-
+**优缺点：**
+- 优：任务类只实现接口，可以继承其他类，功能扩展性强。
+- 缺：需要多创建一个 `Runnable` 对象。
 ```java
 // 线程创建方式二 实现Runnable接口  
 class MyRunnable implements Runnable{  
