@@ -3247,7 +3247,8 @@ new Thread(()->{
 ```
 
 ### 实现 Callable 接口
-如果需要线程执行完毕后返回结果，那么可以使用 `Callable`jie
+如果需要线程执行完毕后返回结果，那么可以使用 `Callable` 和 `FutureTask` 类实现。
+
 
 
 
