@@ -3308,7 +3308,8 @@ public class ThreadDemo3 {
 ## Thread 常用方法
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260303153441057.png)
 
-## 线程安全
+## 线程同步
+在某些高并发的场景中，可能会出现线程安全问题。
 
 
 
