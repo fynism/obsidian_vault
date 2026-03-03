@@ -3226,7 +3226,7 @@ public class ThreadDemo2 {
     }  
 }
 ```
-
+*也能够使用匿名内部类和 `Lambda` 表达式简化。*
 
 
 
