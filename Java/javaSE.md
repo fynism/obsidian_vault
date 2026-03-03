@@ -3259,7 +3259,7 @@ new Thread(()->{
 3. 能够使用 `FutureTask` 里面的 `get` 方法获取线程任务执行结果。
 ```java
 //多线程创建的第三种方式：Callable接口和FutureTask类包装  
-//1.定义一个类实现Callable接口 并 chong'xi
+//1.定义一个类实现Callable接口 并 重写call方法
 class MyCallable implements Callable<Integer> {  
     Integer n;  
     public MyCallable(Integer n) {  
