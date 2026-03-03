@@ -3249,7 +3249,9 @@ new Thread(()->{
 ### 实现 Callable 接口
 如果需要线程执行完毕后**返回结果**，那么可以使用 `Callable` 和 `FutureTask` 类实现。
 **创建步骤：**
-1. 定义一个类实现 `Callable` 接口，重写 `call()` 方法。然后把 `Callable` 类型的对象封装成 `FutureTask` 对象。
+1. 创建对象
+	- 定义一个类实现 `Callable` 接口，重写 `call()` 方法。
+	- 然后把 `Callable` 类型的对象封装成 `FutureTask` 对象。
 2. `new Thread.start(Xxx)`
 3. 能够使用 `FutureTask` 里面的 `get` 方法获取线程任务执行结果。
 
