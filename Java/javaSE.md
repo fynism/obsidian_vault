@@ -3166,7 +3166,32 @@ private static int partition(int[] arr, int left, int right) {
 ## 创建线程
 主要有三种方式：继承 `Thread` 类、实现 `Runnable` 接口、实现 `Callable` 接口。
 ### 继承 Thread 类
+通过自定义一个继承自 `Thread` 的类，重写其中的 `run()` 方法，通过在 `main` 函数中调用 `start()` 方法来启动子线程。
 
+**注意：**
+1. 在主函数中要通过 `start()` 方法来
+*示例：*
+```java
+static class MyThread extends Thread{  
+    //在自定义Thread类中重写run()方法  
+    @Override  
+    public void run() {  
+        for (int i = 0; i < 5; i++) {  
+            System.out.println("子线程："+i);  
+        }  
+    }  
+}  
+  
+public static void main(String[] args) {  
+    //使用start()启动子线程  
+    new MyThread().start();  
+
+    //主线程  
+    for (int i = 0; i < 5; i++) {  
+        System.out.println("主线程："+i);  
+    }  
+}
+```
 
 
 
