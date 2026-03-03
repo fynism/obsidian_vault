@@ -3196,7 +3196,7 @@ public static void main(String[] args) {
 ```
 
 ### 实现 Runnable 接口
-
+声明一个实现 `Runnable` 接口的类，在该类中实现 `run()` 方法，然后在创建 `Thread` 对象的
 
 
 
