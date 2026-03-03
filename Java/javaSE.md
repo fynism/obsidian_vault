@@ -3248,6 +3248,9 @@ new Thread(()->{
 
 ### 实现 Callable 接口
 如果需要线程执行完毕后**返回结果**，那么可以使用 `Callable` 和 `FutureTask` 类实现。
+
+**常用 API：**
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260303153121471.png)
 **创建步骤：**
 1. 创建对象
 	- 定义一个类实现 `Callable` 接口，重写 `call()` 方法。
@@ -3256,7 +3259,7 @@ new Thread(()->{
 3. 能够使用 `FutureTask` 里面的 `get` 方法获取线程任务执行结果。
 ```java
 //多线程创建的第三种方式：Callable接口和FutureTask类包装  
-//1.定义一个类实现Callable接口  
+//1.定义一个类实现Callable接口 并 chong'xi
 class MyCallable implements Callable<Integer> {  
     Integer n;  
     public MyCallable(Integer n) {  
