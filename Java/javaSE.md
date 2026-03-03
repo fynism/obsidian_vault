@@ -3314,7 +3314,7 @@ public class ThreadDemo3 {
 
 主要有三种方法：同步代码块、同步方法、lock 锁
 
-
+**同步代码块：**
 
 
 
