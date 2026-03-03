@@ -3227,6 +3227,26 @@ public class ThreadDemo2 {
 }
 ```
 *也能够使用匿名内部类和 `Lambda` 表达式简化。*
+```java
+//匿名内部类创建Runnable接口实现类  
+new Thread(new Runnable() {  
+    @Override  
+    public void run() {  
+        for (int i = 0; i < 5; i++) {  
+            System.out.println("子线程1：" + i);  
+        }  
+    }  
+}).start();  
+  
+//Lambda表达式进一步简化  
+new Thread(()->{  
+        for (int i = 0; i < 5; i++) {  
+            System.out.println("子线程2：" + i);  
+        }  
+}).start();
+```
+
+### 实现 Callable 接口
 
 
 
