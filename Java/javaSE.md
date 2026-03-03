@@ -3254,7 +3254,53 @@ new Thread(()->{
 	- 然后把 `Callable` 类型的对象封装成 `FutureTask` 对象。
 2. `new Thread.start(Xxx)`
 3. 能够使用 `FutureTask` 里面的 `get` 方法获取线程任务执行结果。
-
+```java
+//多线程创建的第三种方式：Callable接口和FutureTask类包装  
+//1.定义一个类实现Callable接口  
+class MyCallable implements Callable<Integer> {  
+    Integer n;  
+    public MyCallable(Integer n) {  
+        this.n = n;  
+    }  
+    @Override  
+    public Integer call() throws Exception {  
+        //计算1-n的和  
+        int sum = 0;  
+        for (int i = 1; i <= n; i++) {  
+            sum += i;  
+        }  
+        return sum;  
+    }  
+}  
+  
+public class ThreadDemo3 {  
+    public static void main(String[] args) {  
+        //2.创建Callable接口实现类的对象  
+        MyCallable myCallable = new MyCallable(100);  
+        //3.将此Callable接口实现类的对象作为参数传递到FutureTask构造器中，创建FutureTask对象  
+        FutureTask<Integer> futureTask = new FutureTask<>(myCallable);  
+        //4.创建Thread对象，构造方法中传递FutureTask对象  
+        Thread t = new Thread(futureTask);  
+        //5.调用Thread对象的start()方法，启动线程  
+        t.start();  
+  
+        MyCallable myCallable2 = new MyCallable(50);  
+        FutureTask<Integer> futureTask2 = new FutureTask<>(myCallable2);  
+        Thread t2 = new Thread(futureTask2);  
+        t2.start();  
+  
+        //6.使用FutureTask中的get方法来获取子线程的返回值  
+        Integer sum1 = null;  
+        Integer sum2 = null;  
+        try {  
+            sum1 = futureTask.get();  
+        } catch (Exception e) {  
+            e.printStackTrace();  
+        }  
+        System.out.println("f1输出为" + sum1);  
+    }  
+}
+```
 
 
 
