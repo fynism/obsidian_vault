@@ -3196,10 +3196,12 @@ public static void main(String[] args) {
 ```
 
 ### 实现 Runnable 接口
-声明一个实现 `Runnable` 接口的类，在该类中实现 `run()` 方法。在创建 `Thread` 对象的时候把该类作为参数传递，然后能够启动线程。
+声明一个实现 `Runnable` 接口的**任务类**，在该类中实现 `run()` 方法。在创建 `Thread` 对象的时候把该类作为参数传递，然后能够启动线程。
+
+
 ```java
 // 线程创建方式二 实现Runnable接口  
-static class MyRunnable implements Runnable{  
+class MyRunnable implements Runnable{  
     @Override  
     public void run() {  
         for (int i = 0; i < 5; i++) {  
@@ -3208,13 +3210,17 @@ static class MyRunnable implements Runnable{
     }  
 }  
   
-public static void main(String[] args) {  
-    //创建并运行子线程  
-    new Thread(new MyRunnable()).start();  
+public class ThreadDemo2 {  
+    public static void main(String[] args) {  
+        //创建并运行子线程  
+        Runnable r = new MyRunnable();  
+        Thread t = new Thread(r);  
+        t.start();  
   
-    //运行主线程  
-    for (int i = 0; i < 5; i++) {  
-        System.out.println("主线程："+i);  
+        //运行主线程  
+        for (int i = 0; i < 5; i++) {  
+            System.out.println("主线程："+i);  
+        }  
     }  
 }
 ```
