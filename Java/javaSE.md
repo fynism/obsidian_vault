@@ -3385,7 +3385,10 @@ ExecutorService threadPool = new ThreadPoolExecutor(
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260304151106356.png)
 
 一些注意事项：
-- 
+- 什么时候开始创建临时线程？
+	- 核心线程都在处理任务，**并且**任务队列也满了时。
+- 什么时候回执行任务拒绝策略？
+	- 线程池中正在处理任务的线程达到最大线程数（核心线程+临时线程），**并且**任务队列也满了时，会执行
 
 
 
