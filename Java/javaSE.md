@@ -3390,7 +3390,30 @@ ExecutorService threadPool = new ThreadPoolExecutor(
 - 什么时候回执行**任务拒绝策略**？
 	- 线程池中正在处理任务的线程达到最大线程数（核心线程+临时线程），**并且**任务队列也满了时，会执行任务拒绝策略。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260304160010741.png)
-
+```java
+ThreadPoolExecutor pool1 = new ThreadPoolExecutor(  
+        3,  
+        5,  
+        10,  
+        TimeUnit.SECONDS,  
+        new ArrayBlockingQueue<>(3),  
+        Executors.defaultThreadFactory(),  
+        new ThreadPoolExecutor.AbortPolicy()  
+);  
+  
+//创建可复用的Runnable对象  
+MyRunnable r = new MyRunnable();  
+  
+pool1.execute(r);  
+pool1.execute(r);  
+pool1.execute(r);   //3个任务，到这3个核心线程都在工作，后面的任务开始进入任务队列  
+pool1.execute(r);  
+pool1.execute(r);  
+pool1.execute(r);   //6个任务，到这任务队列满了，开始创建临时线程  
+pool1.execute(r);  
+pool1.execute(r);   //3+5 = 8个任务，到这里临时线程也满了，开始执行任务拒绝策略了  
+pool1.execute(r);
+```
 
 
 
