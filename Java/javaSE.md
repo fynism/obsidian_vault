@@ -3315,7 +3315,11 @@ public class ThreadDemo3 {
 主要有三种方法：同步代码块、同步方法、lock 锁
 
 **同步代码块：**
-
+- 作用：把访问共享资源的核心代码上锁，以此来保证线程安全。
+```java
+synchronized (this) {  
+}
+```
 
 
 
