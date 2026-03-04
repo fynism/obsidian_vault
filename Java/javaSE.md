@@ -3416,8 +3416,16 @@ pool1.execute(r);   //3+5 = 8个任务，到这里临时线程也满了，开始
 pool1.execute(r);
 ```
 
+处理` Runnable` 对象：
+```java
+MyRunnable r = new MyRunnable();  
+pool1.execute(r);  
+```
 
+处理 `Callable` 对象：
+```java
 
+```
 
 
 
