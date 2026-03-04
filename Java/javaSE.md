@@ -3363,8 +3363,21 @@ try {
  4. `unit`: 时间单位
  5. `workQueue`: 阻塞队列（存放等待执行的任务）
  6. `threadFactory`: 线程工厂（用来创建线程）
+ 7. `handler`: 拒绝策略（任务满了怎么办）
+*来个例子：*
+```java
+ExecutorService threadPool = new ThreadPoolExecutor(  
+        2,          // 1. corePoolSize: 核心线程数（常驻线程）  
+        5,          // 2. maximumPoolSize: 最大线程数  
+        3L,         // 3. keepAliveTime: 非核心线程闲置生存时间  
+        TimeUnit.SECONDS,  // 4. unit: 时间单位  
+        new LinkedBlockingQueue<>(3), // 5. workQueue: 阻塞队列（存放等待执行的任务）  
+        Executors.defaultThreadFactory(), // 6. threadFactory: 线程工厂（创建线程）  
+        new ThreadPoolExecutor.AbortPolicy() // 7. handler: 拒绝策略（任务满了怎么办）  
+);
+```
 
-
+- 
 
 
 
