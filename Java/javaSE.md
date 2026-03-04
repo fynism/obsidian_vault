@@ -3337,9 +3337,9 @@ synchronized (锁对象) {
 ```
 
 ### **Lock**
-直接创建一个**锁**(常使用 `ReentrantLock`)，能够进行**获取锁、释放锁**操作。保障线程安全。
-- 锁对象使用 `final` 关键字修饰，防止被更改。
-- **获取/释放锁**操作常常放在 `try-finally` 结构中。
+直接创建 Lock 实现类（常用 ReentrantLock）对象，手动控制**获取锁**与**释放锁**，保障线程安全。
+- **封装性**：锁对象通常声明为 `private final`，确保锁实例不可变且不被外部篡改。
+- **规范性**：必须配合 `try-finally`使用。`lock()` 调用应紧贴 `try` 块之前，`unlock()` 必须放在 `finally` 第一行，确保即便业务抛出异常，锁也能被释放，防止死锁。
 ```java
 private final Lock lk = new ReentrantLock();
 //获取锁  
@@ -3351,6 +3351,14 @@ try {
     lk.unlock();  
 }
 ```
+****
+## 线程池
+
+
+
+
+
+
 
 
 
