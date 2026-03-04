@@ -3424,7 +3424,24 @@ pool1.execute(r);
 
 处理 `Callable` 对象：
 ```java
-
+//通过submit方法将任务传递给线程池，并获取Future对象  
+Future<String> futureTask1 = pool1.submit(new MyCallable(100));  
+Future<String> futureTask2 = pool1.submit(new MyCallable(200));  
+Future<String> futureTask3 = pool1.submit(new MyCallable(300));  
+Future<String> futureTask4 = pool1.submit(new MyCallable(400));  
+Future<String> futureTask5 = pool1.submit(new MyCallable(500));  
+  
+//获取返回值并打印  
+try {  
+    System.out.println(futureTask1.get());  
+    System.out.println(futureTask2.get());  
+    System.out.println(futureTask3.get());  
+    System.out.println(futureTask4.get());  
+    System.out.println(futureTask5.get());  
+}catch (Exception e)  
+{  
+    e.printStackTrace();  
+}
 ```
 
 
