@@ -3357,7 +3357,7 @@ try {
 
 - 任务完成后，线程**不销毁**，而是回到线程池中等待下一个任务。
 ### 创建线程池
-- 常使用 `ThreadPoolExecutor` 来**创建**。
+- 常使用 `ExecutorService` 接口的实现类 `ThreadPoolExecutor` 来**创建**。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260304150223726.png)
  `ThreadPoolExecutor` 中有 7 个参数：
  1. `corePoolSize`：核心线程数
@@ -3380,7 +3380,8 @@ ExecutorService threadPool = new ThreadPoolExecutor(
 );
 ```
 
-
+### 处理任务
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260304151020421.png)
 
 
 
