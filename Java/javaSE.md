@@ -3341,7 +3341,18 @@ synchronized (锁对象) {
 - 锁对象使用 `final` 关键字修饰，防止被更改。
 - 在分支结构中使用锁时，释放锁操作常常放在 `try-finally` 结构中。
 ```java
-
+public final Lock lk = new ReentrantLock();
+//获取锁  
+lk.lock();  
+try {  
+   //分支结构
+   if(xxx){...}
+   else{...}
+   
+} finally {  
+    //释放锁  
+    lk.unlock();  
+}
 ```
 
 
