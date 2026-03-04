@@ -3354,7 +3354,10 @@ try {
 ****
 ## 线程池
 通过**复用**已创建的线程来执行任务，避免频繁创建和销毁线程带来的系统开销。它是管理并发任务的标准方式。
-- 常使用 `ThreadPoolExecutor` 来创建。
+
+- 任务完成后，线程**不销毁**，而是回到线程池中等待下一个任务。
+### 创建线程池
+- 常使用 `ThreadPoolExecutor` 来**创建**。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260304150223726.png)
  `ThreadPoolExecutor` 中有 7 个参数：
  1. `corePoolSize`：核心线程数
@@ -3377,7 +3380,7 @@ ExecutorService threadPool = new ThreadPoolExecutor(
 );
 ```
 
-- 
+
 
 
 
