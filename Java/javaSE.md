@@ -3354,9 +3354,15 @@ try {
 ****
 ## 线程池
 通过**复用**已创建的线程来执行任务，避免频繁创建和销毁线程带来的系统开销。它是管理并发任务的标准方式。
-- 常使用 `ThreadPoolExcutor` 来创建。
-
-
+- 常使用 `ThreadPoolExecutor` 来创建。
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260304150223726.png)
+ `ThreadPoolExecutor` 中有 7 个参数：
+ 1. `corePoolSize`：核心线程数
+ 2. `maximumPoolSize`: 最大线程数。比核心线程多出来的就是非核心线程的数量。
+ 3. `keepAliveTime`: 非核心线程闲置生存时间
+ 4. `unit`: 时间单位
+ 5. `workQueue`: 阻塞队列（存放等待执行的任务）
+ 6. `threadFactory`: 线程工厂（用来创建线程）
 
 
 
