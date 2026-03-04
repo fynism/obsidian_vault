@@ -3381,7 +3381,7 @@ ExecutorService threadPool = new ThreadPoolExecutor(
 ```
 
 ### 处理任务
-![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260304151020421.png)
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260304151106356.png)
 
 
 
