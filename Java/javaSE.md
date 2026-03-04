@@ -3339,16 +3339,13 @@ synchronized (锁对象) {
 ### **Lock**
 直接创建一个**锁**(常使用 `ReentrantLock`)，能够进行**获取锁、释放锁**操作。保障线程安全。
 - 锁对象使用 `final` 关键字修饰，防止被更改。
-- 在分支结构中使用锁时，释放锁操作常常放在 `try-finally` 结构中。
+- **获取/释放锁**操作常常放在 `try-finally` 结构中。
 ```java
-public final Lock lk = new ReentrantLock();
+private final Lock lk = new ReentrantLock();
 //获取锁  
 lk.lock();  
 try {  
-   //分支结构
-   if(xxx){...}
-   else{...}
-   
+   //...主要共享资源逻辑
 } finally {  
     //释放锁  
     lk.unlock();  
