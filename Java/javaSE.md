@@ -3620,15 +3620,14 @@ public void parseClassAnnotation() {
     if(c1.isAnnotationPresent(MyAnnotation.class)) {  
         //3.获取注解对象  
         MyAnnotation anno1 = (MyAnnotation) c1.getAnnotation(MyAnnotation.class);  
-  
+        
         //4.获取注解内容  
         int age = anno1.age();  
         String name = anno1.name();  
         String sex = anno1.sex();  
-  
+        
         //5.打印注解内容  
         System.out.println("age:"+age+" name:"+name+" sex:"+sex);  
-  
     }  
 }
 ```
@@ -3659,7 +3658,12 @@ public void parseMethodAnnotation() throws Exception {
 ```
 
 - **解析成员变量的注解**
-代码与上述相似，只是使用 `Field`
+	代码与上述相似，只是使用 `Field` 对象进行，不再赘述。
+***
+
+
+
+
 ***
 # 综合练习
 
