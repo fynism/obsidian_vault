@@ -3480,8 +3480,8 @@ System.out.println(c2 == c3);   //true
 - **成员方法**
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305145700699.png)
 
-*示例代码：*
-比较长，分了三个部分。
+### *示例代码：*
+比较长，分了三个部分。首先是**构造器部分：**
 ```java
 //反射中构造器相关操作  
 @Test  
@@ -3531,7 +3531,33 @@ public void fieldTest() throws Exception {
 }  
 ```
 
-成员方法部分
+**成员方法部分**
+```java
+//反射中成员方法相关操作  
+@Test  
+public void methodTest() throws Exception {  
+    Class c3 = User.class;  
+    //1.获取全部成员方法  
+    Method[] methods = c3.getDeclaredMethods();  
+    for (Method method : methods) {  
+        System.out.println(method);  
+    }  
+  
+    //2.获取指定成员方法  
+    Method method1 = c3.getDeclaredMethod("say", String.class);  
+    Method method2 = c3.getDeclaredMethod("say");  
+    System.out.println(method1.getName() + "(" + method1.getParameterCount() + ")");    //say(1)  
+    System.out.println(method2.getName() + "(" + method2.getParameterCount() + ")");    //say(0)  
+  
+    //3.执行相关方法  
+    User user = new User();  
+  
+    method1.setAccessible(true);  
+    method1.invoke(user, "fengye");  
+    method2.setAccessible(true);  
+    method2.invoke(user);  
+}
+```
 ***
 # 综合练习
 
