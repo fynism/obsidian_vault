@@ -3600,6 +3600,13 @@ public @interface MyAnnotation {
 - **`@Rentention` 注解**：声明注解的保留周期。
  ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305191923561.png)
 
+### 解析注解
+解析注解指的是判断**类/成员方法/变量**上是否存在注解，并且将注解中的内容解析出来。
+
+如何做？
+
+
+
 ***
 # 综合练习
 
