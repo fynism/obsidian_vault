@@ -3472,6 +3472,7 @@ System.out.println(c1 == c2);   //true
 System.out.println(c2 == c3);   //true
 ```
 
+### 常用方法
 接下来，根据这个类对象够获取类中的各种成分并对它们进行操作。
 - **构造器**
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305143802555.png)
@@ -3480,7 +3481,7 @@ System.out.println(c2 == c3);   //true
 - **成员方法**
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305145700699.png)
 
-### *示例代码：*
+### *示例代码*
 比较长，分了三个部分。首先是**构造器部分：**
 ```java
 //反射中构造器相关操作  
@@ -3501,7 +3502,7 @@ public void constructorTest() throws Exception {
   
     //3.进行构造器相关操作  
     //通过构造器创建对象  
-    con1.setAccessible(true);   //暴力反射，直接能够使用private方法  
+    con1.setAccessible(true);   //暴力反射，直接能够使用private构造器  
     User user1 = (User) con1.newInstance("fengye", 3);  
     User user2 = (User) con2.newInstance();  
 }  
@@ -3525,7 +3526,7 @@ public void fieldTest() throws Exception {
     System.out.println(fld.getName() + "(" + fld.getType().getSimpleName() + ")");    //name(String)  
     //3.进行get set操作  
     User user = new User();  
-    fld.setAccessible(true);    //暴力反射，直接能够使用private方法  
+    fld.setAccessible(true);    //暴力反射，直接能够修改private变量  
     fld.set(user, "fengye");     //等同于user.setName("fengye")  
     System.out.println(fld.get(user));  //等同于user.getName()  
 }  
@@ -3558,6 +3559,8 @@ public void methodTest() throws Exception {
     method2.invoke(user);  
 }
 ```
+
+
 ***
 # 综合练习
 
