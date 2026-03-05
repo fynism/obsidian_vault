@@ -3608,8 +3608,58 @@ public @interface MyAnnotation {
 - `Class`,`Method`,`Field`,`Constructor`,都实现了`AnnotatedElement`接口，它们都拥有解析注解的能力。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305192919905.png)
 
+*代码示例：*
+- **解析类的注解**
+```java
+//解析类注解  
+@Test  
+public void parseClassAnnotation() {  
+    //1.获取类对象  
+    Class c1 = Person.class;  
+    //2.使用isAnnotationPresent方法判断类上是否有指定的注解  
+    if(c1.isAnnotationPresent(MyAnnotation.class)) {  
+        //3.获取注解对象  
+        MyAnnotation anno1 = (MyAnnotation) c1.getAnnotation(MyAnnotation.class);  
+  
+        //4.获取注解内容  
+        int age = anno1.age();  
+        String name = anno1.name();  
+        String sex = anno1.sex();  
+  
+        //5.打印注解内容  
+        System.out.println("age:"+age+" name:"+name+" sex:"+sex);  
+  
+    }  
+}
+```
 
+- **解析成员方法的注解**
+```java
+//解析方法注解  
+@Test  
+public void parseMethodAnnotation() throws Exception {  
+    //1.获取类对象  
+    Class c2 = Person.class;  
+    //2.获取方法对象  
+    Method method = c2.getDeclaredMethod("say");  
+    //3.使用isAnnotationPresent方法判断方法上是否有指定的注解  
+    if(method.isAnnotationPresent(MyAnnotation.class)) {  
+        //4.获取注解对象  
+        MyAnnotation anno2 = method.getAnnotation(MyAnnotation.class);  
+  
+        //5.获取注解内容  
+        int age = anno2.age();  
+        String name = anno2.name();  
+        String sex = anno2.sex();  
+  
+        //6.打印注解内容  
+        System.out.println("age:"+age+" name:"+name+" sex:"+sex);  
+    }  
+}
+```
 
+- **解析成员变量的注解**
+代码与上述相似，只是使用 `Field`
 ***
 # 综合练习
 
