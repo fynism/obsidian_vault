@@ -3603,9 +3603,10 @@ public @interface MyAnnotation {
 ### 解析注解
 解析注解指的是判断**类/成员方法/变量**上是否存在注解，并且将注解中的内容解析出来。
 
-如何做？
-
-
+**如何做？**
+- 要解析谁上面的注解，就要通过**反射**先拿到谁的对象。
+- `Class`,`Method`,Field,Constructor,都实现了AnnotatedElement接口，它们都拥有解析注解的能力。
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305192919905.png)
 
 ***
 # 综合练习
