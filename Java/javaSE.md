@@ -3475,8 +3475,8 @@ System.out.println(c2 == c3);   //true
 接下来，通过反射能够获取类中的各种成分并对它们进行操作。
 *接下来以 constructor 的相关方法为例*
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305143802555.png)
-
-
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305145639160.png)
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305145700699.png)
 
 ***
 # 综合练习
