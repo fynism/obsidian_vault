@@ -29,5 +29,6 @@
   "rightToLeft": false,
   "promptDelete": true,
   "strictLineBreaks": false,
-  "spellcheck": false
+  "spellcheck": false,
+  "showIndentGuide": true
 }

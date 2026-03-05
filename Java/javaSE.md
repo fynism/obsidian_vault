@@ -3595,8 +3595,11 @@ public @interface MyAnnotation {
 ```
 
 最经典的两个元注解分别是 `@Target` 和 `@Rentention` 注解。
-- **`@Target` 注解**：声明被修饰的注解能够使用的**位置**。![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305191432122.png)
-- **`@Rentention` 注解**：声明注解的保留周期。![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305191923561.png)
+- **`@Target` 注解**：声明被修饰的注解能够使用的**位置**。
+ ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305191432122.png)
+- **`@Rentention` 注解**：声明注解的保留周期。
+ ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305191923561.png)
+
 ***
 # 综合练习
 
