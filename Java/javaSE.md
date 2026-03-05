@@ -3573,7 +3573,10 @@ Java 中带有 `@` 符号的特殊标记，让其他程序根据**注解信息**
 
 基本格式如下：
 ```java
-
+public @interface MyAnnotation {  
+	//参数...
+	String name() default "XiaoMing";  
+}
 ```
 ***
 # 综合练习
