@@ -3456,8 +3456,21 @@ try {
 ## 反射 
 反射允许程序在**运行时**（Runtime）获取类的内部信息，并能直接操作任意对象的属性和方法。
 
-首先，需要获得类对象。有三种方式：
-1. 
+首先，需要**获得类对象**。有三种方式：
+```java
+//1.直接通过类名.class获取类对象  
+Class c1 = User.class;  
+  
+//2.通过类名获取类本身  
+Class c2 = Class.forName("com.fengye.test.ReflectDemos.User");  
+  
+//3.通过对象获取  
+User u = new User();  
+Class c3 = u.getClass();  
+  
+System.out.println(c1 == c2);   //true  
+System.out.println(c2 == c3);   //true
+```
 
 
 
