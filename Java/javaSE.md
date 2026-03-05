@@ -3605,7 +3605,7 @@ public @interface MyAnnotation {
 
 **如何做？**
 - 要解析谁上面的注解，就要通过**反射**先拿到谁的对象。
-- `Class`,`Method`,Field,Constructor,都实现了AnnotatedElement接口，它们都拥有解析注解的能力。
+- `Class`,`Method`,`Field`,`Constructor`,都实现了`AnnotatedElement`接口，它们都拥有解析注解的能力。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305192919905.png)
 
 ***
