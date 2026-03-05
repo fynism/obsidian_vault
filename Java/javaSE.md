@@ -3571,13 +3571,16 @@ public void methodTest() throws Exception {
 Java 中带有 `@` 符号的特殊标记，让其他程序根据**注解信息**来决定怎么执行该程序。
 - 注解可以用在类上、构造器上、方法上、成员变量上、参数上等。
 
-基本格式如下：
+**基本格式**如下：
 ```java
 public @interface MyAnnotation {  
 	//参数...
 	String name() default "XiaoMing";  
 }
 ```
+
+注解的底层实现原理：
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305185901544.png)
 
 
 ***
