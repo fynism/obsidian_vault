@@ -5,7 +5,7 @@
 ## 项目结构
 idea 里的项目结构从大到小依次是**Project、Module、Package、Class**。
 在不同的Package中的类 是相互独立的，即使它们同名.
-可以使用`import 包名.类名;`来进行跨Package的使用.如  `import com.fengye.test.constructor.Player;`.
+可以使用`import 包名.类名;`来进行**跨Package**的使用.如  `import com.fengye.test.constructor.Player;`.
 
 ---
 ## IDEA 快捷键
@@ -3607,6 +3607,8 @@ public @interface MyAnnotation {
 - 要解析谁上面的注解，就要通过**反射**先拿到谁的对象。
 - `Class`,`Method`,`Field`,`Constructor`,都实现了`AnnotatedElement`接口，它们都拥有解析注解的能力。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305192919905.png)
+
+
 
 ***
 # 综合练习
