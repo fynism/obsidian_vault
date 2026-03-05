@@ -3582,8 +3582,17 @@ public @interface MyAnnotation {
 ```
 
 ### 元注解
-指的是
-
+指的是用来**描述注解**的一些特性的**注解**。
+例如：
+```java
+//这一部分就是yuan'zhu'jie
+@Retention(RetentionPolicy.RUNTIME)  
+@Target(ElementType.TYPE)
+public @interface MyAnnotation {  
+	//参数...
+	String name() default "XiaoMing";  
+}
+```
 ***
 # 综合练习
 
