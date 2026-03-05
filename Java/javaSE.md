@@ -3583,9 +3583,9 @@ public @interface MyAnnotation {
 
 ### 元注解
 指的是用来**描述注解**的一些特性的**注解**。
-例如：
+*例如：*
 ```java
-//这一部分就是yuan'zhu'jie
+//这一部分就是元注解
 @Retention(RetentionPolicy.RUNTIME)  
 @Target(ElementType.TYPE)
 public @interface MyAnnotation {  
@@ -3593,6 +3593,9 @@ public @interface MyAnnotation {
 	String name() default "XiaoMing";  
 }
 ```
+
+最经典的两个元注解分别是 `@Target` 和 `@Rentention` 注解。
+
 ***
 # 综合练习
 
