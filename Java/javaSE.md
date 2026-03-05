@@ -3480,6 +3480,58 @@ System.out.println(c2 == c3);   //true
 - **成员方法**
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305145700699.png)
 
+*示例代码：*
+比较长，分了三个部分。
+```java
+//反射中构造器相关操作  
+@Test  
+public void constructorTest() throws Exception {  
+    Class c1 = User.class;  
+    //1.获取构造器列表  
+    Constructor[] cons = c1.getDeclaredConstructors();  
+    for (Constructor con : cons) {  
+        System.out.println(con);  
+    }  
+  
+    //2.获取指定构造器  
+    Constructor con1 = c1.getDeclaredConstructor(String.class, int.class);  
+    Constructor con2 = c1.getDeclaredConstructor();  
+    System.out.println(con1.getName() + "(" + con1.getParameterCount() + ")");  //User(2)  
+    System.out.println(con2.getName() + "(" + con2.getParameterCount() + ")");  //User(0)  
+  
+    //3.进行构造器相关操作  
+    //通过构造器创建对象  
+    con1.setAccessible(true);   //暴力反射，直接能够使用private方法  
+    User user1 = (User) con1.newInstance("fengye", 3);  
+    User user2 = (User) con2.newInstance();  
+}  
+```
+
+**成员变量部分**
+```java
+//反射中成员变量相关操作  
+@Test  
+public void fieldTest() throws Exception {  
+    Class c2 = User.class;  
+  
+    //1.获取全部成员变量  
+    Field[] flds = c2.getDeclaredFields();  
+    for (Field field : flds) {  
+        System.out.println(field);  
+    }  
+  
+    //2.获取指定成员变量  
+    Field fld = c2.getDeclaredField("name");  
+    System.out.println(fld.getName() + "(" + fld.getType().getSimpleName() + ")");    //name(String)  
+    //3.进行get set操作  
+    User user = new User();  
+    fld.setAccessible(true);    //暴力反射，直接能够使用private方法  
+    fld.set(user, "fengye");     //等同于user.setName("fengye")  
+    System.out.println(fld.get(user));  //等同于user.getName()  
+}  
+```
+
+成员方法部分
 ***
 # 综合练习
 
