@@ -3472,7 +3472,7 @@ System.out.println(c1 == c2);   //true
 System.out.println(c2 == c3);   //true
 ```
 
-接下来，通过反射能够获取类中的各种成分并对它们进行操作。
+接下来，根据这个类对象够获取类中的各种成分并对它们进行操作。
 - **构造器**
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260305143802555.png)
 - **成员变量**
