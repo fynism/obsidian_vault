@@ -3666,6 +3666,7 @@ public void parseMethodAnnotation() throws Exception {
 实际开发中，常用**动态代理**。这是通过反射在运行时动态生成代理类的代理方式。
 
 *示例代码*
+`ProxyUtil`
 ```java
 public class ProxyUtil {  
     //写一个代理类实现对Stars的代理  
@@ -3703,7 +3704,34 @@ public class ProxyUtil {
     }  
 }
 ```
-
+`Stars` 类，
+```java
+ublic class Stars implements StarServices{  
+    String name;  
+    @Override  
+    public void sing(String songName) {  
+        System.out.println(name+"正在唱"+songName);  
+    }  
+  
+    @Override  
+    public void dance() {  
+        System.out.println(name+"正在跳舞");  
+    }  
+}
+```
+`ProxyTest` 主函数
+```java
+public class ProxyTest {  
+    public static void main(String[] args) {  
+        //创建Proxy对象  
+        Stars star1 = new Stars("fengye");  
+        StarServices proxy = ProxyUtil.getProxy(star1);  
+        //调用代理对象  
+        proxy.sing("I Love You");  
+        proxy.dance();  
+    }  
+}
+```
 
 ***
 # 综合练习
