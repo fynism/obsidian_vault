@@ -3665,6 +3665,8 @@ public void parseMethodAnnotation() throws Exception {
 
 实际开发中，常用**动态代理**。这是通过反射在运行时动态生成代理类的代理方式。
 
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260306150017264.png)
+
 *示例代码*
 `ProxyUtil` 类。创建代理对象的工具类。核心代码。
 ```java
@@ -3675,7 +3677,7 @@ public class ProxyUtil {
         /**  
          * 三个参数；  
          * 1.ClassLoader:指定当前目标对象使用的类加载器，获取加载器的方法：this.getClass().getClassLoader()  
-         * 2.Class[]:指定目标对象实现的接口的类型，使用getClass().getInterfaces()获取  
+         * 2.ClassInterfaces[]:指定目标对象实现的接口的类型，使用getClass().getInterfaces()获取  
          * 3.InvocationHandler:指定监控方法，当调用目标对象方法时，会触发此方法执行。匿名内部类，有以下参数：  
          *      a.proxy:代理对象，一般不使用  
          *      b.method:目标对象方法  
