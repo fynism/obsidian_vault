@@ -3666,6 +3666,43 @@ public void parseMethodAnnotation() throws Exception {
 实际开发中，常用**动态代理**。这是通过反射在运行时动态生成代理类的代理方式。
 
 *示例代码*
+```java
+public class ProxyUtil {  
+    //写一个代理类实现对Stars的代理  
+    public static StarServices getProxy(Stars star){  
+  
+        /**  
+         * 三个参数；  
+         * 1.ClassLoader:指定当前目标对象使用的类加载器，获取加载器的方法：this.getClass().getClassLoader()  
+         * 2.Class[]:指定目标对象实现的接口的类型，使用getClass().getInterfaces()获取  
+         * 3.InvocationHandler:指定监控方法，当调用目标对象方法时，会触发此方法执行。匿名内部类，有以下参数：  
+         *      a.proxy:代理对象，一般不使用  
+         *      b.method:目标对象方法  
+         *      c.args:目标对象方法参数  
+         */  
+        StarServices  proxy = (StarServices) Proxy.newProxyInstance(  
+                star.getClass().getClassLoader(),   //获取Stars的类加载器  
+                star.getClass().getInterfaces(),//获取Stars的接口，即StarServices  
+                new InvocationHandler() {  
+                    @Override  
+                    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {  
+                        //进行代理操作  
+                        String methodName = method.getName();  
+                        if(methodName.equals("sing")){  
+                            System.out.println("代理正在寻找话筒。");  
+                        }  
+                        else if(methodName.equals("dance")) {  
+                            System.out.println("代理正在准备舞台。");  
+                        }  
+                        method.invoke(star,args);  
+                        return proxy;  
+                    }  
+                }  
+        );  
+        return proxy;  
+    }  
+}
+```
 
 
 ***
