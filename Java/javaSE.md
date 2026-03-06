@@ -3676,9 +3676,9 @@ public class ProxyUtil {
   
         /**  
          * 三个参数；  
-         * 1.ClassLoader:指定当前目标对象使用的类加载器，获取加载器的方法：this.getClass().getClassLoader()  
-         * 2.ClassInterfaces[]:指定目标对象实现的接口的类型，使用getClass().getInterfaces()获取  
-         * 3.InvocationHandler:指定监控方法，当调用目标对象方法时，会触发此方法执行。匿名内部类，有以下参数：  
+         * 1.ClassLoader:指定当前目标对象使用的类加载器，获取加载器的方法：类名.getClass().getClassLoader()  
+         * 2.ClassInterfaces[]:指定目标对象实现的接口的类型，使用 、类名.getClass().getInterfaces()获取  
+         * 3.InvocationHandler:指定监控方法，当调用目标对象方法时，会触发此方法执行。通过匿名内部类使用，有以下参数：  
          *      a.proxy:代理对象，一般不使用  
          *      b.method:目标对象方法  
          *      c.args:目标对象方法参数  
@@ -3721,7 +3721,7 @@ ublic class Stars implements StarServices{
     }  
 }
 ```
-`ProxyTest` 主函数
+`ProxyTest` 主函数。
 ```java
 public class ProxyTest {  
     public static void main(String[] args) {  
@@ -3731,6 +3731,13 @@ public class ProxyTest {
         //调用代理对象  
         proxy.sing("I Love You");  
         proxy.dance();  
+        
+        /**  
+		 * 代理正在寻找话筒。  
+		 * fengye正在唱I Love You  
+		 * 代理正在准备舞台。  
+		 * fengye正在跳舞  
+		 */
     }  
 }
 ```
