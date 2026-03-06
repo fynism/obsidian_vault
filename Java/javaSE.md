@@ -3666,7 +3666,7 @@ public void parseMethodAnnotation() throws Exception {
 实际开发中，常用**动态代理**。这是通过反射在运行时动态生成代理类的代理方式。
 
 *示例代码*
-`ProxyUtil`
+`ProxyUtil` 类。创建代理对象的工具类。核心代码。
 ```java
 public class ProxyUtil {  
     //写一个代理类实现对Stars的代理  
@@ -3704,7 +3704,7 @@ public class ProxyUtil {
     }  
 }
 ```
-`Stars` 类，
+`Stars` 类。定义了 `Stars` 的方法。实现了 `StarServices` 接口，接口内容不再赘述。
 ```java
 ublic class Stars implements StarServices{  
     String name;  
