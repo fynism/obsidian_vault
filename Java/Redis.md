@@ -87,3 +87,6 @@ Redis 是一个基于 `key-value` 的数据库，其中的 **key**的一般是 *
 
 ### SortedSet 类型
 这是一个**可排序**的 set 集合，和 Java 中的 TreeSet 的**功能**很像，但是底层数据结构差别很大。
+
+*常见命令：*
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260307163826797.png)
