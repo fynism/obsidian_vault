@@ -24,10 +24,11 @@ Shop:Product:1
 Shop:Product:2
 ```
 
-那么，在 RESP 中看到的就是这样的：
+那么，在 RESP 等**图形化界面**中看到的就是这样的：
 这些键就具有了层级结构。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260307152343531.png)
 
+在 redis 的底层，所有的键都是扁平化储存的。所以存入带有冒号的键跟普通的键是完全相同的。这只是 GUI 的约定俗称，一种可视化技术。
 
 # 命令
 可以通过查看[官方文档](https://redis.io/docs/latest/commands/)或者在 **redis-cli** 中使用 `help` 命令查看。
