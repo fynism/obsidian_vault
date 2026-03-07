@@ -27,7 +27,13 @@ Redis 是一个基于 `key-value` 的数据库，其中的 **key**的一般是 *
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260307143133942.png)
 
 ## String 类型
-说是 String 类型，其实就是最简单的各种**字符串**。实可以分成 3 类：
+说是 String 类型，其实就是最简单的各种**字符串**。可以分成 3 类：
 - string: 字符串
-- Iint : 整数
-- Ffloat：浮点数
+- int : 整数
+- float：浮点数
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260307150548164.png)
+
+*常见命令：*
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260307150614122.png)
+
+
