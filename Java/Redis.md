@@ -24,5 +24,6 @@ Redis 是一个基于 `key-value` 的数据库，其中的 **key**的一般是 *
 
 ## 通用命令
 就是 redis-cli 中的 `help @generic` 组的相关命令。这些命令是**通用命令**，不分数据类型，全部可以使用。
-
+*一些常用的通用命令：*
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260307143133942.png)
 
