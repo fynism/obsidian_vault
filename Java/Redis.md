@@ -12,7 +12,8 @@ Redis 里面的 patterns 是一种**匹配格式**的表达式。
 - `h[ae]llo` matches `hello` and `hallo,` but not `hillo`
 - `h[^e]llo` matches `hallo`, `hbllo`, ... but not `hello`
 - `h[a-b]llo` matches `hallo` and `hbllo`
-- 
+
+
 # 命令
 可以通过查看[官方文档](https://redis.io/docs/latest/commands/)或者在 **redis-cli** 中使用 `help` 命令查看。
 
