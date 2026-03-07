@@ -69,6 +69,9 @@ Redis 是一个基于 `key-value` 的数据库，其中的 **key**的一般是 *
 **BLPOP/BRPOP**
 当我在 list 中想要 pop 某个键，但是它现在还没有在 List 中的时候，可以使用**BLPOP/BRPOP**。
 *eg:*
-想要 BLPOP 名称为 `a` 的键，但是 `a` 中还没有元素，那么使用 BLPOP 阻塞 100 秒。
+- 想要 BLPOP 名称为 `a` 的键，但是 `a` 中还没有元素，那么使用 BLPOP 阻塞 100 秒。
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260307162007019.png)
 
 
+- 这时候，通过另外一个客户端连接，执行 LPUSH 操作，为 `a` 中添加元素
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260307162133802.png)
