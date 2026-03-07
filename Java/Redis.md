@@ -82,3 +82,8 @@ Redis 是一个基于 `key-value` 的数据库，其中的 **key**的一般是 *
 ### Set 类型
 与 Java 中的 HashSet 很像，可以看作一个 value 值为 **null** 的 HashMap。
 
+*常见命令：*
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260307163514752.png)
+
+### SortedSet 类型
+R
