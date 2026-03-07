@@ -16,12 +16,17 @@ Redis 是一种使用**键值对**存储的 NoSQL 数据库。
 ## Key 的层级结构
 在 redis 中，因为是按照**键值对**的方式存储，没有**表**的结构，那么如果两个商品的 id 都为 1，该怎么区分呢？
 
-键可以使用 `:` 来划分层级结构，例如：
+键可以使用 `:` 来划分**层级结构**，例如：
 ```
 Shop:User:1
+Shop:User:2
 Shop:Product:1
+Shop:Product:2
 ```
 
+那么，在 RESP 中看到的就是这样的：
+这些键就具有了层级结构。
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260307152343531.png)
 
 
 # 命令
