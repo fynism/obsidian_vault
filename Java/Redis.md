@@ -6,7 +6,7 @@ Redis 是一种使用**键值对**存储的 NoSQL 数据库。
 # 命令
 ## 基本数据结构
 Redis 是一个基于 `key-value` 的数据库，其中的 `key` 一般是 String 类型，但是 `value` 的类型有很多种。如 `String`、`Hash` 、`List`... 
-![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260307141056935.png)
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260307141232074.png)
 
 
 ## 通用命令
