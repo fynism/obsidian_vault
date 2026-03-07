@@ -97,6 +97,7 @@ Redis 是一个基于 `key-value` 的数据库，其中的 **key**的一般是 *
 好的那么。已经学了这么多基本语法，有没有方法能在 Java 中使用 Redis 呢？有的兄弟有的。
 **Jedis 包**提供了在 Java 中连接 Redis 的功能。
 
+*eg:*
 ```java
 public class RedisTest {  
     private Jedis jedis;  
