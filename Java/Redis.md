@@ -92,3 +92,6 @@ Redis 是一个基于 `key-value` 的数据库，其中的 **key**的一般是 *
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260307163826797.png)
 - `ZREVRANK key member` : 获取获取sorted set 中的指定元素的**倒序**排名。
 - `ZREVRANGE key min max`：按照score排序后，**倒序**获取指定排名范围内的元素。
+
+# Jedis
+好的那么。已经学了这么多
