@@ -94,4 +94,37 @@ Redis 是一个基于 `key-value` 的数据库，其中的 **key**的一般是 *
 - `ZREVRANGE key min max`：按照score排序后，**倒序**获取指定排名范围内的元素。
 
 # Jedis
-好的那么。已经学了这么多基本语法，怎么在
+好的那么。已经学了这么多基本语法，有没有方法能在 Java 中使用 Redis 呢？有的兄弟有的。
+**Jedis 包**提供了在 Java 中连接 Redis 的功能。
+
+```java
+public class RedisTest {  
+    private Jedis jedis;  
+    @BeforeEach  
+    public void init() {  
+        //创建Jedis对象  
+        jedis = new Jedis("192.168.179.130",6379) ;  
+        jedis.auth("Dwade520");  
+  
+        //选择Jedis库  
+        jedis.select(0);  
+    }  
+  
+    @Test  
+    public void testString(){  
+        jedis.set("b","30");  
+        String b = jedis.get("b");  
+        String a = jedis.get("a");  
+        System.out.println(b);  
+        System.out.println(a);  
+    }  
+  
+    @AfterEach  
+    //测试完成后关闭Jedis连接  
+    public void destroy() {  
+        if (jedis != null) {  
+            jedis.close();  
+        }  
+    }  
+}
+```
