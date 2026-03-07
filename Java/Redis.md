@@ -5,7 +5,7 @@ Redis 是一种使用**键值对**存储的 NoSQL 数据库。
 - 经过一下午艰苦卓绝的斗争，我终于安装好了 RockyLinux 和 Redis。
 
 ## patterns
-patterns是Redis里面的一种**匹配格式**的表达式。一种**通配符**。
+**patterns**是Redis里面的一种**匹配格式**的表达式。一种**通配符**。
 *下面的例子展示了 patterns 的用法：*
 - `h?llo` matches `hello`, `hallo` and `hxllo`
 - `h*llo` matches `hllo` and `heeeello`
@@ -23,6 +23,7 @@ Redis 是一个基于 `key-value` 的数据库，其中的 **key**的一般是 *
 
 ## 通用命令
 就是 redis-cli 中的 `help @generic` 组的相关命令。这些命令是**通用命令**，不分数据类型，全部可以使用。
-*一些常用的通用命令：*
+*一些常用的**通用命令**：*
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260307143133942.png)
 
+123
