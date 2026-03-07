@@ -66,4 +66,5 @@ Redis 是一个基于 `key-value` 的数据库，其中的 **key**的一般是 *
 
 *常见命令：*
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260307160042898.png)
-
+**BLPOP/BRPOP**
+当我在 redis 中想要 pop 某个键，但是它现在还没有在 List 中的时候，可以使用
