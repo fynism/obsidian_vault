@@ -134,3 +134,4 @@ public class RedisTest {
 ## JedisConnectionPool
 
 ## SpringDataRedis
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260310105610962.png)
