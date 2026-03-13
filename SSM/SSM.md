@@ -1,7 +1,9 @@
 # 常用注解
 
-## `@Bean`
-此注解是一个对于**方法**的注解。带有此注解的方法，其返回值会被放入 Spring 容器中以供调用。
+## 注册
+这一块所记的注解，都是把某个类或者实例**注册(Register)** 到 IOC 容器中的。
+### `@Bean`
+此注解是一个对于**方法**的注解。带有此注解的方法，其**返回值**会被注册到 Spring 容器中以供调用。
 常和 `@Configuration` 注解搭配使用。
 
 *示例代码*
@@ -38,7 +40,7 @@ System.out.println(fengyes);
 - Bean 不允许重名，尽管在编译时不会出现异常，但是运行时 Spring 框架会提示报错。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260313141652471.png)
 
-## `@Component` 及其MVC 分层变种
+### `@Component` 及其MVC 分层变种
 可以使用 `@Component`, `@Controller`, `@Service` , `@Repository` 来对类进行注解，直接将这个**类**的一个实例放入容器中。
 
 事实上，`@Controller`, `@Service` , `@Repository` 底层的实现**都是**通过 `@Component`，他们存在的意义只是让代码可读性更高。
@@ -48,7 +50,7 @@ System.out.println(fengyes);
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260313171820910.png)
 在典型的 MVC 分层中，就可以使用这样的注解。
 
-##  `@Import` 
+###  `@Import` 
 自己写的类，可以使用 `@Component` **或者**`@Configuration` 和 `@Bean` 来将其注册到容器。那么，**第三方库**中的类该怎么注册到容器呢？
 没错，就是用 **`@Import(Xxx.class)`** 来注册。
 
