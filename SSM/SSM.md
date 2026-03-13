@@ -38,8 +38,6 @@ System.out.println(fengyes);
 - Bean 不允许重名，尽管在编译时不会出现异常，但是运行时 Spring 框架会提示报错。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260313141652471.png)
 
-`@ComponentScan`
-一个不该存在的东西。
 ## `@Component` 及其MVC 分层变种
 可以使用 `@Component`, `@Controller`, `@Service` , `@Repository` 来对类进行注解，直接将这个**类**的一个实例放入容器中。
 
@@ -50,6 +48,12 @@ System.out.println(fengyes);
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260313171820910.png)
 在典型的 MVC 分层中，就可以使用这样的注解。
 
-## 
-#  `@Import`
+## `@ComponentScan`
+一个不该存在的东西。
+##  `@Import`
+自己写的类，可以使用 `@Component` **或者**`@Configuration` 和 `@Bean` 来将其注入容器。那么，**第三方库**中的类该怎么注入容器呢？
+
+
+
+
 
