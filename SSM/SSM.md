@@ -40,7 +40,7 @@ System.out.println(fengyes);
 
 `@ComponentScan`
 一个不该存在的东西。
-## `@Component` 及其MVC变种
+## `@Component` 及其MVC 分层变种
 
 
 
