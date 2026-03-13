@@ -2,6 +2,7 @@
 
 ## @Bean
 此注解是一个对于**方法**的注解。带有此注解的方法，其返回值会被放入 Spring 容器中以供调用。
+常和@config'ration
 
 *示例代码*
 向 Spring 容器中添加了一个名为 `"fengye"` 的 Person 类.
