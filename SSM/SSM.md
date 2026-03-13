@@ -38,5 +38,6 @@ System.out.println(fengyes);
 - Bean 不允许重名，尽管在编译时不会出现异常，但是运行时 Spring 框架会提示报错。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260313141652471.png)
 
-`@ComponentScan `
+`@ComponentScan`
+一个不该存在的x
 `@Import`
