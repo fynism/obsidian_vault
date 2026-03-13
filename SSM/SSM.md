@@ -84,5 +84,5 @@ public class UserController {
 }
 ```
 
-@Resou
+`@Resource` 、
 
