@@ -39,5 +39,9 @@ System.out.println(fengyes);
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260313141652471.png)
 
 `@ComponentScan`
-一个不该存在的x
-`@Import`
+一个不该存在的东西。
+## `@Component` 及其MVC变种
+
+
+
+#  `@Import`
