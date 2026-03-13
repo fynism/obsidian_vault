@@ -41,7 +41,7 @@ System.out.println(fengyes);
 `@ComponentScan`
 一个不该存在的东西。
 ## `@Component` 及其MVC 分层变种
-
+可以使用 `@Component`, `@Controller`, `@Service` , `@Repository` 来对类进行注解，z
 
 
 #  `@Import`
