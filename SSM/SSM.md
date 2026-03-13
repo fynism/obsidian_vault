@@ -46,8 +46,6 @@ System.out.println(fengyes);
 事实上，`@Controller`, `@Service` , `@Repository` 底层的实现**都是**通过 `@Component`，他们存在的意义只是让到吗可读性更高。
 
 *例如*
-```java
-
-```
-
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260313171820910.png)
+在典型的 MVC 分层中，就可以使用这样的注解。
 #  `@Import`
