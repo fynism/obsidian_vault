@@ -49,13 +49,13 @@ System.out.println(fengyes);
 在典型的 MVC 分层中，就可以使用这样的注解。
 
 ##  `@Import` 
-自己写的类，可以使用 `@Component` **或者**`@Configuration` 和 `@Bean` 来将其注入容器。那么，**第三方库**中的类该怎么注册到容器呢？
+自己写的类，可以使用 `@Component` **或者**`@Configuration` 和 `@Bean` 来将其注册到容器。那么，**第三方库**中的类该怎么注册到容器呢？
 没错，就是用 **`@Import(Xxx.class)`** 来注册。
 
 *例如*
 ```java
 @Configuration  
-//注入CoreConstants类  
+//注册CoreConstants类  
 @Import(CoreConstants.class)  
 //扫描包  
 @ComponentScan(basePackages = "com.fengye.spring.ioc")  
