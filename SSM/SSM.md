@@ -16,7 +16,21 @@ public static Person person(){
     return person;  
 }
 ```
+获取容器中的 Bean 对象。
+```java
+//获取Bean对象  
+//1. 通过bean的id获取  
+Object fengye = run.getBean("fengye");  
+System.out.println(fengye);  
+  
+//2.通过bean的类型获取  
+Person fengye2 = run.getBean(Person.class);  
+System.out.println(fengye2);
 
-该怎么使用呢？
+//3.若有多个相同类型的bean,那么可以使用getBeansOfType方法来获取Map  
+Map<String, Person> fengyes = run.getBeansOfType(Person.class);  
+System.out.println(fengyes);
+```
 
-
+**注意：**
+- Bean 
