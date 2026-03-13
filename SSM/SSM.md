@@ -37,3 +37,6 @@ System.out.println(fengyes);
 - 如果在**使用类型获取** bean 的时候，容器中存在多个**相同类型**的 bean，那么那么 `getBean` 方法会抛出 `noUniqueBeanDefinition` 异常。
 - Bean 不允许重名，尽管在编译时不会出现异常，但是运行时 Spring 框架会提示报错。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260313141652471.png)
+
+`@ComponentScan `
+`@Import`
