@@ -50,9 +50,9 @@ System.out.println(fengyes);
 
 ## `@ComponentScan`
 一个不该存在的东西。
+
 ##  `@Import`
 自己写的类，可以使用 `@Component` **或者**`@Configuration` 和 `@Bean` 来将其注入容器。那么，**第三方库**中的类该怎么注入容器呢？
-
 
 
 
