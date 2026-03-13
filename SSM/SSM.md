@@ -43,9 +43,13 @@ System.out.println(fengyes);
 ## `@Component` 及其MVC 分层变种
 可以使用 `@Component`, `@Controller`, `@Service` , `@Repository` 来对类进行注解，直接将这个**类**的一个实例放入容器中。
 
-事实上，`@Controller`, `@Service` , `@Repository` 底层的实现**都是**通过 `@Component`，他们存在的意义只是让到吗可读性更高。
+事实上，`@Controller`, `@Service` , `@Repository` 底层的实现**都是**通过 `@Component`，他们存在的意义只是让代码可读性更高。
+(Gemini 说在后面的面相切面编程 AOP 里面还有其他的区别。)
 
 *例如*
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260313171820910.png)
 在典型的 MVC 分层中，就可以使用这样的注解。
+
+## 
 #  `@Import`
+
