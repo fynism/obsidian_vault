@@ -68,7 +68,7 @@ public class AppConfig {
 
 ## 依赖注入
 这一部分的注解，能够实现**依赖注入**，将 IoC 容器中的 Beans **注入**到某个类中。
-
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260313173726786.png)
 ### `@Autowire`
-
+自动装配。底层的原理就是 Spring 调用容器的 `getBean()`方法。
 
