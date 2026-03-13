@@ -66,4 +66,9 @@ public class AppConfig {
 ```
 
 
+## 依赖注入
+这一部分的注解，能够实现**依赖注入**，将 IoC 容器中的 Beans **注入**到某个类中。
+
+### `@Autowire`
+
 
