@@ -124,6 +124,13 @@ public class UserController {
 - 可以进行**请求限定**。
 
 ## 拦截器
-SpringMVC **内置拦截器**机制，允许在请求被目标方法处理的前后进行拦截，执行一些额外操作; 比如: **权限验证、日志记录、数据共享**等。
+SpringMVC **内置拦截器**机制，允许在请求被目标方法处理的**前后**进行拦截，执行一些额外操作; 比如: **权限验证、日志记录、数据共享**等。
 
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260314194432822.png)
+
+*实现案例*
+1. 实现 `HandlerInterceptor` 接口，写拦截器的具体处理方法。
+```java
+
+```
 
