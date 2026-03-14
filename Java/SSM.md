@@ -93,15 +93,21 @@ public class UserController {
 主要涉及到 2 个关键注解：`@ResponseBody`、`@RequestMapping`
 *示例*
 ```java
+// @Controller 表明这是一个控制器  
 @Controller  
 public class UserController {  
   
+    //@ResponseBody 表明该方法返回的数据直接写入 HTTP 响应正文中  
     @ResponseBody  
+    //@RequestMapping("/path") 映射指定路径下的请求  
     @RequestMapping("/user")  
     public String handle() {  
         return "handling requests";  
     }  
 }
 ```
+因为此项目之前在 `application.properties` 中配置过 8085 端口, 访问 `localhost:8085/user` 就能看到return的字符串了。
+
+
 
 
