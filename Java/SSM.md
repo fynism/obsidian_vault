@@ -151,10 +151,29 @@ public class UserControllerInterceptor implements HandlerInterceptor {
     //在视图渲染之后执行  
     @Override  
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception {  
-        System.out.println("afterCompletion finished");  
+        System.out.println("afterCompletionHandler finished");  
     }  
 }
 ```
 
-2. 实现 `WebMvcConfigurer` 接口，在SpringMVC 的配置类中写明拦截器的具体拦截路径。
+2. 实现 `WebMvcConfigurer` 接口，在SpringMVC 的**配置类**中写明拦截器的具体拦截路径。
+```java
+//SpringMvcConfig.java  
+@Configuration  
+@RequiredArgsConstructor  
+public class SpringMvcConfig implements WebMvcConfigurer{  
+  
+    //配合@RequiredArgsConstructor，使用构造方法注入拦截器对象  
+    private final UserControllerInterceptor userControllerInterceptor;  
+  
+    //重写addInterceptors方法,指定拦截路径  
+    @Override  
+    public void addInterceptors(InterceptorRegistry registry) {  
+        registry.addInterceptor(userControllerInterceptor)  
+                .addPathPatterns("/user");  
+    }  
+}
+```
+
+那么，在每一次访问 `http://localhost:8085/user` 的时候都会触发拦截器的三个方法。
 
