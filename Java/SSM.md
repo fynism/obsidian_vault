@@ -101,7 +101,7 @@ public class UserController {
 	-  `?` ：匹配单个任意字符 (1 ~ n)。
 	- 如果访问路径同时满足多个通配符，那么优先访问匹配**最精确**的。
 
-- 可以进行**请求限定**
+- 可以进行**请求限定**。
 
 
 
@@ -109,6 +109,7 @@ public class UserController {
 ```java
 // @Controller 表明这是一个控制器  
 @Controller  
+//或者直接使用@RestController 相当于 @ResponseBody + @Controller
 public class UserController {  
   
     //@ResponseBody 表明该方法返回的数据直接写入 HTTP 响应正文中  
