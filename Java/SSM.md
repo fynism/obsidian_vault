@@ -178,4 +178,6 @@ public class SpringMvcConfig implements WebMvcConfigurer{
 
 > [!notice] 在**每次**访问 `http://localhost:8085/user` 的时候都会触发拦截器的三个方法。
 
-### 拦截器触发顺序
+### 多拦截器执行顺序
+如下图。
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260314195328680.png)
