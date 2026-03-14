@@ -92,6 +92,10 @@ public class UserController {
 ## 响应处理
 主要涉及到 2 个注解：`@ResponseBody`、`@RequestMapping`
 
+**`@RequestMapping("/path")`**
+- 此注解把请求**路径**和**方法**进行了绑定，访问指定路径的时候执行被注解的方法。
+其中，括号内的路径位置支持使用**通配符**：
+
 
 
 
