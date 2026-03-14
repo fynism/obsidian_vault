@@ -99,7 +99,7 @@ public class UserController {
   
     //@ResponseBody 表明该方法返回的数据直接写入 HTTP 响应正文中  
     @ResponseBody  
-    //@RequestMapping("/path") 映射指定路径下的请求  
+    //@RequestMapping("/path") 映射指定路径下的请求 ，把请求路径和方法进行绑定
     @RequestMapping("/user")  
     public String handle() {  
         return "handling requests";  
@@ -107,7 +107,7 @@ public class UserController {
 }
 ```
 因为此项目之前在 `application.properties` 中配置过 8085 端口, 访问 `localhost:8085/user` 就能看到return的字符串了。
-
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260314171129828.png)
 
 
 
