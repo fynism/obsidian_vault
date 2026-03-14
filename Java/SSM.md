@@ -87,5 +87,9 @@ public class UserController {
 `@Resource` 、`@Value`
 
 # Spring MVC
+是一个整合了Servelet API 的web 开发框架。
+
+# 响应处理
+主要涉及到 2 个关键注解
 
 
