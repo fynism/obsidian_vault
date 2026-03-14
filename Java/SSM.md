@@ -90,7 +90,7 @@ public class UserController {
 是一个整合了Servelet API 的web 开发框架。
 
 # 响应处理
-主要涉及到 2 个关键注解：`@ResponseBody`、`@RequestMapping`
+主要涉及到 2 个注解：`@ResponseBody`、`@RequestMapping`
 *示例*
 ```java
 // @Controller 表明这是一个控制器  
