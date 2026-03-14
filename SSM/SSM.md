@@ -84,5 +84,8 @@ public class UserController {
 }
 ```
 
-`@Resource` 、
+`@Resource` 、`@Value`
+
+# Spring MVC
+
 
