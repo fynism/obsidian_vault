@@ -89,8 +89,12 @@ public class UserController {
 # Spring MVC
 是一个整合了Servelet API 的web 开发框架。
 
-# 响应处理
+## 响应处理
 主要涉及到 2 个注解：`@ResponseBody`、`@RequestMapping`
+
+
+
+
 *示例*
 ```java
 // @Controller 表明这是一个控制器  
@@ -108,6 +112,8 @@ public class UserController {
 ```
 因为此项目之前在 `application.properties` 中配置过 8085 端口, 访问 `localhost:8085/user` 就能看到return的字符串了。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260314171129828.png)
+
+
 
 
 
