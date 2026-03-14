@@ -87,7 +87,7 @@ public class UserController {
 `@Resource` 、`@Value`
 
 # Spring MVC
-是一个整合了Servelet API 的web 开发框架。
+是一个整合了Servelet API 的web 开发框架。Web 开发实际上就是请求响应，而SpringMVC 封装了许多关于请求相应的功能。
 
 ## 请求响应
 主要涉及到 2 个注解：`@ResponseBody`、`@RequestMapping`
@@ -123,6 +123,7 @@ public class UserController {
 
 - 可以进行**请求限定**。
 
+## 拦截器
 
 
 
