@@ -145,7 +145,7 @@ public String handle01(String name, Integer age) {
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260316154901902.png)
 
 ### 02 使用 @RequestParam 注解封装多个参数
-
+可以使用 `@RequestParam` 注解来指定参数名称 (`value = xx`)、默认值(`default = xx` )和是否必须(`required = false)。
 *示例*
 ```java
 /**  
@@ -163,7 +163,8 @@ public String handle02(
     return "handle02 - you input : name:" + username + " age:" + userage;  
 }
 ```
-
+使用ApiFox 测试结果如下：
+注意，在我没传 age 参数的情况下，自动选择默认值。
 
 
 
