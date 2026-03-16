@@ -167,6 +167,8 @@ public String handle02(
 注意，在我没传 age 参数的情况下，自动选择默认值。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260316160845520.png)
 
+### 03 使用 POJO 接收参数
+如果参数很多，一个一个传参非常麻烦。这个时候就可以创建对应的 POJO 对象，la
 
 ***
 ## 拦截器
