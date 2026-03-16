@@ -224,7 +224,7 @@ public class SpringMvcConfig implements WebMvcConfigurer{
 
 > [!notice] 在**每次**访问 `http://localhost:8085/user` 的时候都会触发拦截器的三个方法。
 
-> [!tips] 在前后端分离项目中，`postHandle` 较少使用，因为此时响应通常即将被转化为 JSON 数据返回，不能够进行什么有价值的。
+> [!tips] 在前后端分离项目中，`postHandle` 较少使用，因为此时响应通常即将被转化为 JSON 数据返回，不能够进行什么有价值的操作。
 ### 多拦截器执行顺序
 如下图。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260314195328680.png)
