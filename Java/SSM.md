@@ -146,6 +146,23 @@ public String handle01(String name, Integer age) {
 
 ### 02 使用 @RequestParam 注解封装多个参数
 
+*示例*
+```java
+/**  
+ * 使用@RequestParam注解，指定参数名称，可以指定默认值，可以指定是否必须。  
+ * @param username  
+ * @param userage  
+ * @return  
+ */  
+  
+@RequestMapping("/handle02")  
+public String handle02(  
+        @RequestParam("name") String username,  
+        @RequestParam(value = "age",required = false,defaultValue = "18") Integer userage){  
+    System.out.println("handle02 - you input : name:" + username + " age:" + userage);  
+    return "handle02 - you input : name:" + username + " age:" + userage;  
+}
+```
 
 
 
