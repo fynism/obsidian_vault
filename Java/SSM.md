@@ -168,7 +168,30 @@ public String handle02(
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260316160845520.png)
 
 ### 03 使用 POJO 接收参数
-如果参数很多，一个一个传参非常麻烦。这个时候就可以创建对应的 POJO 对象，la
+如果参数很多，一个一个传参非常麻烦。这个时候就可以创建对应的 POJO **对象**，来进行参数的传递。
+- 框架会根据传递的参数自动调用
+*示例*
+```java
+/**  
+ * 如果输入的参数有对应的pojo，那么可以直接获取。  
+ * @param person  
+ * @return  
+ */  
+@RequestMapping("/handle03")  
+public String handle03(Person person){  
+    System.out.println(person);  
+    return "handle03 - ok";  
+}
+```
+
+```java
+@Data  
+public class Person {  
+    String name;  
+    int age;  
+}
+```
+
 
 ***
 ## 拦截器
