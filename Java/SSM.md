@@ -125,16 +125,16 @@ public class UserController {
 
 ### 01 接受 get 请求
 如果需要接受 `get` 请求带有的参数，直接把参数写在 `RequestMapping` 所注解的方法的参数列表中。
-- **没有**携带参数，包装类自动封装为 `null`，基本数据类型自动封装为默认值。
-- 携带参数，自动封装
+- **没有携带**参数，包装类自动封装为 `null`，基本数据类型自动封装为默认值；**携带**参数，自动封装。
+- 方法中的参数名必须与 URL 中的参数名一样。
 *示例*
 ```java
 /**  
+* * 用于响应带有参数的Get请求，直接把params写在方法的参数中。  *
  * * @param name  
  * @param age  
  * @return  
  *  
- * 用于响应带有参数的Get请求，直接把params写在方法的参数中。  
  */  
 @RequestMapping("/handle01")  
 public String handle01(String name, Integer age) {  
@@ -144,7 +144,13 @@ public String handle01(String name, Integer age) {
 使用ApiFox 测试结果如下：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260316154901902.png)
 
-#
+### 02 使用 @RequestParam 注解封装多个参数
+
+
+
+
+
+***
 ## 拦截器
 SpringMVC 内置**拦截器**机制，允许在请求被目标方法处理的**前后**进行拦截，执行一些额外操作; 比如: **权限验证、日志记录、数据共享**等。
 
