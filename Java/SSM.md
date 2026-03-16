@@ -165,7 +165,7 @@ public String handle02(
 ```
 使用ApiFox 测试结果如下：
 注意，在我没传 age 参数的情况下，自动选择默认值。
-
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260316160845520.png)
 
 
 ***
