@@ -84,7 +84,13 @@ public class UserController {
 }
 ```
 
-`@Resource` 、`@Value`
+`@Resource` 、
+
+###  `@Value`
+能够进行对于成员变量值的自动注入。
+1. `@Value ("字面值")`: 直接赋值
+2. @Value ("${key}"): 动态从配置文件中取出某一项的值。
+3. @Value ("#{SpEL}"): Spring Expression LangJage: Spring 表达式语言
 
 # Spring MVC
 是一个整合了Servelet API 的web 开发框架。Web 开发实际上就是请求响应，而SpringMVC 封装了许多关于请求相应的功能。
