@@ -200,7 +200,34 @@ public class Person {
 ```
 
 同时，POJO 也能够使用**多级结构**来封装多级参数。
+```java
+```
+@RequestMapping("/handle05")
+ public User handle05(User user){
+    log.debug(user.getAddress().getProvince()); 
+    return user;
+}
+```
 
+package com.fengye.springmvc.pojo;
+
+import lombok.Data;
+
+@Data  
+public class User {  
+int id;  
+String name;  
+int age;  
+Address address;  
+}
+
+@Data  
+class Address {  
+String province;  
+String city;  
+String street;  
+}
+```
 
 
 ### 04 接受 JSON 
