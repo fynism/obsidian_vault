@@ -173,7 +173,7 @@ public String handle02(
 注意，在我没传 age 参数的情况下，自动选择默认值。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260316160845520.png)
 
-### 03 使用 POJO 接收参数
+### 03 POJO封装接收参数
 如果参数很多，一个一个传参非常麻烦。这个时候就可以创建对应的 POJO **对象**，来进行参数的传递。
 - 框架会根据传递的参数自动调用类中的 `setXxx()` 方法进行参数的传递。
 *示例*
@@ -190,6 +190,7 @@ public String handle03(Person person){
 }
 ```
 
+*POJO*
 ```java
 @Data  
 public class Person {  
@@ -210,7 +211,7 @@ public String handle04(@RequestBody(required = false) Person person){
 ```
 
 ### 05 文件上传
-使用@RequestParam 去除指定文件项，然后使用 MultipartFile 封装。
+使用`@RequestParam` 去除指定文件项，然后使用 `MultipartFile` 封装。
 
 *** 
 ## 响应处理
@@ -236,9 +237,35 @@ public Person data(){
 
 ### 下载文件
 一般情况下是固定格式的代码，只修改文件路径。
-如下：
+*如下*
 ```java
-
+/**  
+     * 响应文件下载  
+     * 一般情况下是固定代码,一般不作更改  
+     * @return ResponseEntity对象  
+     * @throws Exception  
+     */  
+  
+    @RequestMapping("/download")  
+    public ResponseEntity<InputStreamResource> download() throws Exception {  
+  
+        FileInputStream fileInputStream = new FileInputStream("D:\\desktop\\RezeWallpaper.png");  
+  
+        //直接读字节会导致OOM(内存溢出)  
+//        byte[] bytes = fileInputStream.readAllBytes();  
+  
+        //1.中文会出现乱码,用URLEncoder.encode解决乱码  
+        String filename = URLEncoder.encode("蕾塞.png", "utf-8");  
+  
+        //2.文件太大会OOM,创建InputStreamResource解决OOM问题  
+        InputStreamResource resource = new InputStreamResource(fileInputStream);  
+  
+        return ResponseEntity.ok()  
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)  
+                .header("Content-Disposition", "attachment;filename=" + filename)  
+                .contentLength(fileInputStream.available())  
+                .body(resource);  
+    }
 ```
 
 
