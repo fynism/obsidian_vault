@@ -199,8 +199,17 @@ public class Person {
 ```
 
 
-## 
-使用@RequestBody 来接收请求中传递的 JSON 文件。
+## 04 接受 JSON 
+使用 `@RequestBody` 来接收请求中传递的 JSON 文件。
+```java
+@RequestMapping("/handle04")  
+public String handle04(@RequestBody(required = false) Person person){  
+ System.out.println(person);  
+ return "handle04 - ok";  
+ }
+```
+
+
 
 ***
 ## 拦截器
