@@ -95,7 +95,7 @@ public class UserController {
 # Spring MVC
 是一个整合了Servelet API 的web 开发框架。Web 开发实际上就是请求响应，而SpringMVC 封装了许多关于请求相应的功能。
 
-## 请求响应
+## 请求处理
 主要涉及到 2 个注解：`@ResponseBody`、`@RequestMapping`
 
 *示例*
@@ -210,7 +210,11 @@ public String handle04(@RequestBody(required = false) Person person){
 ```
 
 ### 05 文件上传
-使用@RequestParam 去除指定文件项
+使用@RequestParam 去除指定文件项，然后使用 MultipartFile 封装。
+
+*** 
+## 响应处理
+
 
 ***
 ## 拦截器
