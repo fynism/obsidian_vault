@@ -214,6 +214,7 @@ public String handle04(@RequestBody(required = false) Person person){
 
 *** 
 ## 响应处理
+`@ResponseBody` 是核心注解，能够返回 JSON 格式。
 
 
 ***
