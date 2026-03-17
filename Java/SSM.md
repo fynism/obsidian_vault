@@ -216,6 +216,21 @@ public String handle04(@RequestBody(required = false) Person person){
 ## 响应处理
 `@ResponseBody` 是核心注解，能够返回 JSON 格式。
 
+*示例*
+```java
+/**  
+ * 使用@ResponseBody注解，返回数据，而不是视图。  
+ * @return person对象.在浏览器中显示json数据。  
+ */  
+  
+@RequestMapping("/data")  
+public Person data(){  
+    Person person = new Person();  
+    person.setAge(19);  
+    person.setName("zhuxuanlin");  
+    return person;  
+}
+```
 
 ***
 ## 拦截器
