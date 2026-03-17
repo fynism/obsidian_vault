@@ -214,6 +214,8 @@ public String handle04(@RequestBody(required = false) Person person){
 
 *** 
 ## 响应处理
+
+### 返回 JSON
 `@ResponseBody` 是核心注解，能够返回 JSON 格式。
 
 *示例*
@@ -231,6 +233,14 @@ public Person data(){
     return person;  
 }
 ```
+
+### 下载文件
+一般情况下是固定格式的代码，只修改文件路径。
+如下：
+```java
+
+```
+
 
 ***
 ## 拦截器
