@@ -150,7 +150,7 @@ public String handle01(String name, Integer age) {
 使用ApiFox 测试结果如下：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260316154901902.png)
 
-### 02 使用 @RequestParam 注解封装多个参数
+### 02 使用 @RequestParam 注解指定封装参数
 可以使用 `@RequestParam` 注解来指定参数名称 (`value = xx`)、默认值(`default = xx` )和是否必须(`required = false)。
 *示例*
 ```java
@@ -199,6 +199,9 @@ public class Person {
 }
 ```
 
+同时，POJO 也能够使用**多级结构**来封装多级参数。
+
+
 
 ### 04 接受 JSON 
 使用 `@RequestBody` 来接收请求中传递的 JSON 文件。
@@ -211,7 +214,7 @@ public String handle04(@RequestBody(required = false) Person person){
 ```
 
 ### 05 文件上传
-使用`@RequestParam` 去除指定文件项，然后使用 `MultipartFile` 封装。
+使用 `@RequestParam` 取出指定文件项，然后使用 `MultipartFile` 封装。
 
 *** 
 ## 响应处理
