@@ -3,11 +3,8 @@
 
 
 
-# 基于Session 的短信验证码
+# 基于Session 的登录
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260314154742195.png)
-
-# 登录验证功能
-
 ## 发送短信验证码
 从上面的流程图中可以看出，发送短信验证码主要有这几个步骤：
 1. 校验手机号是否符合格式。
@@ -31,7 +28,7 @@
  */  
 @PostMapping("/code")  
 public Result sendCode(@RequestParam("phone") String phone, HttpSession session) {  
-    //  发送短信验证码并保存验证码  
+    //  调用userService中的业务逻辑,发送短信验证码并保存验证码  
     return userService.sendCode(phone, session);  
 }
 ```
@@ -65,10 +62,15 @@ public Result sendCode(String phone, HttpSession session) {
 }
 ```
 
-几个注意点:
+几个**注意点**:
 - 在写业务逻辑的时候, 注意 Controller 层专注实现**请求响应** , 而 Service 层专注实现**业务逻辑**.
 - 善用 `hutool` 这样的**工具类 jar 包** (示例代码中**生成验证码**部分的 `RandomUtil` 就是这个包中的工具类), 能省很多事.
-- 在 log 部分动态打印日志使用的 `{}` 占位符需要加入 `@Slf4j` 注解.
+- 在 log 部分动态打印日志使用的 `{}` 占位符需要加入 `@Slf4j` 注解. 所以这个到底是什么?
 - 在 session 中保存信息使用 `session.setAttribute("key", value)` , 取出值使用 `session.getAttribute("key", value)`
+
+## 验证码注册登录
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260318171931730.png)
+
+从这里开始, 就要涉及到数据库的操作了. 需要了解 `Mybatis` 和 `Mybatis-plus` 相关的知识 .
 
 
