@@ -20,6 +20,50 @@
 也就是说，这一块的实现应该在 `/user` 接口下。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260318170913124.png)
 
-查看 `UserController`,  
+查看 `UserController`, 和 `UserService`, 补全请求响应和业务逻辑.
+*UserController. Java*
+```java
+/**  
+ * 发送手机验证码  
+ * @param phone  
+ * @param session  
+ * @return  
+ */  
+@PostMapping("/code")  
+public Result sendCode(@RequestParam("phone") String phone, HttpSession session) {  
+    //  发送短信验证码并保存验证码  
+    return userService.sendCode(phone, session);  
+}
+```
+
+*UserService. Java*
+```java
+/**  
+ * 发送验证码的业务实现  
+ * @param phone  
+ * @param session  
+ * @return 成功请求  
+ */  
+@Override  
+public Result sendCode(String phone, HttpSession session) {  
+  
+    //1.正则校验手机号，不符合返回错误信息  
+    if (RegexUtils.isPhoneInvalid(phone)) {  
+        return Result.fail("手机号格式错误!");  
+    }  
+  
+    //2.生成验证码  
+    String code = RandomUtil.randomNumbers(6);  
+  
+    //3.保存验证码到Session  
+    session.setAttribute("VerificationCode",code);  
+  
+    //4.发送验证码  
+    log.debug("发送成功,验证码:{}", code);  
+  
+    return Result.ok();  
+}
+```
+
 
 
