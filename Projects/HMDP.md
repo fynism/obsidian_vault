@@ -132,3 +132,17 @@ public Result login(LoginFormDTO loginForm, HttpSession session) {
     return Result.ok(user);  
 }
 ```
+
+创建新用户的实现逻辑稍微有点复杂，将其抽象成一个方法：
+```java
+private User createUserByPhone(String phone){  
+    //创建用户  
+    User user = new User();  
+    user.setPhone(phone);  
+    user.setNickName(SystemConstants.USER_NICK_NAME_PREFIX + RandomUtil.randomString(10));  
+  
+    //存入数据库  
+    save(user);  
+    return user;  
+}
+```
