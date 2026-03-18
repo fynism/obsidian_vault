@@ -148,4 +148,5 @@ private User createUserByPhone(String phone){
 ```
 
 **注意点**：
-- 我说实话，跟数据库交互那一块我到现在还是没看懂。
+- Mybatis-plus 进行数据库的交互。比如： `User user = query().eq("phone", phone).one();` 
+	这里，在 User 类前有个注解 `@TableName("tb_user")`, UserService 继承了
