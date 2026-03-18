@@ -74,7 +74,11 @@ public Result sendCode(String phone, HttpSession session) {
 这一步主要是实现登录和注册的功能 .
 从这里开始, 就要涉及到**数据库**的操作了. 需要了解 `Mybatis` 和 `Mybatis-plus` 相关的知识 .
 
-首先依旧查看qi
+依旧先厘清步骤：
+1. 
+
+首先依旧查看前端发的啥**请求** . 点击"登录"按钮之后, 出现了 `/login` 请求, 是 POST 类型的. **请求体**里面的数据如下图, 就是电话号和验证码:
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260318172211034.png)
 
 
 
