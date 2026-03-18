@@ -149,4 +149,9 @@ private User createUserByPhone(String phone){
 
 **注意点**：
 - Mybatis-plus 进行数据库的交互。比如： `User user = query().eq("phone", phone).one();` 
-	这里，在 User 类前有个注解 `@TableName("tb_user")`, UserService 继承了
+	这里，在 `User` 类前有个注解 `@TableName("tb_user")`；
+	`UserService` 继承了 `ServiceImlp` ：
+	`public class UserServiceImpl extends ServiceImpl<UserMapper, User>`
+有上述两个条件，才能够使用 `query()` 进行查询。
+
+- `BeanUtil.copyProperties(user, UserDTO.class)` 这一句，就是把 user 中的属性值复制
