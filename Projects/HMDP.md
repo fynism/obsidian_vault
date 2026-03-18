@@ -75,9 +75,9 @@ public Result sendCode(String phone, HttpSession session) {
 从这里开始, 就要涉及到**数据库**的操作了. 需要了解 `Mybatis` 和 `Mybatis-plus` 相关的知识 .
 
 依旧先厘清步骤：
-1. 前端获取手机号和验证码，如果验证码和 Session 中保存的不一致则登录失败。
-2. 根据手机号查询数据库中是否有此用户。
-3. 若 无此用户，则根据传入的手机号创建新用户，并且保存用户到数据库。
+1. 前端获取手机号和验证码，**验证码是否一致？** 若验证码和 Session 中保存的不一致则登录失败。
+2. 根据手机号查询用户。
+3. **用户是否存在？** 若不存在，则根据传入的手机号创建新用户，并且保存用户到数据库。
 4. 保存用户到 session 。
 
 首先依旧查看前端发的啥**请求** . 点击"登录"按钮之后, 出现了 `/login` 请求, 是 POST 类型的. **请求体**里面的数据如下图, 就是电话号和验证码:
@@ -97,3 +97,38 @@ public Result login(@RequestBody LoginFormDTO loginForm, HttpSession session){
 }
 ```
 
+*UserService*
+```java
+/**  
+ * 登录业务逻辑  
+ * @param loginForm  
+ * @param session  
+ * @return ok状态和user数据  
+ */  
+@Override  
+public Result login(LoginFormDTO loginForm, HttpSession session) {  
+  
+    String phone = loginForm.getPhone();  
+    String code = loginForm.getCode();  
+    Object cacheCode = session.getAttribute("VerificationCode");  
+  
+    //1.校验手机号和验证码  
+    // 不一致：登录失败
+    if (cacheCode == null || !code.equals(cacheCode.toString())) {  
+        return Result.fail("验证码错误或已过期!");  
+    }  
+  
+    //2.根据手机号查询用户  
+    User user = query().eq("phone", phone).one();  
+  
+    //3.用户是否存在?  
+    //  不存在:直接创建新用户,保存到数据库,再保存到Session  
+    if (user == null){  
+        user = createUserByPhone(phone);  
+    }  
+  
+    //4.保存用户到Session  
+    session.setAttribute("User" , BeanUtil.copyProperties(user, UserDTO.class));  
+    return Result.ok(user);  
+}
+```
