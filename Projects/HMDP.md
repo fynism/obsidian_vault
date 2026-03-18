@@ -71,6 +71,10 @@ public Result sendCode(String phone, HttpSession session) {
 ## 验证码注册登录
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260318171931730.png)
 
-从这里开始, 就要涉及到数据库的操作了. 需要了解 `Mybatis` 和 `Mybatis-plus` 相关的知识 .
+这一步主要是实现登录和注册的功能 .
+从这里开始, 就要涉及到**数据库**的操作了. 需要了解 `Mybatis` 和 `Mybatis-plus` 相关的知识 .
+
+首先依旧查看qi
+
 
 
