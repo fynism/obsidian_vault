@@ -154,4 +154,5 @@ private User createUserByPhone(String phone){
 	`public class UserServiceImpl extends ServiceImpl<UserMapper, User>`
 有上述两个条件，才能够使用 `query()` 进行查询。
 
-- `BeanUtil.copyProperties(user, UserDTO.class)` 这一句，就是把 user 中的属性值复制
+- `BeanUtil.copyProperties(user, UserDTO.class)` 这一句，就是把 user 中的**属性值复制**到一个新的 userDTO 对象并返回。这里是为了隐藏用户的敏感信息，所以才用 userDTO。
+  
