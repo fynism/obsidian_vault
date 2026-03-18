@@ -65,5 +65,8 @@ public Result sendCode(String phone, HttpSession session) {
 }
 ```
 
+几个注意点:
+- 在写业务逻辑的时候, 注意 Controller 层专注实现**请求响应** , 而 Service 层专注实现**业务逻辑**.
+- 善用 `hutool` 这样的工具类 jar 包 (示例代码中生成验证码部分的 RandomUtil 就是这个包中的工具类)
 
 
