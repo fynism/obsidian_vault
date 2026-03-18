@@ -67,6 +67,8 @@ public Result sendCode(String phone, HttpSession session) {
 
 几个注意点:
 - 在写业务逻辑的时候, 注意 Controller 层专注实现**请求响应** , 而 Service 层专注实现**业务逻辑**.
-- 善用 `hutool` 这样的工具类 jar 包 (示例代码中生成验证码部分的 RandomUtil 就是这个包中的工具类)
+- 善用 `hutool` 这样的**工具类 jar 包** (示例代码中**生成验证码**部分的 `RandomUtil` 就是这个包中的工具类), 能省很多事.
+- 在 log 部分动态打印日志使用的 `{}` 占位符需要加入 `@Slf4j` 注解.
+- 在 session 中保存信息使用 `session.setAttribute("key", value)` , 取出值使用 `session.getAttribute("key", value)`
 
 
