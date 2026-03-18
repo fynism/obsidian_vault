@@ -146,3 +146,6 @@ private User createUserByPhone(String phone){
     return user;  
 }
 ```
+
+**注意点**：
+- 我说实话，跟数据库交互那一块我到现在还是没看懂。
