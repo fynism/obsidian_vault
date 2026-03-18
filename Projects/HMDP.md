@@ -76,12 +76,24 @@ public Result sendCode(String phone, HttpSession session) {
 
 依旧先厘清步骤：
 1. 前端获取手机号和验证码，如果验证码和 Session 中保存的不一致则登录失败。
-2. 若 一致，根据手机号查询数据库中是否有此用户。
+2. 根据手机号查询数据库中是否有此用户。
 3. 若 无此用户，则根据传入的手机号创建新用户，并且保存用户到数据库。
 4. 保存用户到 session 。
 
 首先依旧查看前端发的啥**请求** . 点击"登录"按钮之后, 出现了 `/login` 请求, 是 POST 类型的. **请求体**里面的数据如下图, 就是电话号和验证码:
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260318172211034.png)
 
-
+然后实现 `UserController`, 和 `UserService`, 里面的东西。
+首先，*UserController*
+```java
+/**  
+ * 登录功能  
+ * @param loginForm 登录参数，包含手机号、验证码；或者手机号、密码  
+ */  
+@PostMapping("/login")  
+public Result login(@RequestBody LoginFormDTO loginForm, HttpSession session){  
+    //  实现登录功能  
+    return userService.login(loginForm,session);  
+}
+```
 
