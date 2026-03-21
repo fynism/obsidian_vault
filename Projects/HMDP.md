@@ -158,4 +158,4 @@ private User createUserByPhone(String phone){
 
 
 # 改进：基于 Redis 的登录
-
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260321135233728.png)
