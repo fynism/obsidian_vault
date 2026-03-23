@@ -143,3 +143,5 @@ public class RedisTest {
 常见解决方式：
 - 缓存空对象
 - 布隆过滤
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260323154917212.png)
+
