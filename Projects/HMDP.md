@@ -2,7 +2,7 @@
 ## Mybatis-plus
 
 ## Hutool
-可以使用 `JSONUtil.toBean` 来进行序列化。
+可以使用 `JSONUtil.toBean` 来进行序列化；使用 `JSONUtil.toJsonStr`  来进行反序列化。
 
 
 
