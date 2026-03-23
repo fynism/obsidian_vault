@@ -133,5 +133,13 @@ public class RedisTest {
 
 ## JedisConnectionPool
 
-## SpringDataRedis
+# SpringDataRedis
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260310105610962.png)
+
+
+# 缓存穿透
+
+客户端请求的数据，在缓冲和数据库中都不存在，那么这个请求一定会到达数据库。
+常见解决方式：
+- 缓存空对象
+- 布隆过滤
