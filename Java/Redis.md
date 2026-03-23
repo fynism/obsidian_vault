@@ -147,4 +147,8 @@ public class RedisTest {
 - 布隆过滤
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260323154917212.png)
 
-## 缓存
+## 缓存雪崩
+
+Redis 中缓存的多个 key 在同一时间同时失效，导致大量请求到达数据库。
+常见解决方式：
+- 把 key 的 TTL 设置为一个浮动的时间范围（如 `30±5` 分钟）
