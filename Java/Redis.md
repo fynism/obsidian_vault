@@ -137,7 +137,9 @@ public class RedisTest {
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260310105610962.png)
 
 
-# 缓存穿透
+# 实际使用中常见的问题
+
+## 缓存穿透
 
 客户端请求的数据，在缓冲和数据库中都不存在，那么这个请求一定会到达数据库。
 常见解决方式：
@@ -145,3 +147,4 @@ public class RedisTest {
 - 布隆过滤
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260323154917212.png)
 
+## 缓存
