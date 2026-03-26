@@ -336,4 +336,5 @@ public class SpringMvcConfig implements WebMvcConfigurer{
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260314195328680.png)
 
 # 其他注解
-`@Transactional`
+`@Transactional` 事务，能进行回滚。
+`@PathVariable` 来指定请求的动态路由。如
