@@ -334,3 +334,6 @@ public class SpringMvcConfig implements WebMvcConfigurer{
 ### 多拦截器执行顺序
 如下图。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260314195328680.png)
+
+# 其他注解
+`@Transactional`
