@@ -184,5 +184,27 @@ end
 return 0
 ```
 
+```java
+//这里是使用静态代码块定义了UNLOCK_SCRIPT脚本，保证在simpleRedisLock类创建的时候就进行初始化
+private static final DefaultRedisScript<Long> UNLOCK_SCRIPT;  
+static {  
+    UNLOCK_SCRIPT=new DefaultRedisScript<>();  
+    UNLOCK_SCRIPT.setLocation(new ClassPathResource("unlock.lua"));  
+    UNLOCK_SCRIPT.setResultType(Long.class);  
+}
+
+//....
+
+//delLock方法
+@Override  
+public void delLock() {  
+    //调节lua脚本  
+    stringRedisTemplate.execute(  
+            UNLOCK_SCRIPT,  
+            Collections.singletonList(KEY_PREFIX+name),  
+            ID_PREFIX+Thread.currentThread().getId()  
+    );  
+}
+```
 
 最终使用的方案是 `Redission`,
