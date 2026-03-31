@@ -242,4 +242,3 @@ public void delLock() {
 
 在 Redis 中，有基于 `Pub/Sub` 的消息队列。Pub 就是 publis，指的是发布信息；Sub 是 subscribe，订阅。
 <img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260331165915130.png"/>
-	
