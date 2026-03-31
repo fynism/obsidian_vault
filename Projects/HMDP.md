@@ -226,4 +226,5 @@ public void delLock() {
 3. 主从一致
 
 
-# 基于 Redis 的异步gao
+# 基于 Redis 的异步秒杀下单机制
+
