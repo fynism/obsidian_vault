@@ -237,3 +237,9 @@ public void delLock() {
 **说说这一套流程？**（就是 `seckillVoucher` 方法）
 
 先获取用户ID和订单ID，再将优惠券ID，用户ID和订单ID传给Lua脚本执行，进行资格预检，根据 Lua 脚本的返回值（`0`: 成功，`1`: 库存不足，`2`: 重复下单）返回对应的错误信息。将订单信息异步发送到 RabbitMQ 队列，由消费者处理后续逻辑，最后返回订单ID给前端。
+
+# 消息队列
+
+在 Redis 中，有基于 `Pub/Sub` 的消息队列。Pub 就是 publis，指的是发布信息；Sub 是 subscribe，订阅。
+<img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260331165915130.png"/>
+	
