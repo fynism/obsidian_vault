@@ -169,6 +169,7 @@ private User createUserByPhone(String phone){
 # 分布式锁
 因为在集群中，有多个 JVM 虚拟机的存在，可能导致线程安全问题。所以，想到可以使用 Redis 来实现分布式锁。
 1. 最开始，想到了使用 Redis 的 `SETNX` 命令来实现锁。
-	- 锁的键为 `key:` 值为随机 UUID+线程号，
+	- 锁的键为 `key:name`，值为随机 UUID+线程号。
+	- 
 
 最终使用的方式是 `Redission`,
