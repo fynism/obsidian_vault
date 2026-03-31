@@ -240,5 +240,9 @@ public void delLock() {
 
 # 消息队列
 
+## Redis 的 PubSub
 在 Redis 中，有基于 `Pub/Sub` 的消息队列。Pub 就是 publis，指的是发布信息；Sub 是 subscribe，订阅。
 <img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260331165915130.png"/>
+  > [!notice] 但是有**不支持数据持久化、会导致数据丢失、消息堆积有上限**等问题
+## Stream
+Stream 是 Redis 5.0 引入的一种新数据类型，可以实现一个功能非常完善的消息队列。
