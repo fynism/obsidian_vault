@@ -174,6 +174,15 @@ private User createUserByPhone(String phone){
 
 2. 但是！在极端情况下，这个方案存在缺陷：因为 unlock 时 `从Redis中取出值并比较` 和 `删除键` 这两个操作是分两步的，有可能在 `从Redis中取出值` 并且 `比较` 后，但是 `删除` 前，此时正好到达了锁的TTL。之后一个线程进入并成功获取锁，但是锁线程还没有执行删除操作，这样会导致锁被误删。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260331140839604.png)
+	解决方法：使用 **`lua 脚本`** 保证操作的原子性。
+```lua
+--unlock.lua
+-- 比较线程标示与锁中的标示是否一致  
+if(redis.call('get',KEYS[1])==ARGV[1]) then  
+    --释放锁 del key    return redis.call('del',KEYS[1])  
+end  
+return 0
+```
 
 
 最终使用的方案是 `Redission`,
