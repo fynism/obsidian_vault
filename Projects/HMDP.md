@@ -210,3 +210,8 @@ public void delLock() {
 3. 但是！因为使用 `SETNX` 有**不可重入、不可重试、不能够阻塞等待**等等缺点.....
 	最终使用的方案是 `Redission`, 这是一个基于 Redis 的包，提供了各种各样的锁。
 	（果然手搓还是不如直接拿别人写好的来得快啊）
+
+	1. 可重入
+		<img src="https://cdn.jsdelivr.net/gh/KNeegcyao/picdemo/img/image-20241205233234744.png" alt="image-20241205233234744" style="zoom: 50%;" />
+	- 加锁时，
+
