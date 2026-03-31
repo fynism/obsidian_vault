@@ -211,10 +211,15 @@ public void delLock() {
 	最终使用的方案是 `Redission`, 这是一个基于 Redis 的包，提供了各种各样的锁。
 	（果然手搓还是不如直接拿别人写好的来得快啊）
 
-	1. 可重入
+	1. **可重入**
+	*同一个线程在已经获取到锁的情况下，可以再次获取同一把锁而不会被阻塞。这和 Java 里的 ReentrantLock 逻辑一致。*
 		<img src="https://cdn.jsdelivr.net/gh/KNeegcyao/picdemo/img/image-20241205233234744.png" alt="image-20241205233234744" style="zoom: 50%;" />
 	<img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260331143643922.png" style="zoom: 50%;"/>
-	- 获取锁时，判断锁是否存在
-	- 不存在，直接获取锁，并且将重入次数设为 1.
-	- 存在，如果是在同一个
+	- 获取锁时，判断锁是否存在：
+		- 不存在，直接获取锁，并且将重入次数设为 1。
+		- 存在，如果是在同一个线程中获取的，那么不阻塞直接获取锁，并且将重入次数+1。
+	- 释放锁时，重入次数-1 。直到重入次数为 0，删除锁。
+
+5. **可重试**
+
 
