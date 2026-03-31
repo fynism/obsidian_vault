@@ -160,8 +160,14 @@ private User createUserByPhone(String phone){
 - `BeanUtil.copyProperties(user, UserDTO.class)` 这一句，就是把 user 中的**属性值复制**到一个新的 userDTO 对象并返回。这里是为了隐藏用户的敏感信息，所以才用 userDTO。
 
 
-# 改进：基于 Redis 的登录
+## 改进：基于 Redis 的登录
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260321135233728.png)
 
 
 
+
+# 分布式锁
+因为在集群中，有多个 JVM 虚拟机的存在，可能导致线程安全问题。所以，想到可以使用 Redis 来实现分布式锁。
+1. 
+
+最终使用的方式是 `Redission`,
