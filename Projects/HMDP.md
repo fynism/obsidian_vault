@@ -213,5 +213,8 @@ public void delLock() {
 
 	1. 可重入
 		<img src="https://cdn.jsdelivr.net/gh/KNeegcyao/picdemo/img/image-20241205233234744.png" alt="image-20241205233234744" style="zoom: 50%;" />
-	- 加锁时，
+	<img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260331143643922.png" style="zoom: 50%;"/>
+	- 获取锁时，判断锁是否存在
+	- 不存在，直接获取锁，并且将重入次数设为 1.
+	- 存在，如果是在同一个
 
