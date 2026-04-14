@@ -1,3 +1,7 @@
+# 小知识
+在 py 中, 字典/列表/字符串都能够转换为标准的 JSON 格式, 需要使用 json 库.
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260414162153288.png)
+
 # OpenAI 库的使用
 
 <img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260414152917025.png"/>
