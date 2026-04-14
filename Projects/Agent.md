@@ -113,3 +113,40 @@ for chunk in res:
 ## 调用聊天模型
 其中有三种 message 类型, 和前文提到的 OpenAI 库对应.
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260414173258866.png)
+
+*代码示例*
+```Python
+from langchain_core.messages import HumanMessage,AIMessage,SystemMessage  
+from langchain_openai import ChatOpenAI  
+import os  
+  
+# 初始化 DeepSeek 模型  
+# 注意：deepseek-chat 对应的是 DeepSeek-V3# 如果你想用 R1，模型名称请改为 deepseek-reasonermodel = ChatOpenAI(  
+    model='deepseek-chat',  
+    openai_api_key=os.getenv("DEEPSEEK_API_KEY"),  
+    openai_api_base='https://api.deepseek.com',  
+    max_tokens=1024  
+)  
+  
+messages = [  
+    SystemMessage(content="你是一个边塞诗人"),  
+    HumanMessage(content="写一首唐诗"),  
+    AIMessage(content="锄禾日当午，汗滴禾下土，谁知盘中餐，粒粒皆辛苦"),  
+    HumanMessage(content="按照上一个回复的格式，写一首唐诗。"),  
+]  
+  
+res = model.stream(messages)  
+  
+for chunk in res:  
+    print(chunk.content,end="",flush=True)
+```
+
+当然，中间 `messages` 的部分可以简写：
+```Python
+messages = [  
+    ("system","你是一个边塞诗人"),  
+    ("human","写一首唐诗"),  
+    ("ai","锄禾日当午，汗滴禾下土，谁知盘中餐，粒粒皆辛苦"),  
+    ("human","按照上一个回复的格式，写一首唐诗。")  
+]
+```
