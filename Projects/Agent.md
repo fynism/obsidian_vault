@@ -22,12 +22,9 @@
 
 ## 使用流式输出
 ```python
-import os  
-  
-from openai import OpenAI  
-  
 # 1. 获取client对象  
-client = OpenAI( 
+client = OpenAI()
+...
 # 2. 调用模型  
 response = client.chat.completions.create(  
     model="deepseek-chat",  
@@ -46,3 +43,6 @@ for chunk in response:
           flush=True   #立刻刷新缓冲区  
           )
 ```
+
+关键代码是调用模型部分中的 `stream = True`, 能够实现**流式输出**, 也就是现在大部分的 AI Chat 中"一个字一个字" 说话的感觉. 
+如果没有流式输出的话, 只能够等模型输出完全部的信息, 再一下子全部
