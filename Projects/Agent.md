@@ -184,16 +184,18 @@ prompt_template = PromptTemplate.from_template(
     "我的邻居姓：{lastname},刚生了{gender},你帮我起个名字，简单回答"  
 )  
   
-prompt_text = prompt_template.format_prompt(lastname='张',gender="女儿")  
+#prompt_text = prompt_template.format_prompt(lastname='张',gender="女儿")  
   
 model = Tongyi(model="qwen-max");  
   
 # res = model.invoke(input=prompt_text)  
 # print(res)  
   
+# 创建一个链，将提示词模板和模型连接起来  
 chain =prompt_template | model  
 res = chain.invoke(input={"lastname":'张',"gender":"女儿"})  
 print(res)
 ```
 
+其中，第 `195` 行的这一句里面，`|` 是管道符，用来讲提示词模板和模型链接起来，很像 linux 中的管道符，将前一个语句的结果传入下一个语句作输出。这里是调用了 `prompt_template.`
 
