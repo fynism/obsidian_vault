@@ -111,4 +111,5 @@ for chunk in res:
 ```
 
 ## 调用聊天模型
-
+其中有三种 message 类型, 和前文提到的 OpenAI 库对应.
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260414173258866.png)
