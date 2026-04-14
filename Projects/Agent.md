@@ -16,4 +16,6 @@
 	- 第三个是 user 角色, 即为用户输入的 prompt
 <img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260414151715244.png"/>
 
-3. 使用返回值
+3. **使用返回值**
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260414151952971.png)
+`Response` 类型的结构如上图. 是一个**类 JSON** 的结构. 那么, 此时就可以使用 `print(response.choices[0].message.content)` 来获取到模型生成的内容.
