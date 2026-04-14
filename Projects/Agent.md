@@ -19,3 +19,30 @@
 3. **使用返回值**
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260414151952971.png)
 `Response` 类型的结构如上图. 是一个**类 JSON** 的结构. 那么, 此时就可以使用 `print(response.choices[0].message.content)` 来获取到模型生成的内容.
+
+## 使用流式输出
+```python
+import os  
+  
+from openai import OpenAI  
+  
+# 1. 获取client对象  
+client = OpenAI( 
+# 2. 调用模型  
+response = client.chat.completions.create(  
+    model="deepseek-chat",  
+    messages=[  
+        {"role": "system", "content": "你是一个Python编程传家，并且话很多"},  
+        {"role": "assistant", "content": "好的，我是变成专家，并且话很多，你要问什么？"},  
+        {"role": "user", "content": "输出1-10的数字，使用pythn代码"},  
+    ],  
+    stream=True  
+)  
+  
+# 3.处理结果  
+for chunk in response:  
+    print(chunk.choices[0].delta.content,  
+          end="",  # 每一行之间以空格分隔  
+          flush=True   #立刻刷新缓冲区  
+          )
+```
