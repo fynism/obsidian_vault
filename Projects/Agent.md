@@ -151,3 +151,9 @@ messages = [
     ("human","按照上一个回复的格式，写一首唐诗。")  
 ]
 ```
+
+那么，简写有什么**好处**呢？
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260414193122776.png)
+
+## 文本嵌入模型 (Embedding Models)
+
