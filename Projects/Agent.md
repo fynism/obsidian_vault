@@ -141,7 +141,8 @@ for chunk in res:
     print(chunk.content,end="",flush=True)
 ```
 
-当然，中间 `messages` 的部分可以简写：
+### `Messages` 的简写形式
+中间 `messages` 的部分可以**简写**：
 ```Python
 messages = [  
     ("system","你是一个边塞诗人"),  
