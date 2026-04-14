@@ -175,3 +175,7 @@ print(model.embed_documents(["我喜欢你",'我稀饭你','晚上吃啥']))
 
 ***
 ## Prompt 模板
+使用 `promptTemplate` 类来模板化提示词。
+```Python
+
+```
