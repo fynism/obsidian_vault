@@ -176,6 +176,10 @@ print(model.embed_documents(["我喜欢你",'我稀饭你','晚上吃啥']))
 ***
 ## Prompt 模板
 使用 `promptTemplate` 类来模板化提示词。
+
+### 通用提示词模板
+也是一种 `ZeroShotPrompt`.
+*代码示例*
 ```Python
 from langchain_community.llms.tongyi import Tongyi  
 from langchain_core.prompts import PromptTemplate  
@@ -197,6 +201,7 @@ res = chain.invoke(input={"lastname":'张',"gender":"女儿"})
 print(res)
 ```
 
-其中，第 `195` 行的这一句里面，`|` 是管道符，用来讲提示词模板和模型链接起来，很像 linux 中的管道符，将前一个语句的结果传入下一个语句作输出。
-196 行这里实际上的执行顺序是: 先把 `input` 字典里面的内容输入 ` prompt_template.invoke()` 方法, 然后将这个语句的结果顺着管道符传给 ` model.invoke() ` 方法, 最终得到输出结果
+其中，第 `195` 行的这一句里面，`|` 是**管道符**，用来讲提示词模板和模型链接起来，很像 linux 中的管道符，将前一个语句的结果传入下一个语句作输出。
+
+`196` 行这里**实际上的执行顺序**是: 先把 `input` 字典里面的内容输入 ` prompt_template.invoke()` 方法, 然后将这个语句的结果顺着管道符传给 ` model.invoke() ` 方法, 最终得到输出结果.
 
