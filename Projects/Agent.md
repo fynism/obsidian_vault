@@ -157,3 +157,16 @@ messages = [
 
 ## 文本嵌入模型 (Embedding Models)
 
+```python
+# 使用阿里云dashscope  
+from langchain_community.embeddings import DashScopeEmbeddings  
+  
+model = DashScopeEmbeddings()  
+  
+print(model.embed_query("我喜欢你"))  
+print(model.embed_documents(["我喜欢你",'我稀饭你','晚上吃啥']))
+```
+
+## LangChain API 小结
+以 TongYi 模型为例，`LangChain` 提供了这些标准 API.
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260414200131416.png)
