@@ -84,7 +84,9 @@ for chunk in response:
 在调用模型传递参数的时候, 可以在 messages 里面传入多条历史对话信息 ,模型依据传入的上下文能够进行更准确的判断.
 
 # LangChain 框架
-## 调用 LLM
+
+## API 调用
+### 调用 LLM
 因为我使用的是 DeepseekAPI , 它兼容 openai 的规范, 所以可以直接导入 `langchain_openai` 包.
 LangChain 中封装了许多大模型相关的方法, 比如下面代码中的 `Stream()` 方法 ,能够实现流式输出.
 
@@ -110,7 +112,7 @@ for chunk in res:
     print(chunk.content, end="", flush=True)
 ```
 
-## 调用聊天模型
+### 调用聊天模型
 其中有三种 message 类型, 和前文提到的 OpenAI 库对应.
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260414173258866.png)
 
@@ -141,7 +143,7 @@ for chunk in res:
     print(chunk.content,end="",flush=True)
 ```
 
-### `Messages` 的简写形式
+#### `Messages` 的简写形式
 中间 `messages` 的部分可以**简写**：
 ```Python
 messages = [  
@@ -155,7 +157,7 @@ messages = [
 那么，简写有什么**好处**呢？
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260414193122776.png)
 
-## 文本嵌入模型 (Embedding Models)
+### 文本嵌入模型 (Embedding Models)
 
 ```python
 # 使用阿里云dashscope  
@@ -167,6 +169,9 @@ print(model.embed_query("我喜欢你"))
 print(model.embed_documents(["我喜欢你",'我稀饭你','晚上吃啥']))
 ```
 
-## LangChain API 小结
+### LangChain API 小结
 以 TongYi 模型为例，`LangChain` 提供了这些标准 API.
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260414200131416.png)
+
+***
+## Prompt 模板
