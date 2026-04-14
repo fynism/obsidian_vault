@@ -83,18 +83,21 @@ for chunk in response:
 
 在调用模型传递参数的时候, 可以在 messages 里面传入多条历史对话信息 ,模型依据传入的上下文能够进行更准确的判断.
 
-# LangChain
-## 调用模型
-因为我使用的是 DeepseekAPI , 它兼容 openai 的规范, 所以可以直接导入 Deepseek ai
+# LangChain 框架
+## 调用 LLM
+因为我使用的是 DeepseekAPI , 它兼容 openai 的规范, 所以可以直接导入 `langchain_openai` 包.
+LangChain 中封装了许多大模型相关的方法, 比如下面代码中的 `Stream()` 方法 ,能够实现流式输出.
+
 
 ```Python
 from langchain_openai import ChatOpenAI  
 import os  
   
 # 初始化 DeepSeek 模型  
-# 注意：deepseek-chat 对应的是 DeepSeek-V3# 如果你想用 R1，模型名称请改为 deepseek-reasonermodel = ChatOpenAI(  
+# 注意：deepseek-chat 对应的是 DeepSeek-V3# 如果你想用 R1，模型名称请改为 deepseek-reasoner
+model = ChatOpenAI(  
     model='deepseek-chat',  
-    openai_api_key=os.getenv("DASHSCOPE_API_KEY"),  
+    openai_api_key=os.getenv("DEEPSEEK_API_KEY"), 
     openai_api_base='https://api.deepseek.com',  
     max_tokens=1024  
 )  
@@ -106,4 +109,6 @@ res = model.stream(input="你是哪一款模型")
 for chunk in res:  
     print(chunk.content, end="", flush=True)
 ```
+
+## 调用聊天模型
 
