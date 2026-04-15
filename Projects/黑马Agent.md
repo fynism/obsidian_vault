@@ -327,6 +327,6 @@ for chunk in chain.stream({"history": history_data}):
     print(chunk.content,end="",flush=True)
 ```
 
-### Parser
-因为管道符要求左侧组件输出的
+### 利用Parser 实现多模型调用
+因为管道符要求左侧组件输出的类型和右侧组件输入的类型相同 . 而 `model.invoke()` , 这个时候就可以加入 `parser` 来进行类型转换.
 
