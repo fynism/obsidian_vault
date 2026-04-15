@@ -258,6 +258,36 @@ print(model.invoke(input=prompt_text))
 ### `ChatPromptTemplate` 模板
 前面的几个模版只能接入一条消息，而 `ChatPromptTemplate` 能够向大模型传入对话历史，可以参考前文[调用聊天模型](#调用聊天模型)那一部分。
 
+下面的这一段代码提到了 ``
+*代码示例*
+```Python
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder  
+from langchain_community.llms.tongyi import Tongyi  
+  
+chat_Prompt_template = ChatPromptTemplate.from_messages(  
+    [  
+        ('system', '你是一个边塞诗人，可以作诗',),  
+        MessagesPlaceholder('history'),  
+        ('human', '请再来一首唐诗',)  
+    ]  
+)  
+  
+history_data = [  
+    ('human', '你来写一首唐诗'),  
+    ('ai', '锄禾日当午，汗滴禾下土，谁知盘中餐，粒粒皆辛苦'),  
+    ('human', '请继续写一首唐诗'),  
+    ('ai', '行行高歌，歌歌高行，行行高歌，歌歌高行'),  
+]  
+  
+prompt_text = chat_Prompt_template.invoke({"history": history_data}).to_string()  
+  
+  
+  
+model = Tongyi(model="qwen-max")  
+res = model.stream(prompt_text)  
+for r in res:  
+    print(r, end="", flush=True)
+```
 
 ### 模版类两个方法的介绍
 `PromptTemplate` , `FewShotPromptTemplate` , `ChatPromptTemplate` 都继承于一个模版提示词的基类 `BasePromptTemplate`. 在这个类中, 实现了 `format` 方法.
