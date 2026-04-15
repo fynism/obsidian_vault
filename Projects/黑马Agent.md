@@ -330,7 +330,7 @@ for chunk in chain.stream({"history": history_data}):
 ### 利用Parser 实现多模型调用
 因为管道符要求**左侧组件输出的类型**和**右侧组件输入的类型**相同 . 而 `model.invoke()` 输出的类型是 `AIMessage`, 需要输入的参数类型是 `str` .那么, 这个时候就可以加入 ` parser ` 来进行类型转换 , 从而实现模型的链式调用.
 
-常用的几种 `parser`:
+常用的几种 `parser`: `StrOutputParser()` , `JsonOutputParser()`
 
 *示例代码*
 ```Python
@@ -358,4 +358,4 @@ for chunk in chain.stream({"lastname": "张", "gender": "女儿"}):
     print(chunk,end="",flush=True)
 ```
 
-看 `355` 行的那个链.
+看 `355` 行的那个链 . 两个 model 中间 , 又加了一层提示词模板, 而这个模板的输入的**字典**是shi用 `json_parser` 从上一个模型的输出
