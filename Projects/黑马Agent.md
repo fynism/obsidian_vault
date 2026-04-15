@@ -328,5 +328,11 @@ for chunk in chain.stream({"history": history_data}):
 ```
 
 ### 利用Parser 实现多模型调用
-因为管道符要求左侧组件输出的类型和右侧组件输入的类型相同 . 而 `model.invoke()` , 这个时候就可以加入 `parser` 来进行类型转换.
+因为管道符要求**左侧组件输出的类型**和**右侧组件输入的类型**相同 . 而 `model.invoke()` 输出的类型是 `AIMessage`, 需要输入的参数类型是 `str` .那么, 这个时候就可以加入 ` parser ` 来进行类型转换 , 从而实现模型的链式调用.
 
+常用的几种 `parser`:
+
+*示例代码*
+```Python
+
+```
