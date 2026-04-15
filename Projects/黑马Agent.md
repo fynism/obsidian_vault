@@ -358,4 +358,5 @@ for chunk in chain.stream({"lastname": "张", "gender": "女儿"}):
     print(chunk,end="",flush=True)
 ```
 
-看 `355` 行的那个链 . 两个 model 中间 , 又加了一层提示词模板, 而这个模板的输入的**字典**是使用 `json_parser` 从上一个模型的输出
+看 `355` 行的那个链 . 两个 model 中间 , 又加了一层提示词模板, 而这个模板的输入的**字典**是使用 `json_parser` 从上一个模型的输出的 `AIMessages` 里面的 **JSON** 转来的...  
+
