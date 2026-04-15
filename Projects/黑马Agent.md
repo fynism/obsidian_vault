@@ -258,7 +258,8 @@ print(model.invoke(input=prompt_text))
 ### `ChatPromptTemplate` 模板
 前面的几个模版只能接入一条消息，而 `ChatPromptTemplate` 能够向大模型传入对话历史，可以参考前文[调用聊天模型](#调用聊天模型)那一部分。
 
-下面的这一段代码提到了 ``
+下面的这一段代码提到了 `MessagesPlaceholder('history')` 这个东西。本质**占位符**，跟之前出现的 `{}` 基本一样. 只不过 `MessagesPlaceholder('history')` 能够占位填充很多行内容 , 占位内容默认以列表形式传入.
+
 *代码示例*
 ```Python
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder  
@@ -295,3 +296,7 @@ for r in res:
 
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260415145412915.png)
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260415145837489.png)
+
+## Chain 相关使用
+### 基本使用
+最终要的一个符号就是 `|` ,也就是常说的
