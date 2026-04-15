@@ -260,3 +260,4 @@ print(model.invoke(input=prompt_text))
 而 invoke 方法是 `Runnable` 基类的方法.
 
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260415145412915.png)
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260415145837489.png)
