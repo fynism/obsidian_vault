@@ -360,3 +360,21 @@ for chunk in chain.stream({"lastname": "张", "gender": "女儿"}):
 
 看 `355` 行的那个链 . 两个 model 中间 , 又加了一层提示词模板, 而这个模板的输入的**字典**是使用 `json_parser` 从上一个模型的输出的 `AIMessages` 里面的 **JSON** 转来的...  
 
+### 自定义函数
+
+*先看示例代码*
+```python
+model = ChatTongyi(model="qwen-max")  
+str_parser = StrOutputParser()  
+  
+first_prompt = PromptTemplate.from_template("我邻居姓：{lastname},刚生了{gender}，请帮忙起名字，仅告知我姓名，不要额外信息")  
+  
+second_prompt = PromptTemplate.from_template("姓名{name}，请帮我解析含义")  
+  
+my_func = RunnableLambda(lambda ai_msg:{"name": ai_msg.content})  
+  
+chain = first_prompt | model | my_func | second_prompt | model | str_parser  
+  
+for chunk in chain.stream({"lastname":"张","gender":"女孩"}):  
+    print(chunk,end="",flush=True)
+```
