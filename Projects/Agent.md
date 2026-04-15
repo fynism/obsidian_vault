@@ -178,7 +178,7 @@ print(model.embed_documents(["我喜欢你",'我稀饭你','晚上吃啥']))
 使用 `promptTemplate` 类来模板化提示词。
 
 ### 通用提示词模板
-也是一种 `ZeroShotPrompt`.
+是一种 `ZeroShotPrompt` 方法的模板，能够进行 Prompt 的模版输入. 类名为 `PromptTemplate` .
 *代码示例*
 ```Python
 from langchain_community.llms.tongyi import Tongyi  
@@ -206,7 +206,7 @@ print(res)
 `196` 行这里**实际上的执行顺序**是: 先把 `input` 字典里面的内容输入 ` prompt_template.invoke()` 方法, 然后将这个语句的结果顺着管道符传给 ` model.invoke() ` 方法, 最终得到输出结果.
 
 ### FewShot 提示词模板
-这是 `FewShot` 模式的提示词模板，主要格式如下图所示。它能够提供多个例子给模型，供其参考。
+类名为 `FewShotPromptTemplate`. 这是 `FewShot` 模式的提示词模板，主要格式如下图所示。它能够提供多个例子给模型，供其参考。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260415143813501.png)
 
 *示例代码*
@@ -256,6 +256,7 @@ print(model.invoke(input=prompt_text))
 ```
 
 ### `ChatPromptTemplate` 模板
+
 ### 模版类两个方法的介绍
 `PromptTemplate` , `FewShotPromptTemplate` , `ChatPromptTemplate` 都继承于一个模版提示词的基类 `BasePromptTemplate`. 在这个类中, 实现了 `format` 方法.
 而 invoke 方法是顶级父类 `Runnable` 中的方法.
