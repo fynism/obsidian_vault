@@ -256,6 +256,8 @@ print(model.invoke(input=prompt_text))
 ```
 
 ### `ChatPromptTemplate` 模板
+前面的几个模版只能接入一条消息，而 `ChatPromptTemplate` 能够向大模型传入对话历史，可以参考前文[调用聊天模型]()。
+
 
 ### 模版类两个方法的介绍
 `PromptTemplate` , `FewShotPromptTemplate` , `ChatPromptTemplate` 都继承于一个模版提示词的基类 `BasePromptTemplate`. 在这个类中, 实现了 `format` 方法.
