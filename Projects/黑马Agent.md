@@ -301,6 +301,29 @@ for r in res:
 ### 管道符
 最终要的一个符号就是 `|` ,也就是常说的**管道符** , 跟 linux 里面那个管道符的用法基本一样. 都是把前一个操作的**输出**作为下一个操作的**输入**来进行使用.
 
+用管道符链接的一连串操作, 就叫做 `chain` .
+- 注意: 使用管道符链接的每一个组件, 都必须是 `R'u`
+*给个示例*
+```Python
+chat_Prompt_template = ChatPromptTemplate.from_messages(  
+    [  
+        ('system','你是一个边塞诗人，可以作诗',),  
+        ('human','请再来一首唐诗',)  
+    ]  
+)  
+
+  
+model = ChatOllama(model="qwen2.5:0.5b-instruct")  
+  
+# 组成链，要求每一个组件都是Runnable的子类  
+chain = chat_Prompt_template | model  
+  
+res = chain.invoke({"history":history_data})  
+print(res.content)  
+  
+for chunk in chain.stream({"history": history_data}):  
+    print(chunk.content,end="",flush=True)
+```
 
 
 
