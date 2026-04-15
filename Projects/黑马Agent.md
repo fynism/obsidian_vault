@@ -256,7 +256,9 @@ print(model.invoke(input=prompt_text))
 ```
 
 ### `ChatPromptTemplate` 模板
-前面的几个模版只能接入一条消息，而 `ChatPromptTemplate` 能够向大模型传入对话历史，可以参考前文[调用聊天模型](#调用聊天模型)那一部分。
+前面的几个模版只能接入一条消息，而 `ChatPromptTemplate` 能够向大模型传入对话历史.
+
+这个模板的核心呢就是 `from_messages()` 这个方法 . 参数为一个列表, 可以输入对话历史, 详细用法可以参考前文[调用聊天模型](#调用聊天模型)那一部分。
 
 下面的这一段代码提到了 `MessagesPlaceholder('history')` 这个东西。本质**占位符**，跟之前出现的 `{}` 基本一样. 只不过 `MessagesPlaceholder('history')` 能够占位填充很多行内容 , 占位内容默认以列表形式传入.
 
@@ -313,8 +315,7 @@ chat_Prompt_template = ChatPromptTemplate.from_messages(
     ]  
 )  
 
-  
-model = ChatOllama(model="qwen2.5:0.5b-instruct")  
+model = Tongyi(model="qwen3-max")  
   
 # 组成链，要求每一个组件都是Runnable的子类  
 chain = chat_Prompt_template | model  
