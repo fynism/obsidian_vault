@@ -254,3 +254,7 @@ print(prompt_text)
 model = Tongyi(model="qwen-max")  
 print(model.invoke(input=prompt_text))
 ```
+
+## 模版类介绍
+`PromptTemplate` , `FewSPromptTemplate`
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260415145412915.png)
