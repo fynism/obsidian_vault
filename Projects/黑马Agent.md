@@ -387,5 +387,7 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
 
 # RAG项目
 
-项目主要结构
+项目主要结构:
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260415211042090.png)
+
+项目基本思路:
