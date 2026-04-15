@@ -370,7 +370,8 @@ str_parser = StrOutputParser()
 first_prompt = PromptTemplate.from_template("我邻居姓：{lastname},刚生了{gender}，请帮忙起名字，仅告知我姓名，不要额外信息")  
   
 second_prompt = PromptTemplate.from_template("姓名{name}，请帮我解析含义")  
-  
+
+#定义了一个函数，将ai消息的内容提取出来
 my_func = RunnableLambda(lambda ai_msg:{"name": ai_msg.content})  
   
 chain = first_prompt | model | my_func | second_prompt | model | str_parser  
@@ -378,3 +379,7 @@ chain = first_prompt | model | my_func | second_prompt | model | str_parser
 for chunk in chain.stream({"lastname":"张","gender":"女孩"}):  
     print(chunk,end="",flush=True)
 ```
+
+这里核心就是这一句 `my_func = RunnableLambda(lambda ai_msg:{"name": ai_msg.content})  `
+拆解一下:
+- `my_func` 函数在 chain 中的位置: 左边是 model, 右边是提示词模板. 那么: 该函数的参数为 `AImessage`
