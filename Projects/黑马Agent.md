@@ -384,3 +384,8 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
 拆解一下:
 - `my_func` 函数**在 chain 中**的位置: 左边是 model, 右边是提示词模板. 那么: 该函数的参数为 `AIMessage` , 输出为**字典**.
 - 函数内部  `ai_msg` 为输入的 `AIMessage` 类型的参数 , `:` 后面是返回的内容 , 一个**字典**格式. 与上面我们的分析对应起来了.
+
+# RAG项目
+
+项目质
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260415211042090.png)
