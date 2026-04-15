@@ -327,5 +327,6 @@ for chunk in chain.stream({"history": history_data}):
     print(chunk.content,end="",flush=True)
 ```
 
-
+### Parser
+因为管道符要求左侧组件输出的
 
