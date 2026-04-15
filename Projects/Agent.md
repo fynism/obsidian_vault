@@ -206,4 +206,10 @@ print(res)
 `196` 行这里**实际上的执行顺序**是: 先把 `input` 字典里面的内容输入 ` prompt_template.invoke()` 方法, 然后将这个语句的结果顺着管道符传给 ` model.invoke() ` 方法, 最终得到输出结果.
 
 ## FewShot 提示词模板
+这是 `FewShot` 模式的提示词模板，主要格式如下图所示。它能够提供多个例子给模型，供其参考。
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260415143813501.png)
+
+*示例代码*
+```Python
+
+```
