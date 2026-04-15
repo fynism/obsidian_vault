@@ -256,5 +256,7 @@ print(model.invoke(input=prompt_text))
 ```
 
 ## 模版类介绍
-`PromptTemplate` , `FewSPromptTemplate`
+`PromptTemplate` , `FewShotPromptTemplate` , `ChatPromptTemplate` 都继承于一个模版提示词的基类 `BasePromptTemplate`. 在这个类中, 实现了 ` format ` 方法.
+而 invoke 方法是 `Runnable` 基类的方法.
+
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260415145412915.png)
