@@ -256,7 +256,7 @@ print(model.invoke(input=prompt_text))
 ```
 
 ### `ChatPromptTemplate` 模板
-前面的几个模版只能接入一条消息，而 `ChatPromptTemplate` 能够向大模型传入对话历史，可以参考前文[调用聊天模型]()。
+前面的几个模版只能接入一条消息，而 `ChatPromptTemplate` 能够向大模型传入对话历史，可以参考前文[调用聊天模型](#调用聊天模型)那一部分。
 
 
 ### 模版类两个方法的介绍
