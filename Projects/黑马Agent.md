@@ -406,14 +406,14 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
   - **向量库初始化**
       - `KnowledgeBaseService.__init__()` 里先创建持久化目录，再初始化 Chroma。
       - 同时指定 embedding 模型。
-      - 用的是`DashScopeEmbeddings (model="text-embedding-v 4")`。
+      - 用的是`DashScopeEmbeddings(model="text-embedding-v 4")`。
   - **文本切分与入库**
-      - Upload_by_str () 是主入口。       
-      - 它根据 config_data. Py 里的 chunk_size、chunk_overlap、separators 等参数控制切分策略。         
-      - 最终把切分后的文本块和元数据一起写进向量库。                                                                    
-  可以把它理解成一个很小的知识库写入服务：                                                                                                                                                               
-  “输入原始文本” -> “判重” -> “必要时切块” -> “向量化并持久化存储”。
+      - `upload_by_str()` 是主入口。       
+      - 它根据 `config_data.py` 里的 `chunk_size`、`chunk_overlap`、`separators` 等参数控制切分策略。
+      - 最终把切分后的文本块和元数据一起写进向量库。   
 
+  可以把它理解成一个很小的知识库写入服务：
+  “输入原始文本” -> “判重” -> “必要时切块” -> “向量化并持久化存储”。
 
 
 ### `MD5` 去重检查
