@@ -395,8 +395,12 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
 
 ## `knowledgeBaseService` 实现
 
-### `md5` 去重检查
+### `MD5` 去重检查
 
 上述离线流程图中的右半边流程部分，主要是先使用 `MD5` 来进行文件的**去重检查**：如果是已经存在的文件, 则不存入向量库, 如果是不存在的文件, 那么就可以存入向量库. 
 
+为了实现这个功能, 在 `knowledge_base.py` 中实现了 3 个方法:
+- `check_md5(md5_str: str)` : 检查传入的 `md5` 字符串是否已经被处理过 ,返回布尔类型.
+- `save_md5(m5d_str: str,encoding="utf-8")` : 将
+- `get_string_md5(input_str: str,encoding="utf-8")`
 
