@@ -393,7 +393,10 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
 项目离线流程:
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260415211925275.png)
 
-## `knowledgeBaseService` 实现
+## 文件上传
+使用了 streamlit 来快速构建文件上传的网页前端.
+
+## `knowledge_base.py` 
 
 ### `MD5` 去重检查
 
