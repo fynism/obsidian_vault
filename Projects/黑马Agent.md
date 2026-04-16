@@ -390,5 +390,9 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
 项目主要结构:
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260415211042090.png)
 
-项目基本思路:
+项目离线流程基本思路:
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260415211925275.png)
+
+## `knowledgeBaseService` 实现
+
+
