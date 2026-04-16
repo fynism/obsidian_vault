@@ -390,9 +390,13 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
 项目主要结构:
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260415211042090.png)
 
-项目离线流程基本思路:
+项目离线流程:
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260415211925275.png)
 
 ## `knowledgeBaseService` 实现
+
+### `md5` 去重检查
+
+上述离线流程图中的右半边流程部分，主要是先使用 `MD5` 来进行文件的**去重检查**：如果是已经存在的文件, 则不存入向量库, 如果是不存在的文件, 那么就可以存入向量库. 
 
 
