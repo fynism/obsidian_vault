@@ -400,16 +400,14 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
 
 
   核心结构有三块：
-  - 去重层                                                                                                                                                                                               
-      - Check_md 5 () / save_md 5 () / get_string_md 5 ()
+  - **去重层**
+      - `Check_md5()` / `save_md5()` / `get_string_md5() `
       - 作用是用一个本地 md 5 记录文件，避免同一段内容反复入库。
-  - 向量库初始化
-      - KnowledgeBaseService.__init__() 里先创建持久化目录，再初始化 Chroma。
+  - **向量库初始化**
+      - `KnowledgeBaseService.__init__()` 里先创建持久化目录，再初始化 Chroma。
       - 同时指定 embedding 模型。
-      - 根目录版本用的是 OllamaEmbeddings (model="qwen 2.5:0.5 b-instruct")。
-      - 案例目录版本用的是 DashScopeEmbeddings (model="text-embedding-v 4")。
-      - 也就是说，两份文件的主流程一样，主要区别在“用哪个嵌入模型”。                                                                                                                                     
-  - 文本切分与入库
+      - 用的是`DashScopeEmbeddings (model="text-embedding-v 4")`。
+  - **文本切分与入库**
       - Upload_by_str () 是主入口。       
       - 它根据 config_data. Py 里的 chunk_size、chunk_overlap、separators 等参数控制切分策略。         
       - 最终把切分后的文本块和元数据一起写进向量库。                                                                    
