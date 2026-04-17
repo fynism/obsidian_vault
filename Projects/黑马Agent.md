@@ -420,7 +420,15 @@ for msg in res["messages"]:
 
 好的. 上述代码中, 有这几个部分:
 - 首先是工具类的定义.
-在 LangChain 中, 使用 `@tool(description="查询天气")` 这样的装饰器, 能够将这个函数方法指定为 tools, 能够被 Agent 调用 . 
+在 LangChain 中, 使用 `@tool(description="查询天气")` 这样的装饰器, 能够将这个函数方法指定为 tools, 能够被 Agent 调用 , `description` 中的内容告诉大模型应该什么时候调用这个工具. 
+
+- Agent 对象的初始化:
+使用 `create_agent()` 方法进行模型初始化, 并且传入模型类型 , 可调用的工具方法 , 系统 prompt 等.
+
+- Agent 对象的调用:
+- 
+
+
 # RAG项目
 
 项目主要结构:
