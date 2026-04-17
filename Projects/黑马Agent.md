@@ -462,4 +462,35 @@ class KnowledgeBaseService(object):
         )
 ```
 
-##
+## 存入向量库
+核心函数为 `upload_by_str`.
+在这个函数里面做了这么几件事:
+- 先进行 md5 检查, 文件是否已经你存在于知识库.
+- 文件分块. 大于gui'di
+
+```Python
+def upload_by_str(self,data,filename):  
+    md5_hex = get_string_md5(data)  
+    if check_md5(md5_hex):  
+        return "[跳过]内容已经存在知识库中"  
+  
+    if len(data)>config.max_split_char_number:  
+        knowledge_chunks: list[str] = self.spliter.split_text(data)  
+    else:  
+        knowledge_chunks = [data]  
+  
+    metadata = {  
+        "source": filename,  
+        "create_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),  
+        "operator": "小曹"  
+    }  
+  
+    self.chroma.add_texts(  
+        knowledge_chunks,  
+        metadatas=[metadata for _ in knowledge_chunks],  
+    )  
+  
+    save_md5(md5_hex)  
+  
+    return "[成功]内容已经成功载入向量库"
+```
