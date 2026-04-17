@@ -396,7 +396,20 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
 ## `app_file_uploader.py`
 使用了 streamlit 来快速构建文件上传的网页前端.
 
-注意点:
+**注意点**:
+1. 因为 streamlit 在每一次页面更新内容后都会重新加载所有的代码.  所以使用了 streamlit 中的 `session_state` 字典来进行状态保存.
+
+主要保存了 `counter`  用以对上传文件进行计数和 `service` 用以
+```Python
+# session_state是一个字典  
+# 用于在不同运行之间存储状态  
+if "counter" not in st.session_state:  
+    st.session_state["counter"] = 0  
+  
+#确保只创建一次KnowledgeBaseService  
+if "service" not in st.session_state:  
+    st.session_state["service"] = KnowledgeBaseService()
+```
 
 ## `knowledge_base.py` 
 
