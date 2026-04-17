@@ -430,6 +430,9 @@ for msg in res["messages"]:
 - Agent 对象的调用:
 向 Agent 对象中传入类 JSON 格式的数据 , 如上述代码中传入了 `{"messages" : ["xxx"]}` 这样的数据 ,即用户的提问 prompt.
 
+## ReAct 框架介绍
+就是 Reasoning+Acting
+
 
 # RAG项目
 
