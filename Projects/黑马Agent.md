@@ -399,7 +399,7 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
 **注意点**:
 1. 因为 streamlit 在每一次页面更新内容后都会重新加载所有的代码.  所以使用了 streamlit 中的 `session_state` 字典来进行状态保存.
 
-主要保存了 `counter`  用以对上传文件进行计数和 `service` 用以
+主要保存了 `counter`  用以对上传文件进行计数和 `service` 用以初始化加载 `KnowledgeBaseService()` 对象.
 ```Python
 # session_state是一个字典  
 # 用于在不同运行之间存储状态  
@@ -411,8 +411,14 @@ if "service" not in st.session_state:
     st.session_state["service"] = KnowledgeBaseService()
 ```
 
-## `knowledge_base.py` 
+2. 
 
+
+
+
+
+***
+## `knowledge_base.py` 
 
   核心结构有三块：
   - **去重层**
@@ -485,7 +491,7 @@ class KnowledgeBaseService(object):
 
 - **文本格式化** : 在将 string 存入向量数据库前, 需要将其转化为 `list[str]` 的格式. 大于 `max_split_char_number` 的使用文本分割器分块 ; 小于规定长度的直接存入列表中.
 
-- **存入向量库** : 使用 `chroma.add_texts` 方法将文本和元数据存入向量库中.
+- **存入向量库** : 使用 `chroma.add_texts()` 方法将文本和元数据存入向量库中.
 
 - 将上传的 md5值存入文件中 , 以作去重用.
 
