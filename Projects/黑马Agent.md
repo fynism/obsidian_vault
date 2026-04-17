@@ -465,8 +465,14 @@ class KnowledgeBaseService(object):
 ## 存入向量库
 核心函数为 `upload_by_str`.
 在这个函数里面做了这么几件事:
+
 - 先进行 **md5 检查**, 文件是否已经你存在于知识库.
+
 - **文本格式化** : 在将 string 存入向量数据库前, 需要将其转化为 `list[str]` 的格式. 大于 `max_split_char_number` 的使用文本分割器分块 ; 小于规定长度的直接存入列表中.
+
+- **存入向量库** : 使用 `chroma.add_texts` 方法将文本和元数据存入向量库中.
+
+- 将上传的 md5值存入文件中 , 以作去重用.
 
 ```Python
 def upload_by_str(self,data,filename):  
