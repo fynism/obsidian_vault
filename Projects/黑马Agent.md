@@ -585,5 +585,5 @@ def upload_by_str(self,data,filename):
 好像是一个面向消费者的智能客服. 
 TODO 诶? 那为啥要用 Agent? 这个不是只要用 RAG 就能够解决的东西吗? 需要调用什么工具呢 ? 
 
+看看架构图先:
 <img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260417211625921.png"/>
-看看架构图先
