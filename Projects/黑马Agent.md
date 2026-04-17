@@ -428,7 +428,7 @@ for msg in res["messages"]:
 使用 `create_agent()` 方法进行模型初始化, 并且传入模型类型 , 可调用的工具方法 , 系统 prompt 等.
 
 - Agent 对象的调用:
-向 Agent 对象中传入类 JSON 格式的数据 , 如上述代码中传入了 `{"messages" : ["xxx"]}` 这样的数据 ,即用户的提问 prompt.
+向 Agent 对象中传入一个**字典**(类 JSON 格式)的数据 , 如上述代码中传入了 `{"messages" : ["xxx"]}` 这样的数据 ,即用户的提问 prompt.
 
 ## ReAct 框架介绍
 就是 Reasoning+Acting
