@@ -425,3 +425,35 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
 - `save_md5(m5d_str: str,encoding="utf-8")` : 将传入的 `md5` 字符串存入文件中.  ==(是否可以使用数据库存储?)==
 - `get_string_md5(input_str: str,encoding="utf-8")` : 调用 `hashlib.md5()` 方法, 将文本文件转换为 32 为长的 `md5` 字符串.
 
+## 向量库初始化
+首先，创建了一个 `KnowledgeBaseService` 的类 , bian
+主要做了这么几件事
+
+直接看代码
+```Python
+class KnowledgeBaseService(object):  
+    def __init__(self):  
+        # 如果文件夹不存在则创建，如果存在则跳过  
+        os.makedirs(config.persist_directory,exist_ok=True)  
+  
+        # 向量存储的示例Chroma向量库对象  
+        self.chroma=Chroma(  
+            collection_name=config.collection_name,    # 数据库表名  
+            embedding_function= DashScopeEmbeddings(model=config.embedding_model_name),    #嵌入模型名称  
+            persist_directory=config.persist_directory    # 数据库本地存储文件夹  
+        )  
+        # 文本分割器的对象  
+        self.spliter=RecursiveCharacterTextSplitter(  
+            # 分割后的文本段最大长度  
+            chunk_size=config.chunk_size,  
+  
+            # 连续文本段之间的字符重叠数量  
+            chunk_overlap=config.chunk_overlap,  
+  
+            # 自然段落划分的符号  
+            separators =config.separators,  
+  
+            # 使用python自带的len函数做长度统计  
+            length_function= len  
+        )
+```
