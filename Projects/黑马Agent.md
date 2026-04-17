@@ -392,10 +392,10 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
 
 # Agent 
 
-在 Agent 中, 模型能够根据用户提出的问题来选择调用不同的模型. 而不是像使用 `chain`
+在 Agent 中, 模型能够根据用户提出的问题来选择调用**不同的**模型. 而不是像使用 chain 调用模型的时候只能够使用规定好的、写死顺序的 chain.
 ## 工具的基本使用
 
-先来看一段代码:
+*先来看一段代码*:
 ```Python
 @tool(description="查询天气")  
 def get_weather() -> str:  
@@ -421,14 +421,14 @@ for msg in res["messages"]:
 ```
 
 好的. 上述代码中, 有这几个部分:
-- 首先是工具类的定义.
+- 首先是**工具**方法的定义:
 在 LangChain 中, 使用 `@tool(description="查询天气")` 这样的装饰器, 能够将这个函数方法指定为 tools, 能够被 Agent 调用 , `description` 中的内容告诉大模型应该什么时候调用这个工具. 
 
 - Agent 对象的初始化:
 使用 `create_agent()` 方法进行模型初始化, 并且传入模型类型 , 可调用的工具方法 , 系统 prompt 等.
 
 - Agent 对象的调用:
-向 Agent 对象中传入类 JSON 格式的数据 , 如上述代码中传入了 `{"messages" : ["xxx"]}` 这样的数据 , 能够让
+向 Agent 对象中传入类 JSON 格式的数据 , 如上述代码中传入了 `{"messages" : ["xxx"]}` 这样的数据 ,即用户的提问 prompt.
 
 
 # RAG项目
