@@ -391,6 +391,8 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
 
 
 # Agent 
+
+在 Agent 中, 模型能够根据用户提出的问题来选择调用不同的模型. 而不是像使用 `chain`
 ## 工具的基本使用
 
 先来看一段代码:
@@ -426,7 +428,7 @@ for msg in res["messages"]:
 使用 `create_agent()` 方法进行模型初始化, 并且传入模型类型 , 可调用的工具方法 , 系统 prompt 等.
 
 - Agent 对象的调用:
-- 
+向 Agent 对象中传入类 JSON 格式的数据 , 如上述代码中传入了 `{"messages" : ["xxx"]}` 这样的数据 , 能够让
 
 
 # RAG项目
