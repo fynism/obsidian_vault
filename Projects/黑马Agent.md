@@ -434,8 +434,10 @@ for msg in res["messages"]:
 就是 Reasoning+Acting
 
 ## 中间件
-![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260417201815376.png)
 
+正如下图中所示
+<img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260417201815376.png" zoom = ""/>
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260417204604257.png)
 
 # RAG项目
 
