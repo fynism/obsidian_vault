@@ -426,8 +426,12 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
 - `get_string_md5(input_str: str,encoding="utf-8")` : 调用 `hashlib.md5()` 方法, 将文本文件转换为 32 为长的 `md5` 字符串.
 
 ## 向量库初始化
-首先，创建了一个 `KnowledgeBaseService` 的类 , bian
-主要做了这么几件事
+首先，创建并 init 了一个 `KnowledgeBaseService` 的类 , 便于调用向量库相关服务.
+
+在 `__init()__` 中主要做了这么几件事:
+- 若 Chroma 向量库的文件夹不存在, 则创建
+- 初始化 Chroma 对象
+- 初始化文本分割器对象
 
 直接看代码
 ```Python
@@ -457,3 +461,5 @@ class KnowledgeBaseService(object):
             length_function= len  
         )
 ```
+
+##
