@@ -396,6 +396,9 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
 项目离线流程:
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260415211925275.png)
 
+项目在线流程:
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260417154525719.png)
+
 ## `app_file_uploader.py`
 使用了 streamlit 来快速构建文件上传的网页前端.
 
@@ -414,7 +417,7 @@ if "service" not in st.session_state:
     st.session_state["service"] = KnowledgeBaseService()
 ```
 
-2. 
+
 
 
 
