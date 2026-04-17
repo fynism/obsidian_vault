@@ -437,6 +437,8 @@ for msg in res["messages"]:
 
 正如下图中所示, 这六种 `MiddleWare` 中间件的生命周期示例图.
 <img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260417201815376.png" style="width: 50%;" />
+
+下图中给出了具体代码的示例:
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260417204604257.png)
 
 # RAG项目
