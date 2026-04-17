@@ -398,7 +398,7 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
 
 项目在线流程:
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260417154525719.png)
-
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260417154613650.png)
 ## `app_file_uploader.py`
 使用了 streamlit 来快速构建文件上传的网页前端.
 
