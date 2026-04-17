@@ -435,8 +435,8 @@ for msg in res["messages"]:
 
 ## 中间件
 
-正如下图中所示
-<img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260417201815376.png" zoom = 50%/>
+正如下图中所示, 这六种 `MiddleWare` 中间件的生命周期示例图.
+<img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260417201815376.png" style="width: 50%;" />
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260417204604257.png)
 
 # RAG项目
