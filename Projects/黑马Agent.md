@@ -466,7 +466,7 @@ class KnowledgeBaseService(object):
 核心函数为 `upload_by_str`.
 在这个函数里面做了这么几件事:
 - 先进行 md5 检查, 文件是否已经你存在于知识库.
-- 文件分块. 大于gui'di
+- 文件分块. 大于规定长度的使用文本分割器分块
 
 ```Python
 def upload_by_str(self,data,filename):  
