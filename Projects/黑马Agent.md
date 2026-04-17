@@ -418,7 +418,9 @@ for msg in res["messages"]:
     print(type(msg).__name__, msg.content)
 ```
 
-好的. 上述代码中,
+好的. 上述代码中, 有这几个部分:
+- 首先是工具类的定义.
+在 LangChain 中, 使用 `@tool(description="查询天气")` 这样的装饰器, 能够将这个函数方法指定为 tools, 能够被 Agent 调用 . 
 # RAG项目
 
 项目主要结构:
