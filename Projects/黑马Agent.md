@@ -433,7 +433,8 @@ for msg in res["messages"]:
 ## ReAct 框架介绍
 就是 Reasoning+Acting
 
-## 中间jian
+## 中间件
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260417201815376.png)
 
 
 # RAG项目
