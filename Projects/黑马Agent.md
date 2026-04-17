@@ -393,8 +393,10 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
 项目离线流程:
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260415211925275.png)
 
-## 文件上传
+## `app_file_uploader.py`
 使用了 streamlit 来快速构建文件上传的网页前端.
+
+注意点:
 
 ## `knowledge_base.py` 
 
@@ -425,7 +427,7 @@ for chunk in chain.stream({"lastname":"张","gender":"女孩"}):
 - `save_md5(m5d_str: str,encoding="utf-8")` : 将传入的 `md5` 字符串存入文件中.  ==(是否可以使用数据库存储?)==
 - `get_string_md5(input_str: str,encoding="utf-8")` : 调用 `hashlib.md5()` 方法, 将文本文件转换为 32 为长的 `md5` 字符串.
 
-## 向量库初始化
+### 向量库初始化
 首先，创建并 init 了一个 `KnowledgeBaseService` 的类 , 便于调用向量库相关服务.
 
 在 `__init()__` 中主要做了这么几件事:
@@ -462,8 +464,8 @@ class KnowledgeBaseService(object):
         )
 ```
 
-## 存入向量库
-核心函数为 `upload_by_str`.
+### 存入向量库
+主要实现了一个核心函数: `upload_by_str`.
 在这个函数里面做了这么几件事:
 
 - 先进行 **md5 检查**, 文件是否已经你存在于知识库.
@@ -500,3 +502,4 @@ def upload_by_str(self,data,filename):
   
     return "[成功]内容已经成功载入向量库"
 ```
+
