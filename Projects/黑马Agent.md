@@ -436,7 +436,7 @@ for msg in res["messages"]:
 ## 中间件
 
 正如下图中所示
-<img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260417201815376.png" zoom = ""/>
+<img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260417201815376.png" zoom = 50%/>
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260417204604257.png)
 
 # RAG项目
