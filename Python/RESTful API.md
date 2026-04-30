@@ -82,7 +82,12 @@ async def create_user(user: User):
 ```
 
 # 中间件
+是一个全局性的 filter。它可以在每一个请求前后进行一些操作，并且返回相应结果。
 
+*示例代码*
+```python
+
+```
 
 # 依赖注入相关
 
