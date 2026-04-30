@@ -84,7 +84,7 @@ async def create_user(user: User):
 # 中间件
 是一个全局性的 filter。它可以在**每一个**请求前后进行一些操作，并且返回相应结果。
 对，是“每一个”。甚至在返回像 404 这种错误状态码的时候也会执行中间件。
-
+<img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260430213244814.png"/>
 
 *示例代码*
 ```python
