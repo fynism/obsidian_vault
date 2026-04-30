@@ -82,11 +82,22 @@ async def create_user(user: User):
 ```
 
 # 中间件
-是一个全局性的 filter。它可以在每一个请求前后进行一些操作，并且返回相应结果。
+是一个全局性的 filter。它可以在**每一个**请求前后进行一些操作，并且返回相应结果。
+对，是“每一个”。甚至在返回像 404 这种错误状态码的时候也会执行中间件。
+
 
 *示例代码*
 ```python
+@app.middleware("http")
+async def add_process_time_header(request, call_next):
+    print("中间件，在请求处理前执行")
+    response = await call_next(request)
+    print("中间件，在请求处理后执行")
+    return response
 
+@app.get("/")
+async def read_root():
+    return {"Hello": "World"}
 ```
 
 # 依赖注入相关
