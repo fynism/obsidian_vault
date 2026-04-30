@@ -67,5 +67,14 @@ async def query_item(
 
 *示例代码*
 ```python
+from pydantic import BaseModel
+# ...
+class User(BaseModel):
+    username: str
+    password: str
+
+@app.post("/users")
+async def create_user(user: User):
+    return {"username": user.username, "password": user.password}
 
 ```
