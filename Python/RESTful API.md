@@ -82,7 +82,8 @@ async def create_user(user: User):
 ```
 
 # 中间件
-这塔吗不是 SpringBoot 的
+这塔吗不是 SpringBoot 的拦截器吗
+
 
 # 依赖注入相关
 
