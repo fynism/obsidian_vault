@@ -64,14 +64,15 @@ async def query_item(
 当想要传递大量 JSON 类型的数据的时候，经常使用 POST, PUT 等方法，将 JSON 放入请求体来传递。
 这个很像 SpringBoot 里面的“使用对象来作为请求参数”。
 这里是先使用 `pydantic` 来定义一个固定数据类型的“对象” ，然后在参数中传递它。
+同时，像上述的说到的各种参数一样，也可以通过外部方法 `pydantic.Field()` 方法来对其进行约束。
 
 *示例代码*
 ```python
-from pydantic import BaseModel
+from pydantic import BaseModel，Field
 # ...
 class User(BaseModel):
-    username: str
-    password: str
+    username: str = Field(..., description="用户名，长度为3-50", min_length=3, max_length=50)
+   password: str = Field(..., description="密码，长度为6-20", min_length=6, max_length=20)
 
 @app.post("/users")
 async def create_user(user: User):
@@ -79,4 +80,5 @@ async def create_user(user: User):
 
 #run...
 ```
+
 
