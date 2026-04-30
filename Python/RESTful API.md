@@ -47,4 +47,11 @@ async def read_item(item_id: int = 10 ,content:str = "这是默认内容"):
     return {"item_id": item_id, "content": content}
 ```
 
-在上面的例子中，当我访问 `http://127.0.0.1:8000/items?item_id=10&content=hello` 的时候，就能够得到一下j
+在上面的例子中，当我访问 `http://127.0.0.1:8000/items?item_id=10&content=hello` 的时候，就能够得到相应的 `response`:
+```json
+{
+  "item_id": 10,
+  "content": "hello"
+}
+```
+
