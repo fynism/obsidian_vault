@@ -19,11 +19,10 @@ if __name__ == "__main__":
 ```
 
 ## Path 方法对参数进行约束
+
+使用 `Path()` 方法 , 能够对参数进行一些范围上的约束。比如 `gt,ge,lt,le` 来约束**数字**的范围；`min_length, max_length` 来约束**字符串长度**的范围。
+
 ```python
-from fastapi import FastAPI,Path
-
-app = FastAPI()
-
 @app.get("/")
 async def read_root():
     return {"Hello": "World"}
@@ -36,7 +35,7 @@ async def read_item(item_id: int = Path(..., title="The ID of the item to get",d
 async def read_user(username: str = Path(..., description="用户名，长度为3-50", min_length=3, max_length=50)):
     return {"username": username}
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+#...
 ```
+
+
