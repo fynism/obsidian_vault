@@ -43,10 +43,10 @@ async def read_user(username: str = Path(..., description="用户名，长度为
 
 ```python
 @app.get("/items")
-async def read_item(
-	item_id: int = 10 ,
-	content:str = "这是默认内容"
-):
+async def query_item(
+    item_id: int = Query(10,description="书籍id,范围从0-100", ge=0, le=100),
+    content:str = Query("这是默认内容", description="书籍内容")
+    ):
     return {"item_id": item_id, "content": content}
 
 ```
@@ -58,4 +58,4 @@ async def read_item(
   "content": "hello"
 }
 ```
-
+其中，`Query()` 方法的第一个参数为默认值，其他的参数都与 `Path()` 方法共通。
