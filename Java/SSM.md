@@ -1,7 +1,7 @@
 # JAVA Web 相关
 ## RESTful API
 是一种 API 的设计模式。简单来说，RESTful API 设计模式的接口名称为资源的名称（名词），而对这些资源进行的操作（动词）有 HTTP 的请求方式来提供。
-
+<img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260430164405215.png"/>
 
 # 常用注解
 
