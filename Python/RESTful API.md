@@ -38,4 +38,9 @@ async def read_user(username: str = Path(..., description="用户名，长度为
 #...
 ```
 
+## 查询参数
+如果方法的形参没有出现在 URL 路径中，那么这些形参自动被定义为查询参数，一般使用 GET 方法的 `?` 符号来实现查询。
 
+
+```python
+```
