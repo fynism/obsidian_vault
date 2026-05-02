@@ -101,9 +101,13 @@ async def read_root():
 ```
 
 # 依赖注入相关
-跟 springboot 中的依赖注入有点不太一样，Python 里面似乎是一种公共通用逻辑复用。
-(在我看来更类似于 Springboot 中的拦截器。单从功能)
+跟 springboot 中的依赖注入有点不太一样，fastAPI里面似乎是一种公共通用逻辑复用。
+(在我看来更类似于 Springboot 中的拦截器。单从常用的功能逻辑复用这一块去看的话。)
+
+首先我定义了一个公共逻辑函数。然后在 `/userinfo` 路径下的函数参数中使用 `Depend()` 来注入这个公共逻辑函数。
+
 ```python
+#定义一个公共逻辑函数，使用Depends装饰器将其注入到路径操作函数中
 async def user_logic(
         user_id: int = Query(0, description="用户ID"),
         username: str = Query("default_user", description="用户名")
