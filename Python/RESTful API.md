@@ -101,7 +101,11 @@ async def read_root():
 ```
 
 # 依赖注入相关
+跟 springboot 中的依赖注入有点不太一样，Python 里面似乎是一种公共通用逻辑复用。
+在我看来更类似于 Springboot 中的拦截器。
+```python
 
+```
 
 # ORM 相关
 
