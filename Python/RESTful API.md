@@ -104,6 +104,24 @@ async def read_root():
 跟 springboot 中的依赖注入有点不太一样，Python 里面似乎是一种公共通用逻辑复用。
 在我看来更类似于 Springboot 中的拦截器。
 ```python
+#定义一个公共逻辑函数，使用Depends装饰器将其注入到路径操作函数中
+@Depends
+async def user_logic(
+        user_id: int = Query(0, description="用户ID"),
+        username: str = Query("default_user", description="用户名")
+):
+    print("公共逻辑正在处理")
+    return {"user_id": user_id, "username": username}
+
+@app.get("/userinfo")
+#@Depends装饰器用于将公共逻辑注入到路径操作函数中
+#返回的结果会作为参数传递给路径操作函数
+async def read_user(
+        userinfo = Depends(user_logic)
+):
+    print("userinfo路径请求中...")
+    return userinfo
+
 
 ```
 
