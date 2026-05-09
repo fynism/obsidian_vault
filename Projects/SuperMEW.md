@@ -1,7 +1,6 @@
 # 其他小知识
 ## milvus
-
-
+Milvus 和其他关系型数据库的区别是: 它存储的是一个多维xian collection,
 
 
 
