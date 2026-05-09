@@ -1,6 +1,15 @@
 # 其他小知识
 ## milvus
-Milvus 和其他关系型数据库的区别是: 它存储的是一个多维xian collection,
+Milvus 和其他关系型数据库的区别是: 它存储的是一个多维向量 collection, 它的查询能够根据语义进行相似查询 (余弦相似度).
+这个项目里面使用的是 `pymilvus` 来进行 milvus 数据库的操作.
+- 连接 Milvus
+```Python
+# 连接（本地 / Docker）
+client = MilvusClient(uri="http://localhost:19530")
+
+# 或者使用 Milvus Lite（纯本地文件，无需部署）
+# client = MilvusClient(uri="./milvus.db")
+```
 
 
 
