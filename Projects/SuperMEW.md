@@ -5,10 +5,8 @@ Milvus 和其他关系型数据库的区别是: 它存储的是一个多维向�
 - 连接 Milvus
 ```Python
 # 连接（本地 / Docker）
-client = MilvusClient(uri="http://localhost:19530")
+client = MilvusClient(url="http://localhost:19530")
 
-# 或者使用 Milvus Lite（纯本地文件，无需部署）
-# client = MilvusClient(uri="./milvus.db")
 ```
 
 
