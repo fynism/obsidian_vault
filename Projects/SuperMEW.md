@@ -47,3 +47,7 @@ Ok
 
 ## 稠密向量
 
+
+# LangGraph 状态机
+下图展示了使用 LangGraph 编排的 RAG 功能的 pipeline。
+<img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260511213327838.png"/>
