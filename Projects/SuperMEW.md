@@ -59,9 +59,12 @@ Ok
 
 ## 相关性评分节点
 
+就是这个
+
 主要使用的是独立的评分模型 `GRADE_MODEL` ,(.env 中
   `GRADE_MODEL=deepseek-v4-flash`），而不是主对话模型。原因：
   - 这是一个小而确定性的判断（yes/no），用 flash 模型更快更省
   - 避免主模型（思考模型）在评分时发散
   - `temperature=0` 保证评分结果稳定
 
+## 问题重写
