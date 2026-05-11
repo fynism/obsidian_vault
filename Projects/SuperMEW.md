@@ -59,7 +59,7 @@ Ok
 
 ## 相关性评分节点
 
-就是这个
+就是这个 `grade_documents` 节点. 
 
 主要使用的是独立的评分模型 `GRADE_MODEL` ,(.env 中
   `GRADE_MODEL=deepseek-v4-flash`），而不是主对话模型。原因：
@@ -68,3 +68,21 @@ Ok
   - `temperature=0` 保证评分结果稳定
 
 ## 问题重写
+即 `rewrite_question` 节点.
+
+这个节点做了两件事: **策略选择**和**执行扩展策略**.
+首先是策略选择 :
+```python
+router = _get_router_model()     # 主模型 deepseek-v4-pro
+prompt = (
+    "请根据用户问题选择最合适的查询扩展策略，仅输出策略名。\n"
+    "- step_back：包含具体名称、日期、代码等细节，需要先理解通用概念的问题。\n"
+    "- hyde：模糊、概念性、需要解释或定义的问题。\n"
+    "- complex：多步骤、需要分解或综合多种信息的复杂问题。\n"
+    f"用户问题：{question}"
+)
+decision = router.invoke(prompt)
+# 解析策略名: "step_back" / "hyde" / "complex"
+```
+
+使用大模型从三种策略中
