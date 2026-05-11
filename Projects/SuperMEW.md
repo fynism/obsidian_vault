@@ -51,3 +51,9 @@ Ok
 # LangGraph 状态机
 下图展示了使用 LangGraph 编排的 RAG 功能的 pipeline。
 <img src="https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260511213327838.png"/>
+
+一开始先进行混合检索，尝试召回相关文本块。
+  在进入 `grade_documents` 节点进行相关性评分后, 有两条路径：
+  - Yes：初始检索结果相关 → 直接结束，返回结果给 LLM 生成答案
+  - No：初始检索不相关 → 触发查询重写 → 扩展检索 → 返回新结果
+
