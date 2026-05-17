@@ -190,9 +190,11 @@ Redis 是缓存层，不是持久层。即使 Redis 挂了，`get_json()` 和 `s
 
 
 # 三级分块
+首先明确分块的目的：为了在使用
+
 首先, 传入的文件会按照 size 从大到小来分成 `L1 , L2 , L3` 三种大小的 chunk
 这个 chunk 的分割是递归性的, 如下图所示
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260517212438493.png)
 
-此时, 只有 L 3 级别的 (最小的) chunk 被向量化到 Milvus 中, `L2 , L3` 都存在结构化数据库中.
+此时, 只有 L 3 级别的 (最小的) chunk 被向量化到 Milvus 中, `L2 , L3` 都存在结构化数据库中 , 这是为了避免重复的向量化, 节省 Milvus 的存储空间。
 
