@@ -150,15 +150,13 @@ PostgreSQL 的角色是持久化所有需要精确查询和事务保证的数据
 - 对话历史 → chat_sessions + chat_messages（每次对话结束后全量覆写消息列表，见 agent.py:72 先删后插）
 - 父级分块（用于 Auto-merging）→ parent_chunks，按 chunk_id 主键 upsert
 - reasoning_content 和 rag_trace 都是 JSON/Text，直接存 PostgreSQL
-
-
+---
 ## Redis — 热数据缓存层
 
 backend/cache.py，TTL 默认 300 秒。
 
 三个缓存 key 模式：
-
-
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260517200352921.png)
 
 读写策略是经典的 Cache-Aside：
 - 读：先查 Redis → 命中直接返回 → 未命中查 PostgreSQL → 回写 Redis
@@ -168,4 +166,3 @@ Redis 是纯缓存，不是持久层。即使 Redis 挂了，get_json() 和 set_
 静默吞异常，系统会降级到每次都查 PostgreSQL。
 
 ---
-
