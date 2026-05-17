@@ -139,24 +139,10 @@ Step-Back 的实现
 
 # 数据库相关
 
-PostgreSQL — 权威数据源（Source of Truth）
+## PostgreSQL — 权威数据源（Source of Truth）
 
 backend/models.py 定义了 4 张表：
-```
-┌───────────────┬───────────────────┬───────────────────────────────────────────────────────────────┐
-│      表       │       用途        │                           关键字段                            │
-├───────────────┼───────────────────┼───────────────────────────────────────────────────────────────┤
-│ users         │ 用户账号          │ username, password_hash, role                                 │
-├───────────────┼───────────────────┼───────────────────────────────────────────────────────────────┤
-│ chat_sessions │ 会话元数据        │ user_id, session_id, metadata_json, updated_at                │
-├───────────────┼───────────────────┼───────────────────────────────────────────────────────────────┤
-│ chat_messages │ 每条消息          │ session_ref_id, message_type, content, reasoning_content,     │
-│               │                   │ rag_trace                                                     │
-├───────────────┼───────────────────┼───────────────────────────────────────────────────────────────┤
-│ parent_chunks │ L1/L2             │ chunk_id, text, filename, chunk_level, parent_chunk_id        │
-│               │ 父级分块文本      │                                                               │
-└───────────────┴───────────────────┴───────────────────────────────────────────────────────────────┘
-```
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260517200255541.png)
 
 PostgreSQL 的角色是持久化所有需要精确查询和事务保证的数据：
 
@@ -165,4 +151,21 @@ PostgreSQL 的角色是持久化所有需要精确查询和事务保证的数据
 - 父级分块（用于 Auto-merging）→ parent_chunks，按 chunk_id 主键 upsert
 - reasoning_content 和 rag_trace 都是 JSON/Text，直接存 PostgreSQL
 
+
+## Redis — 热数据缓存层
+
+backend/cache.py，TTL 默认 300 秒。
+
+三个缓存 key 模式：
+
+
+
+读写策略是经典的 Cache-Aside：
+- 读：先查 Redis → 命中直接返回 → 未命中查 PostgreSQL → 回写 Redis
+- 写：先写 PostgreSQL → 同步写入/删除 Redis
+
+Redis 是纯缓存，不是持久层。即使 Redis 挂了，get_json() 和 set_json() 都做了 try/except
+静默吞异常，系统会降级到每次都查 PostgreSQL。
+
+---
 
