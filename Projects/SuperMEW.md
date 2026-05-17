@@ -47,6 +47,11 @@ Ok
 
 ## 稠密向量
 
+## RRF 策略进行 hybrid 查询
+
+## Jina Rerank 精排
+
+
 
 # LangGraph 状态机
 下图展示了使用 LangGraph 编排的 RAG 功能的 pipeline。
