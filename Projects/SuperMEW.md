@@ -167,7 +167,7 @@ Redis 是缓存层，不是持久层。即使 Redis 挂了，`get_json()` 和 `s
 
 ---
 
-Milvus — 向量检索引擎
+## Milvus — 向量检索引擎
 
   backend/milvus_client.py:28-105，单 collection embeddings_collection。
 
