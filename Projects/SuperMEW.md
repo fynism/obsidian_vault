@@ -162,7 +162,24 @@ backend/cache.py，TTL 默认 300 秒。
 - 读：先查 Redis → 命中直接返回 → 未命中查 PostgreSQL → 回写 Redis
 - 写：先写 PostgreSQL → 同步写入/删除 Redis
 
-Redis 是纯缓存，不是持久层。即使 Redis 挂了，get_json() 和 set_json() 都做了 try/except
-静默吞异常，系统会降级到每次都查 PostgreSQL。
+Redis 是缓存层，不是持久层。即使 Redis 挂了，`get_json()` 和 `set_json()` 都做了 try/except
+静默吞异常，系统会**降级**到每次都查 PostgreSQL。
 
 ---
+
+Milvus — 向量检索引擎
+
+  backend/milvus_client.py:28-105，单 collection embeddings_collection。
+
+  存储的每条记录代表一个 L3 叶子分块：
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260517200757235.png)
+  Milvus 只做一件事：语义/关键词混合检索。检索流程（rag_utils.py:245-301）：
+
+  查询文本
+    → dense_embedding (BAAI/bge-m3)
+    → sparse_embedding (BM25)
+    → Milvus.hybrid_retrieve() [RRF 融合两路结果]
+    → Rerank (jina-reranker-v3, 可选)
+    → Auto-merging [用 chunk_id 回查 parent_chunks 合并父块]
+    → 返回最终结果
+
