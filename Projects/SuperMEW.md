@@ -174,7 +174,7 @@ Redis 是缓存层，不是持久层。即使 Redis 挂了，`get_json()` 和 `s
 
 ## Milvus — 向量检索引擎
 
-  backend/milvus_client.py:28-105，单 collection embeddings_collection。
+  `backend/milvus_client.py:28-105`，单 collection embeddings_collection。
 
   存储的每条记录代表一个 L3 叶子分块：
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260517200757235.png)
@@ -188,3 +188,6 @@ Redis 是缓存层，不是持久层。即使 Redis 挂了，`get_json()` 和 `s
     → Auto-merging [用 chunk_id 回查 parent_chunks 合并父块]
     → 返回最终结果
 
+
+# 三级分块
+首先, 传入的文件会按照 size 从大到小来分成 `L1 , L2 , L3` 三种大小的 chunk
