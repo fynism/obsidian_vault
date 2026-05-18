@@ -192,6 +192,7 @@ Redis 是缓存层，不是持久层。即使 Redis 挂了，`get_json()` 和 `s
 # 三级分块
 首先明确分块的目的：为了在查询时精确匹配向量语义(`L3`)的同时，能够为模型提供大量的连贯上下文(` L1 `)。
 
+## 分块
 首先, 传入的文件会按照 size 从大到小来分成 `L1 , L2 , L3` 三种大小的 chunk
 这个 chunk 的分割是递归性的, 如下图所示
 ![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260517212438493.png)
