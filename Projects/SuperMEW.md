@@ -203,3 +203,43 @@ Redis 是缓存层，不是持久层。即使 Redis 挂了，`get_json()` 和 `s
 召回也是采用递归式的召回结构。首先仅对存储在 Milvus 中的 `L3` 级别的 chunk 进行 hybrid 查询, 然后如果在某一个大块(`L2`)下命中了超过 threshold 的小块( `L3`)  , 那么就召回这个大块.
 
 同理, `L2` 也以此方法来召回 `L1` . 最后, 把拥有最完整上下文的 `L1` 传入大模型作为上下文 , 使模型能够解决问题 .
+
+```python
+def _merge_to_parent_level(docs, threshold=2):
+    # 1. 按 parent_chunk_id 分组
+    groups = defaultdict(list)
+    for doc in docs:
+        groups[doc["parent_chunk_id"]].append(doc)
+
+    # 2. 找到 ≥ threshold 个孩子的父块
+    merge_parent_ids = [pid for pid, children in groups.items() if
+len(children) >= threshold]
+
+    # 3. 从 PostgreSQL/Redis 读取父块文本
+    parent_docs = _parent_chunk_store.get_documents_by_ids(merge_parent_ids)
+
+    # 4. 用父块替换其下所有子块，继承最高分
+    for doc in docs:
+        if doc["parent_chunk_id"] in parent_map:
+            parent = parent_map[doc["parent_chunk_id"]]
+            parent["score"] = max(parent["score"], doc["score"])
+            merged_docs.append(parent)   # 替换
+        else:
+            merged_docs.append(doc)      # 保留原样
+
+_auto_merge_documents 连续调用两次：L3 → L2，再 L2 → L1。
+```
+
+以下是 AI 的总结：
+```
+问题: chunk 太小 → 丢失上下文，LLM 看不懂碎片
+       chunk 太大 → 向量语义稀释，检索不准
+
+方案: 三粒度分块
+      检索用最小粒度 (L3=300) → 精确匹配
+      回答用最大粒度 (L1=1200) → 完整上下文
+      中间层 (L2=600)   → 过渡合并的桥梁
+
+代价: 只对 1/3 的块做了向量化，节省了 ~40% 存储和向量计算
+      父块按需从 PostgreSQL + Redis 加载，毫秒级
+```
