@@ -130,18 +130,16 @@ Step-Back 的实现
   HyDE 的实现
 
   Backend/rag_utils. Py: 211-224
+HyDE（Hypothetical Document Embeddings）的思路是让 LLM 先凭空编一段答案文档，然后用这段虚构文档做检索。因为虚构文档和真实文档在语义空间更接近，检索效果往往比直接搜原始问题好。
 
-  HyDE（Hypothetical Document Embeddings）的思路是让 LLM 先凭空编一段答案文档，然后用这段虚构文档做检索。因为虚构文
-  档和真实文档在语义空间更接近，检索效果往往比直接搜原始问题好。
-
-  用户问题: "什么是混合检索？"
-       ↓ generate_hypothetical_document ()
-  假设文档: "混合检索是一种结合稠密向量检索和稀疏向量检索的信息检索方法。
-           稠密向量通过深度学习模型捕获语义信息，稀疏向量如 BM 25 捕获关键词
-           匹配信号。两者通过 RRF 等融合算法综合排序..."
-       ↓ 用这段文本去 Milvus 检索
-
-
+```
+用户问题: "什么是混合检索？"
+     ↓ generate_hypothetical_document ()
+假设文档: "混合检索是一种结合稠密向量检索和稀疏向量检索的信息检索方法。
+         稠密向量通过深度学习模型捕获语义信息，稀疏向量如 BM 25 捕获关键词
+         匹配信号。两者通过 RRF 等融合算法综合排序..."
+     ↓ 用这段文本去 Milvus 检索
+```
 # 数据库相关
 
 ## PostgreSQL — 权威数据源（Source of Truth）
