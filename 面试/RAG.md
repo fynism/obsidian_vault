@@ -59,4 +59,4 @@
 
 - 参考答案:前端停止按钮会触发 `AbortController.abort()`，fetch 抛出 `AbortError`，气泡显示“已终止回答”。后端如果只依赖连接断开，后台 agent task 可能仍在跑，继续调用 LLM、工具和检索，浪费 token 与资源，还可能继续向队列写入无人消费的数据。显式 `agent_task.cancel()` 可以确定性回收后台任务。
 
-
+![](https://cdn.jsdelivr.net/gh/fynism/Picogo@main/img/20260603002954503.png)
