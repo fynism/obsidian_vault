@@ -2,4 +2,4 @@
 
 - 参考答案: `search_knowledge_base` 作为同步工具可能在线程池中执行，不能直接操作主事件循环里的 SSE 输出。项目在流式函数里创建统一 `asyncio.Queue`，调用 `set_rag_step_queue()` 捕获当前 running loop；工具线程里通过 `emit_rag_step()` 使用 `loop.call_soon_threadsafe(queue.put_nowait, step)` 把 RAG 步骤安全投递回主循环。
 
-
+- 

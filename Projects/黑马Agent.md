@@ -470,12 +470,6 @@ if "service" not in st.session_state:
     st.session_state["service"] = KnowledgeBaseService()
 ```
 
-
-
-
-
-
-
 ***
 ## `knowledge_base.py` 
 
